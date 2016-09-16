@@ -7,14 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1800AD5D1D3B2BD400C3F932 /* DB_Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1800AD5C1D3B2BD400C3F932 /* DB_Function.swift */; };
+		1800AD5F1D3B80E500C3F932 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1800AD5E1D3B80E500C3F932 /* libsqlite3.dylib */; };
 		1813ADC31D315806001BB532 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813ADC21D315806001BB532 /* AppDelegate.swift */; };
 		1813ADC51D315806001BB532 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813ADC41D315806001BB532 /* ViewController.swift */; };
 		1813ADC81D315806001BB532 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1813ADC61D315806001BB532 /* Main.storyboard */; };
 		1813ADCA1D315806001BB532 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1813ADC91D315806001BB532 /* Assets.xcassets */; };
 		1813ADCD1D315806001BB532 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1813ADCB1D315806001BB532 /* LaunchScreen.storyboard */; };
+		188903AE1D3BA3F400B16FE8 /* DBController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188903AD1D3BA3F400B16FE8 /* DBController.m */; };
+		18894BF01D32908300EE4CB2 /* game_logo_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18894BEF1D32908300EE4CB2 /* game_logo_image.png */; };
+		18894BF41D37D3F300EE4CB2 /* EnrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18894BF31D37D3F300EE4CB2 /* EnrollView.swift */; };
+		18DFD4DA1D8BB15100582637 /* id_search_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFD4D71D8BB15100582637 /* id_search_image.png */; };
+		18DFD4DB1D8BB15100582637 /* member_out_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFD4D81D8BB15100582637 /* member_out_image.png */; };
+		18DFD4DC1D8BB15100582637 /* password_search_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFD4D91D8BB15100582637 /* password_search_image.png */; };
+		18DFD4E61D8BB29A00582637 /* enroll_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFD4E31D8BB29A00582637 /* enroll_image.png */; };
+		18DFD4E71D8BB29A00582637 /* login_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFD4E41D8BB29A00582637 /* login_image.png */; };
+		18DFD4E81D8BB29A00582637 /* memberlist_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFD4E51D8BB29A00582637 /* memberlist_image.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1800AD5C1D3B2BD400C3F932 /* DB_Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DB_Function.swift; path = ../DB_Function.swift; sourceTree = "<group>"; };
+		1800AD5E1D3B80E500C3F932 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
 		1813ADBF1D315806001BB532 /* Swift_sample_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_sample_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1813ADC21D315806001BB532 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1813ADC41D315806001BB532 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +35,17 @@
 		1813ADC91D315806001BB532 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1813ADCC1D315806001BB532 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1813ADCE1D315806001BB532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		188903AC1D3BA3F400B16FE8 /* DBController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBController.h; sourceTree = "<group>"; };
+		188903AD1D3BA3F400B16FE8 /* DBController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBController.m; sourceTree = "<group>"; };
+		188903AF1D3BA47500B16FE8 /* Swift_sample_app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift_sample_app-Bridging-Header.h"; sourceTree = "<group>"; };
+		18894BEF1D32908300EE4CB2 /* game_logo_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_logo_image.png; sourceTree = "<group>"; };
+		18894BF31D37D3F300EE4CB2 /* EnrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnrollView.swift; sourceTree = "<group>"; };
+		18DFD4D71D8BB15100582637 /* id_search_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = id_search_image.png; sourceTree = "<group>"; };
+		18DFD4D81D8BB15100582637 /* member_out_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = member_out_image.png; sourceTree = "<group>"; };
+		18DFD4D91D8BB15100582637 /* password_search_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password_search_image.png; sourceTree = "<group>"; };
+		18DFD4E31D8BB29A00582637 /* enroll_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enroll_image.png; sourceTree = "<group>"; };
+		18DFD4E41D8BB29A00582637 /* login_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_image.png; sourceTree = "<group>"; };
+		18DFD4E51D8BB29A00582637 /* memberlist_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = memberlist_image.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1800AD5F1D3B80E500C3F932 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +63,13 @@
 		1813ADB61D315806001BB532 = {
 			isa = PBXGroup;
 			children = (
+				188903AC1D3BA3F400B16FE8 /* DBController.h */,
+				188903AD1D3BA3F400B16FE8 /* DBController.m */,
+				188903AF1D3BA47500B16FE8 /* Swift_sample_app-Bridging-Header.h */,
+				1800AD5E1D3B80E500C3F932 /* libsqlite3.dylib */,
 				1813ADC11D315806001BB532 /* Swift_sample_app */,
 				1813ADC01D315806001BB532 /* Products */,
+				18894BEE1D32908300EE4CB2 /* resource file */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +90,24 @@
 				1813ADC91D315806001BB532 /* Assets.xcassets */,
 				1813ADCB1D315806001BB532 /* LaunchScreen.storyboard */,
 				1813ADCE1D315806001BB532 /* Info.plist */,
+				18894BF31D37D3F300EE4CB2 /* EnrollView.swift */,
+				1800AD5C1D3B2BD400C3F932 /* DB_Function.swift */,
 			);
 			path = Swift_sample_app;
+			sourceTree = "<group>";
+		};
+		18894BEE1D32908300EE4CB2 /* resource file */ = {
+			isa = PBXGroup;
+			children = (
+				18894BEF1D32908300EE4CB2 /* game_logo_image.png */,
+				18DFD4D71D8BB15100582637 /* id_search_image.png */,
+				18DFD4D81D8BB15100582637 /* member_out_image.png */,
+				18DFD4D91D8BB15100582637 /* password_search_image.png */,
+				18DFD4E31D8BB29A00582637 /* enroll_image.png */,
+				18DFD4E41D8BB29A00582637 /* login_image.png */,
+				18DFD4E51D8BB29A00582637 /* memberlist_image.png */,
+			);
+			path = "resource file";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,8 +170,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1813ADCD1D315806001BB532 /* LaunchScreen.storyboard in Resources */,
+				18DFD4E61D8BB29A00582637 /* enroll_image.png in Resources */,
+				18DFD4DC1D8BB15100582637 /* password_search_image.png in Resources */,
+				18DFD4E81D8BB29A00582637 /* memberlist_image.png in Resources */,
 				1813ADCA1D315806001BB532 /* Assets.xcassets in Resources */,
+				18DFD4E71D8BB29A00582637 /* login_image.png in Resources */,
+				18DFD4DB1D8BB15100582637 /* member_out_image.png in Resources */,
+				18894BF01D32908300EE4CB2 /* game_logo_image.png in Resources */,
 				1813ADC81D315806001BB532 /* Main.storyboard in Resources */,
+				18DFD4DA1D8BB15100582637 /* id_search_image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,8 +189,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18894BF41D37D3F300EE4CB2 /* EnrollView.swift in Sources */,
 				1813ADC51D315806001BB532 /* ViewController.swift in Sources */,
 				1813ADC31D315806001BB532 /* AppDelegate.swift in Sources */,
+				1800AD5D1D3B2BD400C3F932 /* DB_Function.swift in Sources */,
+				188903AE1D3BA3F400B16FE8 /* DBController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +298,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -250,10 +307,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = developer_seo;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Swift_sample_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.Swift-sample-app";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.developer-seo.Swift-sample-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Swift_sample_app-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -261,10 +325,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = developer_seo;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Swift_sample_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.Swift-sample-app";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.developer-seo.Swift-sample-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = NO;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Swift_sample_app-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -287,6 +358,7 @@
 				1813ADD31D315806001BB532 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
