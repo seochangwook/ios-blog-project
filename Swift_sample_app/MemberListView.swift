@@ -60,6 +60,10 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
     
     var button_number = 0;
     
+    /** 정렬에 사용될 배열변수 **/
+    var member_desc_list = [String]()
+    var member_asc_list = [String]()
+    
     /** TableView 관련 Swipe Refresh 이벤트 **/
     var refreshControl: UIRefreshControl!
     
@@ -93,7 +97,7 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
         
         print("db table check : ", self.db_table_check)
         
-        self.load_memberlist()
+        self.load_memberlist(flag: "2") //기본적용//
         
         // set up the refresh control
         refreshControl = UIRefreshControl()
@@ -122,30 +126,9 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
     override func viewDidAppear(_ animated: Bool) //처음뷰가 호출될 때 실행(중복실행가능)//
     {
         super.viewDidAppear(true)
-        
-        //다이얼로그로 현재 스토리보드의 상황을 알려준다.//
-        /*let refreshAlert = UIAlertController(title: "정보", message: self.screen_message, preferredStyle: UIAlertControllerStyle.alert)
-        
-        //다이얼로그에 버튼 등록//
-        refreshAlert.addAction(UIAlertAction(title: "확인", style: .default, handler: { (action: UIAlertAction!) in self.load_memberlist() //'확인'버튼을 누를 시 특정 함수를 실행.//
-        }))
-        
-        //다이얼로그를 실행.//
-        present(refreshAlert, animated: true, completion: nil)*/
-        
-        /*self.db_connection_check = DB_Func_class.DB_Connection()
-        
-        print("DB Connection Check : ", db_connection_check)
-        
-        //테이블 생성. 테이블 생성은 기존에 있는 테이블일 경우 실패를 하기에 에러가 나도 예외처리의 문제는 없다.//
-        self.db_table_check = DB_Func_class.DB_Table_Create()
-        
-        print("db table check : ", self.db_table_check)
-        
-        self.load_memberlist()*/
     }
     
-    func load_memberlist() //해당 부분이 네트워크로 데이터를 불러오는 경우도 된다//
+    func load_memberlist(flag:String) //해당 부분이 네트워크로 데이터를 불러오는 경우도 된다//
     {
         print("load member list")
         
@@ -153,15 +136,15 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
         if(self.db_connection_check == true)
         {
             //이름부분의 리스트 정보//
-            self.member_name = DB_Func_class.DB_Select_user_name() //이름을 불러온다.//
-            self.member_image = DB_Func_class.DB_Select_user_image() //이미지를 불러온다.//
-            self.member_id = DB_Func_class.DB_Select_user_id() //id들을 불러온다.//
+            self.member_name = DB_Func_class.DB_Select_user_name(flag: flag) //이름을 불러온다.//
+            self.member_image = DB_Func_class.DB_Select_user_image(flag: flag) //이미지를 불러온다.//
+            self.member_id = DB_Func_class.DB_Select_user_id(flag: flag) //id들을 불러온다.//
             //부가정보 로드//
-            self.member_address = DB_Func_class.DB_Select_user_address() //주소정보들을 불러온다.//
-            self.member_phone_number = DB_Func_class.DB_Select_user_phonenumber() //전화번호 정보들을 불러온다.//
-            self.member_email_address = DB_Func_class.DB_Select_user_emailaddress() //이메일 정보들을 불러온다.//
-            self.member_success = DB_Func_class.DB_Select_user_success() //승률정보들을 불러온다//
-            self.member_fail = DB_Func_class.DB_Select_user_fail() //패전기록들을 불러온다//
+            self.member_address = DB_Func_class.DB_Select_user_address(flag: flag) //주소정보들을 불러온다.//
+            self.member_phone_number = DB_Func_class.DB_Select_user_phonenumber(flag: flag) //전화번호 정보들을 불러온다.//
+            self.member_email_address = DB_Func_class.DB_Select_user_emailaddress(flag: flag) //이메일 정보들을 불러온다.//
+            self.member_success = DB_Func_class.DB_Select_user_success(flag: flag) //승률정보들을 불러온다//
+            self.member_fail = DB_Func_class.DB_Select_user_fail(flag: flag) //패전기록들을 불러온다//
             
             print("member name count:", self.member_name.count)
             print("member id count:", self.member_id.count)
@@ -273,7 +256,7 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
                 
             print("move sotryboard...")
             
-            //이동할 스토리보드에 있는 값을 받을 변수설정//
+            //이동할 스토리보드에 있는 값을 받을 변수설정(안드로이드에서는 해당 기능을 인텐트로 구현)//
             destination.member_id = self.member_id[cell_position!]
             destination.member_name = self.member_name[cell_position!]
             destination.member_imageUrl = self.member_image[cell_position!]
@@ -291,13 +274,31 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
     {
         print("최고득점순으로 정렬")
         
-        
+        self.db_connection_check = DB_Func_class.DB_Connection()
+         
+         print("DB Connection Check : ", db_connection_check)
+         
+         //테이블 생성. 테이블 생성은 기존에 있는 테이블일 경우 실패를 하기에 에러가 나도 예외처리의 문제는 없다.//
+         self.db_table_check = DB_Func_class.DB_Table_Create()
+         
+         print("db table check : ", self.db_table_check)
+         
+        self.load_memberlist(flag: "0") //내림차순 결과//
     }
     
     func OrderMinValue_member() //오름차순(ASC)//
     {
         print("최저득점순으로 정렬")
         
-        
+        self.db_connection_check = DB_Func_class.DB_Connection()
+         
+         print("DB Connection Check : ", db_connection_check)
+         
+         //테이블 생성. 테이블 생성은 기존에 있는 테이블일 경우 실패를 하기에 에러가 나도 예외처리의 문제는 없다.//
+         self.db_table_check = DB_Func_class.DB_Table_Create()
+         
+         print("db table check : ", self.db_table_check)
+         
+        self.load_memberlist(flag: "1") //오름차순 결과//
     }
 }

@@ -95,14 +95,14 @@ class DB_Func //클래스 정의.//
     }
     /////////////
     //멤버의 이름들을 반환하는 메소드//
-    func DB_Select_user_name() -> [String]
+    func DB_Select_user_name(flag:String) -> [String]
     {
         var member_name = [String]()
         
         let db_control = DBController();
         
         //이름 데이터를 불러온다. (NSMutableArray <-> String[])//
-        member_name = db_control.db_Select_User_Name() as! [String]
+        member_name = db_control.db_Select_User_Name(flag) as! [String]
 
         print("array size:", member_name.count)
         
@@ -115,14 +115,14 @@ class DB_Func //클래스 정의.//
     }
     /////////////
     //멤버의 id들을 반환하는 메소드//
-    func DB_Select_user_id() -> [String]
+    func DB_Select_user_id(flag:String) -> [String]
     {
         var member_id = [String]()
         
         let db_control = DBController();
         
         //이름 데이터를 불러온다. (NSMutableArray <-> String[])//
-        member_id = db_control.db_Select_User_id() as! [String]
+        member_id = db_control.db_Select_User_id(flag) as! [String]
         
         print("array size:", member_id.count)
         
@@ -135,14 +135,14 @@ class DB_Func //클래스 정의.//
     }
     //////////////
     //멤버의 이미지들을 반환하는 메소드//
-    func DB_Select_user_image() -> [String]
+    func DB_Select_user_image(flag:String) -> [String]
     {
         var member_image = [String]()
         
         let db_control = DBController()
         
         //이미지 데이터를 불러온다.//
-        member_image = db_control.db_Select_User_image() as! [String]
+        member_image = db_control.db_Select_User_image(flag) as! [String]
         
         print("array size:", member_image.count)
         
@@ -155,14 +155,14 @@ class DB_Func //클래스 정의.//
     }
     ////////////////
     //멤버의 주소들을 반환하는 메소드//
-    func DB_Select_user_address() -> [String]
+    func DB_Select_user_address(flag:String) -> [String]
     {
         var member_address = [String]()
         
         let db_control = DBController()
         
         //이미지 데이터를 불러온다.//
-        member_address = db_control.db_Select_User_address() as! [String]
+        member_address = db_control.db_Select_User_address(flag) as! [String]
         
         print("array size:", member_address.count)
         
@@ -175,14 +175,14 @@ class DB_Func //클래스 정의.//
     }
     /////////////////
     //멤버의 전화번호들을 반환하는 메소드//
-    func DB_Select_user_phonenumber() -> [String]
+    func DB_Select_user_phonenumber(flag:String) -> [String]
     {
         var phonenumber = [String]()
         
         let db_control = DBController()
         
         //이미지 데이터를 불러온다.//
-        phonenumber = db_control.db_Select_User_phonenumber() as! [String]
+        phonenumber = db_control.db_Select_User_phonenumber(flag) as! [String]
         
         print("array size:", phonenumber.count)
         
@@ -195,14 +195,14 @@ class DB_Func //클래스 정의.//
     }
     /////////////////
     //멤버의 이메일 주소들을 반환하는 메소드//
-    func DB_Select_user_emailaddress() -> [String]
+    func DB_Select_user_emailaddress(flag:String) -> [String]
     {
         var emailaddress = [String]()
         
         let db_control = DBController()
         
         //이미지 데이터를 불러온다.//
-        emailaddress = db_control.db_Select_User_emailaddress() as! [String]
+        emailaddress = db_control.db_Select_User_emailaddress(flag) as! [String]
         
         print("array size:", emailaddress.count)
         
@@ -215,14 +215,14 @@ class DB_Func //클래스 정의.//
     }
     //////////////////
     //멤버의 승률을 반환하는 메소드//
-    func DB_Select_user_success() -> [String]
+    func DB_Select_user_success(flag:String) -> [String]
     {
         var success = [String]()
         
         let db_control = DBController()
         
         //이미지 데이터를 불러온다.//
-        success = db_control.db_Select_User_success() as! [String]
+        success = db_control.db_Select_User_success(flag) as! [String]
         
         print("array size:", success.count)
         
@@ -235,14 +235,14 @@ class DB_Func //클래스 정의.//
     }
     ////////////////////
     //멤버의 실점을 반환하는 메소드//
-    func DB_Select_user_fail() -> [String]
+    func DB_Select_user_fail(flag:String) -> [String]
     {
         var fail = [String]()
         
         let db_control = DBController()
         
         //이미지 데이터를 불러온다.//
-        fail = db_control.db_Select_User_fail() as! [String]
+        fail = db_control.db_Select_User_fail(flag) as! [String]
         
         print("array size:", fail.count)
         

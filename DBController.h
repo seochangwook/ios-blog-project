@@ -23,13 +23,13 @@
                             input_success:(NSString *)input_success
                             input_lose:(NSString *)input_lose;
                             //사용자 정보 저장//
-- (NSMutableArray *)DB_Select_User_Name; //사용자 이름 정보 추출//
-- (NSMutableArray *)DB_Select_User_id; //사용자 아이디 정보 추출//
-- (NSMutableArray *)DB_Select_User_image; //사용자 이미지 정보 추출//
-- (NSMutableArray *)db_Select_User_address; //사용자 주소 정보 추출//
-- (NSMutableArray *)db_Select_User_phonenumber; //사용자 전화번호 정보 추출//
-- (NSMutableArray *)db_Select_User_emailaddress; //사용자 이메일 정보 추출//
-- (NSMutableArray *)db_Select_User_success; //사용자 승률 정보 추출//
-- (NSMutableArray *)db_Select_User_fail; //사용자 실점 정보 추출//
+- (NSMutableArray *)DB_Select_User_Name:(NSString *)flag; //사용자 이름 정보 추출//
+- (NSMutableArray *)DB_Select_User_id:(NSString *)flag; //사용자 아이디 정보 추출//
+- (NSMutableArray *)DB_Select_User_image:(NSString *)flag; //사용자 이미지 정보 추출//
+- (NSMutableArray *)db_Select_User_address:(NSString *)flag; //사용자 주소 정보 추출//
+- (NSMutableArray *)db_Select_User_phonenumber:(NSString *)flag; //사용자 전화번호 정보 추출//
+- (NSMutableArray *)db_Select_User_emailaddress:(NSString *)flag; //사용자 이메일 정보 추출//
+- (NSMutableArray *)db_Select_User_success:(NSString *)flag; //사용자 승률 정보 추출//
+- (NSMutableArray *)db_Select_User_fail:(NSString *)flag; //사용자 실점 정보 추출//
 
 @end

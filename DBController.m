@@ -20,6 +20,10 @@
     NSMutableArray *image_Result; //이미지 배열
     NSMutableArray *success_Result; //승점 배열//
     NSMutableArray *lose_Result; //실점 배열//
+    
+    /** 정렬관련 배열 **/
+    NSMutableArray *desc_memberlist; //내림차순 정렬배열//
+    NSMutableArray *asc_memberlist; //내림차순 정렬배열//
 }
 
 - (BOOL)DB_Connect_func
@@ -329,7 +333,7 @@
     return insert_user_info_check;
 }
 /////////////////
-- (NSMutableArray *)DB_Select_User_Name
+- (NSMutableArray *)DB_Select_User_Name:(NSString *)flag
 {
     //검색//
     //데이터베이스에서 조건을 주어서 탐색한다.//
@@ -377,8 +381,24 @@
     
     //데이터 출력//
     sqlite3_stmt *select_stmt;
+    char *select_sql; //쿼리문//
     
-    char *select_sql = "SELECT member_name FROM game_member";
+    //플래그에 따라 쿼리문을 변경해준다.//
+    if([flag isEqualToString:@"2"])
+    {
+        select_sql = "SELECT member_name FROM game_member";
+    }
+    
+    else if([flag isEqualToString:@"0"]) //내림차순//
+    {
+        select_sql = "SELECT member_name FROM game_member ORDER BY member_success_count DESC";
+    }
+    
+    else if([flag isEqualToString:@"1"]) //오름차순//
+    {
+        select_sql = "SELECT member_name FROM game_member ORDER BY member_success_count ASC";
+    }
+    
     int ret;
     
     ret = sqlite3_prepare_v2(database, select_sql, -1, &select_stmt, NULL);
@@ -418,7 +438,7 @@
     return Name_Result;
 }
 ////////////////////
-- (NSMutableArray *)DB_Select_User_id
+- (NSMutableArray *)DB_Select_User_id:(NSString *)flag
 {
     //검색//
     //데이터베이스에서 조건을 주어서 탐색한다.//
@@ -466,8 +486,24 @@
     
     //데이터 출력//
     sqlite3_stmt *select_stmt;
+    char *select_sql; //쿼리문//
     
-    char *select_sql = "SELECT member_id FROM game_member";
+    //플래그에 따라 쿼리문을 변경해준다.//
+    if([flag isEqualToString:@"2"])
+    {
+        select_sql = "SELECT member_id FROM game_member";
+    }
+    
+    else if([flag isEqualToString:@"0"]) //내림차순//
+    {
+        select_sql = "SELECT member_id FROM game_member ORDER BY member_success_count DESC";
+    }
+    
+    else if([flag isEqualToString:@"1"]) //오름차순//
+    {
+        select_sql = "SELECT member_id FROM game_member ORDER BY member_success_count ASC";
+    }
+    
     int ret;
     
     ret = sqlite3_prepare_v2(database, select_sql, -1, &select_stmt, NULL);
@@ -506,7 +542,7 @@
     return id_Result;
 }
 ////////////////
-- (NSMutableArray *)DB_Select_User_image
+- (NSMutableArray *)DB_Select_User_image:(NSString *)flag
 {
     //검색//
     //데이터베이스에서 조건을 주어서 탐색한다.//
@@ -554,8 +590,24 @@
     
     //데이터 출력//
     sqlite3_stmt *select_stmt;
+    char *select_sql; //쿼리문//
     
-    char *select_sql = "SELECT member_profile_image FROM game_member";
+    //플래그에 따라 쿼리문을 변경해준다.//
+    if([flag isEqualToString:@"2"])
+    {
+        select_sql = "SELECT member_profile_image FROM game_member";
+    }
+    
+    else if([flag isEqualToString:@"0"]) //내림차순//
+    {
+        select_sql = "SELECT member_profile_image FROM game_member ORDER BY member_success_count DESC";
+    }
+    
+    else if([flag isEqualToString:@"1"]) //오름차순//
+    {
+        select_sql = "SELECT member_profile_image FROM game_member ORDER BY member_success_count ASC";
+    }
+    
     int ret;
     
     ret = sqlite3_prepare_v2(database, select_sql, -1, &select_stmt, NULL);
@@ -594,7 +646,7 @@
     return image_Result;
 }
 ///////////////////
-- (NSMutableArray *)db_Select_User_address
+- (NSMutableArray *)db_Select_User_address:(NSString *)flag
 {
     //검색//
     //데이터베이스에서 조건을 주어서 탐색한다.//
@@ -642,8 +694,24 @@
     
     //데이터 출력//
     sqlite3_stmt *select_stmt;
+    char *select_sql; //쿼리문//
     
-    char *select_sql = "SELECT member_address FROM game_member";
+    //플래그에 따라 쿼리문을 변경해준다.//
+    if([flag isEqualToString:@"2"])
+    {
+        select_sql = "SELECT member_address FROM game_member";
+    }
+    
+    else if([flag isEqualToString:@"0"]) //내림차순//
+    {
+        select_sql = "SELECT member_address FROM game_member ORDER BY member_success_count DESC";
+    }
+    
+    else if([flag isEqualToString:@"1"]) //오름차순//
+    {
+        select_sql = "SELECT member_address FROM game_member ORDER BY member_success_count ASC";
+    }
+    
     int ret;
     
     ret = sqlite3_prepare_v2(database, select_sql, -1, &select_stmt, NULL);
@@ -682,7 +750,7 @@
     return address_Result;
 }
 //////////////////////
-- (NSMutableArray *)db_Select_User_phonenumber
+- (NSMutableArray *)db_Select_User_phonenumber:(NSString *)flag
 {
     //검색//
     //데이터베이스에서 조건을 주어서 탐색한다.//
@@ -730,8 +798,24 @@
     
     //데이터 출력//
     sqlite3_stmt *select_stmt;
+    char *select_sql; //쿼리문//
     
-    char *select_sql = "SELECT member_tel FROM game_member";
+    //플래그에 따라 쿼리문을 변경해준다.//
+    if([flag isEqualToString:@"2"])
+    {
+        select_sql = "SELECT member_tel FROM game_member";
+    }
+    
+    else if([flag isEqualToString:@"0"]) //내림차순//
+    {
+        select_sql = "SELECT member_tel FROM game_member ORDER BY member_success_count DESC";
+    }
+    
+    else if([flag isEqualToString:@"1"]) //오름차순//
+    {
+        select_sql = "SELECT member_tel FROM game_member ORDER BY member_success_count ASC";
+    }
+    
     int ret;
     
     ret = sqlite3_prepare_v2(database, select_sql, -1, &select_stmt, NULL);
@@ -770,7 +854,7 @@
     return tel_Result;
 }
 ////////////////////////
-- (NSMutableArray *)db_Select_User_emailaddress
+- (NSMutableArray *)db_Select_User_emailaddress:(NSString *)flag
 {
     //검색//
     //데이터베이스에서 조건을 주어서 탐색한다.//
@@ -818,8 +902,24 @@
     
     //데이터 출력//
     sqlite3_stmt *select_stmt;
+    char *select_sql; //쿼리문//
     
-    char *select_sql = "SELECT member_email_address FROM game_member";
+    //플래그에 따라 쿼리문을 변경해준다.//
+    if([flag isEqualToString:@"2"])
+    {
+        select_sql = "SELECT member_email_address FROM game_member";
+    }
+    
+    else if([flag isEqualToString:@"0"]) //내림차순//
+    {
+        select_sql = "SELECT member_email_address FROM game_member ORDER BY member_success_count DESC";
+    }
+    
+    else if([flag isEqualToString:@"1"]) //오름차순//
+    {
+        select_sql = "SELECT member_email_address FROM game_member ORDER BY member_success_count ASC";
+    }
+    
     int ret;
     
     ret = sqlite3_prepare_v2(database, select_sql, -1, &select_stmt, NULL);
@@ -858,7 +958,7 @@
     return email_Result;
 }
 /////////////////////////
-- (NSMutableArray *)db_Select_User_success
+- (NSMutableArray *)db_Select_User_success:(NSString *)flag
 {
     //검색//
     //데이터베이스에서 조건을 주어서 탐색한다.//
@@ -906,8 +1006,24 @@
     
     //데이터 출력//
     sqlite3_stmt *select_stmt;
+    char *select_sql; //쿼리문//
     
-    char *select_sql = "SELECT member_success_count FROM game_member";
+    //플래그에 따라 쿼리문을 변경해준다.//
+    if([flag isEqualToString:@"2"])
+    {
+        select_sql = "SELECT member_success_count FROM game_member";
+    }
+    
+    else if([flag isEqualToString:@"0"]) //내림차순//
+    {
+        select_sql = "SELECT member_success_count FROM game_member ORDER BY member_success_count DESC";
+    }
+    
+    else if([flag isEqualToString:@"1"]) //오름차순//
+    {
+        select_sql = "SELECT member_success_count FROM game_member ORDER BY member_success_count ASC";
+    }
+    
     int ret;
     
     ret = sqlite3_prepare_v2(database, select_sql, -1, &select_stmt, NULL);
@@ -946,7 +1062,7 @@
     return success_Result;
 }
 ////////////////////////
-- (NSMutableArray *)db_Select_User_fail
+- (NSMutableArray *)db_Select_User_fail:(NSString *)flag
 {
     //검색//
     //데이터베이스에서 조건을 주어서 탐색한다.//
@@ -994,8 +1110,24 @@
     
     //데이터 출력//
     sqlite3_stmt *select_stmt;
+    char *select_sql; //쿼리문//
     
-    char *select_sql = "SELECT member_lose_count FROM game_member";
+    //플래그에 따라 쿼리문을 변경해준다.//
+    if([flag isEqualToString:@"2"])
+    {
+        select_sql = "SELECT member_lose_count FROM game_member";
+    }
+    
+    else if([flag isEqualToString:@"0"]) //내림차순//
+    {
+        select_sql = "SELECT member_lose_count FROM game_member ORDER BY member_success_count DESC";
+    }
+    
+    else if([flag isEqualToString:@"1"]) //오름차순//
+    {
+        select_sql = "SELECT member_lose_count FROM game_member ORDER BY member_success_count ASC";
+    }
+    
     int ret;
     
     ret = sqlite3_prepare_v2(database, select_sql, -1, &select_stmt, NULL);
