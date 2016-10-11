@@ -17,6 +17,11 @@
 		1813ADCA1D315806001BB532 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1813ADC91D315806001BB532 /* Assets.xcassets */; };
 		1813ADCD1D315806001BB532 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1813ADCB1D315806001BB532 /* LaunchScreen.storyboard */; };
 		1854B2EC1D9A92EF002F3424 /* MemberInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854B2EB1D9A92EF002F3424 /* MemberInfoDetailView.swift */; };
+		1866FAF91DAC99280096F47D /* vitory_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 1866FAF81DAC99280096F47D /* vitory_image.png */; };
+		1866FAFB1DAC9E080096F47D /* baner_blog.png in Resources */ = {isa = PBXBuildFile; fileRef = 1866FAFA1DAC9E080096F47D /* baner_blog.png */; };
+		1866FAFD1DAC9F7E0096F47D /* blog_movebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 1866FAFC1DAC9F7E0096F47D /* blog_movebutton.png */; };
+		1866FAFF1DACA04E0096F47D /* MemberListViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866FAFE1DACA04E0096F47D /* MemberListViewFooter.swift */; };
+		1881E6D21DAA4FAD00095F8E /* MemberListViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881E6D11DAA4FAD00095F8E /* MemberListViewHeader.swift */; };
 		188903AE1D3BA3F400B16FE8 /* DBController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188903AD1D3BA3F400B16FE8 /* DBController.m */; };
 		18894BF01D32908300EE4CB2 /* game_logo_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18894BEF1D32908300EE4CB2 /* game_logo_image.png */; };
 		18894BF41D37D3F300EE4CB2 /* EnrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18894BF31D37D3F300EE4CB2 /* EnrollView.swift */; };
@@ -45,6 +50,11 @@
 		1813ADCC1D315806001BB532 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1813ADCE1D315806001BB532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1854B2EB1D9A92EF002F3424 /* MemberInfoDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemberInfoDetailView.swift; path = ../MemberInfoDetailView.swift; sourceTree = "<group>"; };
+		1866FAF81DAC99280096F47D /* vitory_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vitory_image.png; path = ../../imagesample/vitory_image.png; sourceTree = "<group>"; };
+		1866FAFA1DAC9E080096F47D /* baner_blog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = baner_blog.png; path = ../../imagesample/baner_blog.png; sourceTree = "<group>"; };
+		1866FAFC1DAC9F7E0096F47D /* blog_movebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blog_movebutton.png; path = ../../imagesample/blog_movebutton.png; sourceTree = "<group>"; };
+		1866FAFE1DACA04E0096F47D /* MemberListViewFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListViewFooter.swift; sourceTree = "<group>"; };
+		1881E6D11DAA4FAD00095F8E /* MemberListViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListViewHeader.swift; sourceTree = "<group>"; };
 		188903AC1D3BA3F400B16FE8 /* DBController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBController.h; sourceTree = "<group>"; };
 		188903AD1D3BA3F400B16FE8 /* DBController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBController.m; sourceTree = "<group>"; };
 		188903AF1D3BA47500B16FE8 /* Swift_sample_app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift_sample_app-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -109,6 +119,8 @@
 				18894BF31D37D3F300EE4CB2 /* EnrollView.swift */,
 				1800AD5C1D3B2BD400C3F932 /* DB_Function.swift */,
 				18DFD50B1D8D183D00582637 /* MemberListViewTableCell.swift */,
+				1881E6D11DAA4FAD00095F8E /* MemberListViewHeader.swift */,
+				1866FAFE1DACA04E0096F47D /* MemberListViewFooter.swift */,
 			);
 			path = Swift_sample_app;
 			sourceTree = "<group>";
@@ -116,6 +128,9 @@
 		18894BEE1D32908300EE4CB2 /* resource file */ = {
 			isa = PBXGroup;
 			children = (
+				1866FAFC1DAC9F7E0096F47D /* blog_movebutton.png */,
+				1866FAFA1DAC9E080096F47D /* baner_blog.png */,
+				1866FAF81DAC99280096F47D /* vitory_image.png */,
 				18894BEF1D32908300EE4CB2 /* game_logo_image.png */,
 				18DFD4D71D8BB15100582637 /* id_search_image.png */,
 				18DFD4D81D8BB15100582637 /* member_out_image.png */,
@@ -196,12 +211,15 @@
 				18DFD4DC1D8BB15100582637 /* password_search_image.png in Resources */,
 				18DFD50E1D8D5C8200582637 /* user_more_info_imagae.png in Resources */,
 				18DFD4E81D8BB29A00582637 /* memberlist_image.png in Resources */,
+				1866FAF91DAC99280096F47D /* vitory_image.png in Resources */,
 				1813ADCA1D315806001BB532 /* Assets.xcassets in Resources */,
 				1808B6FC1D8E66BB00DF1024 /* no_image.png in Resources */,
 				18DFD4E71D8BB29A00582637 /* login_image.png in Resources */,
 				18DFD4DB1D8BB15100582637 /* member_out_image.png in Resources */,
 				18894BF01D32908300EE4CB2 /* game_logo_image.png in Resources */,
+				1866FAFD1DAC9F7E0096F47D /* blog_movebutton.png in Resources */,
 				1813ADC81D315806001BB532 /* Main.storyboard in Resources */,
+				1866FAFB1DAC9E080096F47D /* baner_blog.png in Resources */,
 				18DFD4DA1D8BB15100582637 /* id_search_image.png in Resources */,
 				18DFD50A1D8D156B00582637 /* default_people_image.png in Resources */,
 				1808B6FA1D8E658C00DF1024 /* get_image_button.png in Resources */,
@@ -223,6 +241,8 @@
 				1800AD5D1D3B2BD400C3F932 /* DB_Function.swift in Sources */,
 				188903AE1D3BA3F400B16FE8 /* DBController.m in Sources */,
 				1854B2EC1D9A92EF002F3424 /* MemberInfoDetailView.swift in Sources */,
+				1881E6D21DAA4FAD00095F8E /* MemberListViewHeader.swift in Sources */,
+				1866FAFF1DACA04E0096F47D /* MemberListViewFooter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,7 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
 {
     @IBOutlet weak var member_tableview: UITableView!
     @IBOutlet weak var sort_select_button: UISegmentedControl!
+    @IBOutlet weak var listtitle_label: UILabel!
     
     @IBAction func sort_button(_ sender: UISegmentedControl)
     {
@@ -35,11 +36,13 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
     
     // Don't forget to enter this in IB also
     let cellReuseIdentifier = "membertableviewcell" //UITableViewCell의 id가 된다.//
+    let listviewheaderIdentifier = "memberlistviewheader"
+    let listviewfooterIdentifier = "memberlistviewfooter"
     
     //이전 스토리보드에서 값을 전달받음.//
     var screen_message = ""
     
-    /** TableView에 사용될 배열변수**/
+    /** TableView에 사용될 배열변수(해당 내용들을 가지고 테이블을 셋팅한다.)**/
     var member_image = [String]()
     var member_name = [String]()
     var member_id = [String]()
@@ -50,6 +53,11 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
     var member_phone_number = [String]()
     var member_success = [String]()
     var member_fail = [String]()
+    
+    //헤더뷰의 정보를 위한 배열//
+    var header_member_name = [String]()
+    var header_member_winnumber = [String]()
+    var header_member_winpeopleimage = [String]()
     
     /** 데이터베이스 관련 변수 **/
     var db_connection_check : Bool?
@@ -66,7 +74,7 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
     
     /** TableView 관련 Swipe Refresh 이벤트 **/
     var refreshControl: UIRefreshControl!
-    
+   
     //멤버리스트를 보여줄 리스트뷰 작업//
     @IBAction func back_screen(_ sender: UIBarButtonItem)
     {
@@ -126,6 +134,8 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
     override func viewDidAppear(_ animated: Bool) //처음뷰가 호출될 때 실행(중복실행가능)//
     {
         super.viewDidAppear(true)
+        
+        listtitle_label.text = "Game ranking list"
     }
     
     func load_memberlist(flag:String) //해당 부분이 네트워크로 데이터를 불러오는 경우도 된다//
@@ -172,10 +182,56 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
         }
     }
     
+    func load_memberlist_header(flag:String, totalmembercount_label:UILabel, winpoint_label:UILabel, bestmember_label:UILabel, winpeopleimageview:UIImageView) //해당 부분이 네트워크로 데이터를 불러오는 경우도 된다//
+    {
+        print("load member list for headerview")
+        
+        //데이터베이스로 부터 멤버리스트의 정보를 가져온다.//
+        if(self.db_connection_check == true)
+        {
+            //이름부분의 리스트 정보//
+            self.header_member_name = DB_Func_class.DB_Select_user_name(flag: flag) //이름을 불러온다.//
+            self.header_member_winnumber = DB_Func_class.DB_Select_user_success(flag: flag) //승률정보들을 불러온다//
+            self.header_member_winpeopleimage = DB_Func_class.DB_Select_user_image(flag: flag) //이미지를 불러온다.//
+        }
+        
+        //내림차순이기에 가장 첫번째가 가장 최고득점자다.//
+        let name_table_size = self.header_member_name.count
+        
+        bestmember_label.text = self.header_member_name[0]
+        totalmembercount_label.text = String(name_table_size)
+        winpoint_label.text = self.header_member_winnumber[0]
+        
+        //String -> NSURL//
+        let fileUrl = URL(string: self.header_member_winpeopleimage[0])
+        
+        asset.asset(for: fileUrl!, resultBlock: { asset in
+            if let ast = asset
+            {
+                let assetRep = ast.defaultRepresentation()
+                let iref = assetRep?.fullResolutionImage().takeUnretainedValue()
+                let image = UIImage(cgImage: iref!)
+                
+                DispatchQueue.main.async(execute: {
+                    // ...Update UI with image here
+                    winpeopleimageview.contentMode = .scaleAspectFit
+                    winpeopleimageview.image = image //썸네일 이미지 적용//
+                })
+            }
+            }, failureBlock: { error in
+                print("Error: \(error)")
+        })
+    }
+    
     //적용된 UITableView관련 필수 메소드를 오버라이드 해준다.(테이블의 행의 개수를 설정)//
     //UITableView는 옵셔널이기에 사용 시 '!'로 강제 풀어준다.//
     func tableView(_ tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
         return self.member_name.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        //각 테이블뷰의 섹션을 나눈다(섹션이 나누어진다.)//
+        return 1
     }
     
     //리스트뷰 데이터 초기화 부분//
@@ -235,6 +291,58 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
         print("You tapped cell number \((indexPath as NSIndexPath).row).")
     }
     
+    //테이블뷰 헤더뷰 설정//
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var headerCell = self.member_tableview.dequeueReusableCell(withIdentifier: self.listviewheaderIdentifier)as? MemberListViewHeader
+        
+        //headerCell?.backgroundColor = UIColor.cyan
+        
+        //각 섹션마다 정보를 다르게 해준다.(복합리스트 가능)//
+        switch (section)
+        {
+        case 0:
+            //해당 섹션에서 필요한 작업을 해준다.(셀)//
+            OrderMaxValue_memberlist(totalmembercount_label: (headerCell?.totalmembercount_label)!, winpoint_label: (headerCell?.winpoint_label)!,
+                                     bestmember_label: (headerCell?.bestmember_label)!,
+                                     winpeopleimageview: (headerCell?.winpeopleimageview)!) //내림차순 정렬을 해야지 한번에 총 멤버수까지 알 수 있다.//
+            break
+            
+        default:
+            
+            break
+            
+        }
+
+        
+        return headerCell
+    }
+    
+    //테이블에 대한 푸터뷰 작업//
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerCell = self.member_tableview.dequeueReusableCell(withIdentifier: self.listviewfooterIdentifier)as? MemberListViewFooter
+        
+        return footerCell
+    }
+    
+    //헤더뷰의 높이 설정//
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch(section)
+        {
+        case 0:
+            return 80.0
+            
+            break
+        default:
+            return 40.0
+            
+            break
+        }
+    }
+    
+    //푸터뷰의 높이 설정//
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 35.0
+    }
     
     //스토리보드 이동(Modal방식)//
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -269,6 +377,7 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
         }
     }
     
+    
     //정렬관련 메소드 정의//
     func OrderMaxValue_member() //내림차순(DESC)//
     {
@@ -300,5 +409,22 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
          print("db table check : ", self.db_table_check)
          
         self.load_memberlist(flag: "1") //오름차순 결과//
+    }
+    
+    //헤더뷰의 정렬 메소드 정의//
+    func OrderMaxValue_memberlist(totalmembercount_label:UILabel, winpoint_label:UILabel, bestmember_label:UILabel, winpeopleimageview: UIImageView) //내림차순(DESC)//
+    {
+        print("최고득점순으로 정렬")
+        
+        self.db_connection_check = DB_Func_class.DB_Connection()
+        
+        print("DB Connection Check : ", db_connection_check)
+        
+        //테이블 생성. 테이블 생성은 기존에 있는 테이블일 경우 실패를 하기에 에러가 나도 예외처리의 문제는 없다.//
+        self.db_table_check = DB_Func_class.DB_Table_Create()
+        
+        print("db table check : ", self.db_table_check)
+        
+        self.load_memberlist_header(flag: "0", totalmembercount_label: totalmembercount_label, winpoint_label: winpoint_label, bestmember_label: bestmember_label,winpeopleimageview:winpeopleimageview) //내림차순 결과//
     }
 }
