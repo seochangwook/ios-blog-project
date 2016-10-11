@@ -12,4 +12,4 @@
 
 ---------------------------------------
 * memberlistview sorting (16.10.04)
-* memberlistview header / footer view (16.10.11)
+* memberlistview header / footer view, Swipe (16.10.11)
