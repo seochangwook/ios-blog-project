@@ -352,7 +352,7 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
         segue_id = segue.identifier!
         
         //identifier값으로 비교한다.//
-        print("segue id : ", segue_id+" id")
+        print("segue id : [",segue_id+"] id")
         
         //스토리보드의 id값을 가지고 이동할 스토리보드를 선택한다.//
         if(segue_id == "memberinfodetailview")
@@ -373,7 +373,11 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
             destination.member_address = self.member_address[cell_position!]
             destination.member_success = self.member_success[cell_position!]
             destination.member_lose = self.member_fail[cell_position!]
-            
+        }
+        
+        else if(segue_id == "webviewblog")
+        {
+            print("move blog webview")
         }
     }
     

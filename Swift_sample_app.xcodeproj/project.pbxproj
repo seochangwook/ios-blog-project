@@ -25,6 +25,7 @@
 		188903AE1D3BA3F400B16FE8 /* DBController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188903AD1D3BA3F400B16FE8 /* DBController.m */; };
 		18894BF01D32908300EE4CB2 /* game_logo_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18894BEF1D32908300EE4CB2 /* game_logo_image.png */; };
 		18894BF41D37D3F300EE4CB2 /* EnrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18894BF31D37D3F300EE4CB2 /* EnrollView.swift */; };
+		18976EB31DB2034B00C95206 /* WebViewblog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18976EB21DB2034B00C95206 /* WebViewblog.swift */; };
 		18DFD4DA1D8BB15100582637 /* id_search_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFD4D71D8BB15100582637 /* id_search_image.png */; };
 		18DFD4DB1D8BB15100582637 /* member_out_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFD4D81D8BB15100582637 /* member_out_image.png */; };
 		18DFD4DC1D8BB15100582637 /* password_search_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFD4D91D8BB15100582637 /* password_search_image.png */; };
@@ -60,6 +61,7 @@
 		188903AF1D3BA47500B16FE8 /* Swift_sample_app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift_sample_app-Bridging-Header.h"; sourceTree = "<group>"; };
 		18894BEF1D32908300EE4CB2 /* game_logo_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_logo_image.png; sourceTree = "<group>"; };
 		18894BF31D37D3F300EE4CB2 /* EnrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnrollView.swift; sourceTree = "<group>"; };
+		18976EB21DB2034B00C95206 /* WebViewblog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewblog.swift; path = ../WebViewblog.swift; sourceTree = "<group>"; };
 		18DFD4D71D8BB15100582637 /* id_search_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = id_search_image.png; sourceTree = "<group>"; };
 		18DFD4D81D8BB15100582637 /* member_out_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = member_out_image.png; sourceTree = "<group>"; };
 		18DFD4D91D8BB15100582637 /* password_search_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password_search_image.png; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				1813ADCB1D315806001BB532 /* LaunchScreen.storyboard */,
 				1813ADCE1D315806001BB532 /* Info.plist */,
 				18894BF31D37D3F300EE4CB2 /* EnrollView.swift */,
+				18976EB21DB2034B00C95206 /* WebViewblog.swift */,
 				1800AD5C1D3B2BD400C3F932 /* DB_Function.swift */,
 				18DFD50B1D8D183D00582637 /* MemberListViewTableCell.swift */,
 				1881E6D11DAA4FAD00095F8E /* MemberListViewHeader.swift */,
@@ -243,6 +246,7 @@
 				1854B2EC1D9A92EF002F3424 /* MemberInfoDetailView.swift in Sources */,
 				1881E6D21DAA4FAD00095F8E /* MemberListViewHeader.swift in Sources */,
 				1866FAFF1DACA04E0096F47D /* MemberListViewFooter.swift in Sources */,
+				18976EB31DB2034B00C95206 /* WebViewblog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
