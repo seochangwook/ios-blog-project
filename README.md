@@ -8,6 +8,7 @@
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0022.PNG" width="200" height="350">
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0023.PNG" width="200" height="350">
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0024.PNG" width="200" height="350">
+  <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0025.PNG" width="200" height="350">
 </p>
 
 ---------------------------------------
