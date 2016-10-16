@@ -26,6 +26,7 @@
 		18894BF01D32908300EE4CB2 /* game_logo_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18894BEF1D32908300EE4CB2 /* game_logo_image.png */; };
 		18894BF41D37D3F300EE4CB2 /* EnrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18894BF31D37D3F300EE4CB2 /* EnrollView.swift */; };
 		18976EB31DB2034B00C95206 /* WebViewblog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18976EB21DB2034B00C95206 /* WebViewblog.swift */; };
+		18D7DFF41DB356C10033CD3D /* MemberIDSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D7DFF31DB356C10033CD3D /* MemberIDSearchView.swift */; };
 		18DFD4DA1D8BB15100582637 /* id_search_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFD4D71D8BB15100582637 /* id_search_image.png */; };
 		18DFD4DB1D8BB15100582637 /* member_out_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFD4D81D8BB15100582637 /* member_out_image.png */; };
 		18DFD4DC1D8BB15100582637 /* password_search_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFD4D91D8BB15100582637 /* password_search_image.png */; };
@@ -62,6 +63,7 @@
 		18894BEF1D32908300EE4CB2 /* game_logo_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_logo_image.png; sourceTree = "<group>"; };
 		18894BF31D37D3F300EE4CB2 /* EnrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnrollView.swift; sourceTree = "<group>"; };
 		18976EB21DB2034B00C95206 /* WebViewblog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewblog.swift; path = ../WebViewblog.swift; sourceTree = "<group>"; };
+		18D7DFF31DB356C10033CD3D /* MemberIDSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberIDSearchView.swift; sourceTree = "<group>"; };
 		18DFD4D71D8BB15100582637 /* id_search_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = id_search_image.png; sourceTree = "<group>"; };
 		18DFD4D81D8BB15100582637 /* member_out_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = member_out_image.png; sourceTree = "<group>"; };
 		18DFD4D91D8BB15100582637 /* password_search_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password_search_image.png; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				18DFD50B1D8D183D00582637 /* MemberListViewTableCell.swift */,
 				1881E6D11DAA4FAD00095F8E /* MemberListViewHeader.swift */,
 				1866FAFE1DACA04E0096F47D /* MemberListViewFooter.swift */,
+				18D7DFF31DB356C10033CD3D /* MemberIDSearchView.swift */,
 			);
 			path = Swift_sample_app;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18DFD5081D8CFD0700582637 /* MemberListView.swift in Sources */,
+				18D7DFF41DB356C10033CD3D /* MemberIDSearchView.swift in Sources */,
 				18894BF41D37D3F300EE4CB2 /* EnrollView.swift in Sources */,
 				1813ADC51D315806001BB532 /* ViewController.swift in Sources */,
 				1813ADC31D315806001BB532 /* AppDelegate.swift in Sources */,

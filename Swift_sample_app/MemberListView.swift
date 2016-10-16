@@ -81,6 +81,7 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
         dismiss(animated: true, completion: nil)
     }
     
+    
     func back()
     {
         dismiss(animated: true, completion: nil)
@@ -344,7 +345,7 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
         return 35.0
     }
     
-    //스토리보드 이동(Modal방식)//
+    //스토리보드 이동(Modal방식,Push방식)//
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         //이동할 스토리보드의 id저장.값이 변할 수 있는 것은 가변타입(var)로 한다. 고정값(상수)이면 let//
