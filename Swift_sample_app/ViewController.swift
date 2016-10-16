@@ -109,6 +109,12 @@ class ViewController: UIViewController
         //UINavigation의 원리도 modal이 아닌 push로 하고 값을 넘기는 segue 매커니즘은 동일//
         else if(segue_id == "memberidsearchview")
         {
+            //값을 전달하기 위해서 목표 뷰를 설정(캐스팅)//
+            let destination = segue.destination as! MemberIDSearchView
+            
+            //해당 뷰로 데이터 전송//
+            destination.info_label_str = "Member ID Search"
+            
             print("move sotryboard navigation...")
         }
     }

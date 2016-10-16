@@ -158,8 +158,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="사용자 ID찾기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPw-Pj-uk6">
-                                <frame key="frameInset" minX="16" minY="64" width="101" height="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPw-Pj-uk6">
+                                <frame key="frameInset" minX="16" minY="64" width="281" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -171,10 +171,13 @@
                     <navigationItem key="navigationItem" title="IDSearchView" id="zlM-5X-Vhf">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Cgh-re-0kk"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="info_label" destination="aPw-Pj-uk6" id="q4s-o8-1yO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5L6-bI-ZTH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="265" y="544"/>
+            <point key="canvasLocation" x="264.5" y="543.5"/>
         </scene>
         <!--MemberListView-->
         <scene sceneID="BV2-gy-lZ7">

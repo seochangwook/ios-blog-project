@@ -359,6 +359,8 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
         if(segue_id == "memberinfodetailview")
         {
             let button = sender as? UIButton //현재 UIButton의 프로토콜로 왔으니 sender를 UIButton으로 캐스팅한다.//
+            
+            //UINavigation에서의 값 전달도 일반적으로 destination을 설정해서 한다.//
             let destination = segue.destination as! MemberInfoDetailView //이동할 스토리보드를 정의//
             
             let cell_position = button?.tag //버튼의 tag값을 가져온다.(tag: 선택된 셀의 row값)//
