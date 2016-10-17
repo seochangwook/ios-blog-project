@@ -15,5 +15,5 @@
 ---------------------------------------
 * memberlistview sorting (16.10.04)
 * memberlistview header / footer view, Swipe (16.10.11)
-* webview - App Transport Security issue fix (16.10.15)
+* webview - App Transport Security issue(HTTP) fix (16.10.15)
 * UINavigation Controller (16.10.16)
