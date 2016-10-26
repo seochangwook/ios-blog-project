@@ -117,6 +117,15 @@ class ViewController: UIViewController
             
             print("move sotryboard navigation...")
         }
+        
+        else if(segue_id == "memberpasswordsearchview")
+        {
+            let destination = segue.destination as! MemberPasswordSearchView
+            
+            destination.info_label_str = "Member Password Search"
+            
+            print("move storyboard navigation...")
+        }
     }
 }
 

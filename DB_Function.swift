@@ -253,5 +253,34 @@ class DB_Func //클래스 정의.//
         
         return fail
     }
+    ////////////////////
+    //멤버의 정보를 가져온다.//
+    func DB_Select_user_info(inputname:String) -> String
+    {
+        var user_info = String()
+        
+        let db_control = DBController()
+        
+        user_info = db_control.db_Select_User_Info(inputname) as String
+        
+        print("member info: ", user_info)
+        
+        return user_info
+    }
+    ////////////////////
+    //멤버의 패스워드 정보를 가져온다.//
+    func DB_Select_user_info_password(inputname:String, input_id:String) -> String
+    {
+        var user_info = String()
+        
+        let db_control = DBController()
+        
+        user_info = db_control.db_Select_User_Info_password(inputname, input_id: input_id) as String
+        
+        print("member info: ", user_info)
+        
+        return user_info
+    }
+
 }
 ////////////

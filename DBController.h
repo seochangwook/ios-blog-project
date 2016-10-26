@@ -31,5 +31,7 @@
 - (NSMutableArray *)db_Select_User_emailaddress:(NSString *)flag; //사용자 이메일 정보 추출//
 - (NSMutableArray *)db_Select_User_success:(NSString *)flag; //사용자 승률 정보 추출//
 - (NSMutableArray *)db_Select_User_fail:(NSString *)flag; //사용자 실점 정보 추출//
+- (NSString *)db_Select_User_Info:(NSString *)inputname; //정보추출//
+- (NSString *)db_Select_User_Info_password:(NSString *)inputname input_id:(NSString *)input_id;
 
 @end
