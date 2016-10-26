@@ -26,3 +26,4 @@ Dreaming Developer 운영자 서창욱
 * memberlistview header / footer view, Swipe (16.10.11)
 * webview - App Transport Security issue(HTTP) fix -> Info.plist (16.10.15)
 * UINavigation Controller (16.10.16)
+* search id/password (mail) (16.10.27)
