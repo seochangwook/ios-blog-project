@@ -126,6 +126,15 @@ class ViewController: UIViewController
             
             print("move storyboard navigation...")
         }
+        
+        else if(segue_id == "memberdeleteview")
+        {
+            let destination = segue.destination as! MemberDeleteView
+            
+            destination.info_str_title = "Member Delete"
+            
+            print("move storyboard navigation...")
+        }
     }
 }
 

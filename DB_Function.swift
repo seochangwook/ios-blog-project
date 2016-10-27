@@ -281,6 +281,20 @@ class DB_Func //클래스 정의.//
         
         return user_info
     }
+    ////////////////////
+    //멤버의 정보를 지운다.//
+    func DB_user_delete(input_id:String) -> Bool
+    {
+        var user_info = Bool()
+        
+        let db_control = DBController()
+        
+        user_info = db_control.db_Select_User_Info_password(input_id) as Bool
+        
+        print("member info: ", user_info)
+        
+        return user_info
+    }
 
 }
 ////////////

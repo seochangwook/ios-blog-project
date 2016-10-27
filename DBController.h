@@ -33,5 +33,6 @@
 - (NSMutableArray *)db_Select_User_fail:(NSString *)flag; //사용자 실점 정보 추출//
 - (NSString *)db_Select_User_Info:(NSString *)inputname; //정보추출//
 - (NSString *)db_Select_User_Info_password:(NSString *)inputname input_id:(NSString *)input_id;
+- (BOOL)db_Select_User_Info_password:(NSString *)inputid;
 
 @end

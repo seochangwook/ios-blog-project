@@ -73,6 +73,10 @@ class MemberPasswordSearchView : UIViewController
         info_text.text = info_label_str
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     //빈 공간을 눌렀을때 키보드가 종료되는 것. 오버라이드해서 사용한다.//
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         input_id_textfield.resignFirstResponder()

@@ -17,6 +17,7 @@
 		1813ADC81D315806001BB532 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1813ADC61D315806001BB532 /* Main.storyboard */; };
 		1813ADCA1D315806001BB532 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1813ADC91D315806001BB532 /* Assets.xcassets */; };
 		1813ADCD1D315806001BB532 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1813ADCB1D315806001BB532 /* LaunchScreen.storyboard */; };
+		183B006E1DC21F8000F88013 /* MemberDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B006D1DC21F8000F88013 /* MemberDeleteView.swift */; };
 		1854B2EC1D9A92EF002F3424 /* MemberInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854B2EB1D9A92EF002F3424 /* MemberInfoDetailView.swift */; };
 		1866FAF91DAC99280096F47D /* vitory_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 1866FAF81DAC99280096F47D /* vitory_image.png */; };
 		1866FAFB1DAC9E080096F47D /* baner_blog.png in Resources */ = {isa = PBXBuildFile; fileRef = 1866FAFA1DAC9E080096F47D /* baner_blog.png */; };
@@ -53,6 +54,7 @@
 		1813ADC91D315806001BB532 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1813ADCC1D315806001BB532 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1813ADCE1D315806001BB532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		183B006D1DC21F8000F88013 /* MemberDeleteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberDeleteView.swift; sourceTree = "<group>"; };
 		1854B2EB1D9A92EF002F3424 /* MemberInfoDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemberInfoDetailView.swift; path = ../MemberInfoDetailView.swift; sourceTree = "<group>"; };
 		1866FAF81DAC99280096F47D /* vitory_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vitory_image.png; path = ../../imagesample/vitory_image.png; sourceTree = "<group>"; };
 		1866FAFA1DAC9E080096F47D /* baner_blog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = baner_blog.png; path = ../../imagesample/baner_blog.png; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				1866FAFE1DACA04E0096F47D /* MemberListViewFooter.swift */,
 				18D7DFF31DB356C10033CD3D /* MemberIDSearchView.swift */,
 				181394861DC0F04D001081A1 /* MemberPasswordSearchView.swift */,
+				183B006D1DC21F8000F88013 /* MemberDeleteView.swift */,
 			);
 			path = Swift_sample_app;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				18DFD5081D8CFD0700582637 /* MemberListView.swift in Sources */,
 				18D7DFF41DB356C10033CD3D /* MemberIDSearchView.swift in Sources */,
 				181394871DC0F04D001081A1 /* MemberPasswordSearchView.swift in Sources */,
+				183B006E1DC21F8000F88013 /* MemberDeleteView.swift in Sources */,
 				18894BF41D37D3F300EE4CB2 /* EnrollView.swift in Sources */,
 				1813ADC51D315806001BB532 /* ViewController.swift in Sources */,
 				1813ADC31D315806001BB532 /* AppDelegate.swift in Sources */,

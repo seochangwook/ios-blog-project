@@ -112,6 +112,7 @@
                                 </state>
                                 <connections>
                                     <action selector="memberout_button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mud-OL-3JN"/>
+                                    <segue destination="I8J-NT-ggI" kind="push" identifier="memberdeleteview" id="taf-jb-L4Z"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -204,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5L6-bI-ZTH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="265" y="597"/>
+            <point key="canvasLocation" x="-202" y="597"/>
         </scene>
         <!--PawdSearchView-->
         <scene sceneID="W21-eN-C6B">
@@ -276,7 +277,65 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="re3-QY-tsj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="751.5" y="596.5"/>
+            <point key="canvasLocation" x="265" y="597"/>
+        </scene>
+        <!--MemberDelete-->
+        <scene sceneID="DPA-kA-XJ0">
+            <objects>
+                <viewController id="I8J-NT-ggI" customClass="MemberDeleteView" customModule="Swift_sample_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4zG-Bz-8ty"/>
+                        <viewControllerLayoutGuide type="bottom" id="LFc-XS-EdE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tOr-9B-28g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rF-cn-nXM">
+                                <frame key="frameInset" minX="16" minY="85" width="294" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="제거할 아이디를 입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m41-c8-YQN">
+                                <frame key="frameInset" minX="16" minY="121" width="335" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="input id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tJi-99-ht0">
+                                <frame key="frameInset" minX="16" minY="150" width="199" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qo2-qa-0bV">
+                                <frame key="frameInset" minX="16" minY="207" width="84" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="탈퇴">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="memberout_button:" destination="I8J-NT-ggI" eventType="touchUpInside" id="RcA-l7-HU4"/>
+                                    <action selector="send_emailbutton:" destination="e4c-Td-ev8" eventType="touchUpInside" id="IH3-rA-56n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="MemberDelete" id="rAR-yk-o7F"/>
+                    <connections>
+                        <outlet property="info_str" destination="2rF-cn-nXM" id="I9G-yA-KoR"/>
+                        <outlet property="input_id_textfield" destination="tJi-99-ht0" id="mz3-ok-nAQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yId-FY-68A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="752" y="597"/>
         </scene>
         <!--MemberListView-->
         <scene sceneID="BV2-gy-lZ7">
