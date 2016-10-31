@@ -31,3 +31,4 @@ Dreaming Developer 운영자 서창욱
 * UINavigation Controller (16.10.16)
 * search id/password (mail) (16.10.27)
 * sqlite3 CRUD (16.10.27)
+* tabbar / badge (16.10.31)
