@@ -11,12 +11,14 @@ import UIKit
 @UIApplicationMain //앱의 시작점을 명시. 스위프트는 따로 main이 없다.(main.swift파일은 존재)//
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
-
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Type casting in swift is "as Type", you'll need to unwrap optionals however.
+        
         return true
     }
 

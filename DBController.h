@@ -34,5 +34,6 @@
 - (NSString *)db_Select_User_Info:(NSString *)inputname; //정보추출//
 - (NSString *)db_Select_User_Info_password:(NSString *)inputname input_id:(NSString *)input_id;
 - (BOOL)db_Select_User_Info_password:(NSString *)inputid;
+- (BOOL)db_CheckLogin:(NSString *)inputid input_password:(NSString *)input_password;
 
 @end

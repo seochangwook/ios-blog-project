@@ -18,6 +18,9 @@
 		1813ADCA1D315806001BB532 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1813ADC91D315806001BB532 /* Assets.xcassets */; };
 		1813ADCD1D315806001BB532 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1813ADCB1D315806001BB532 /* LaunchScreen.storyboard */; };
 		183B006E1DC21F8000F88013 /* MemberDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B006D1DC21F8000F88013 /* MemberDeleteView.swift */; };
+		184BB7D21DC4CD03002B5797 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184BB7D11DC4CD03002B5797 /* MainTabView.swift */; };
+		184BB7D41DC4E91F002B5797 /* GameTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184BB7D31DC4E91F002B5797 /* GameTabView.swift */; };
+		184BB7D61DC4E997002B5797 /* GameSettingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184BB7D51DC4E997002B5797 /* GameSettingTabView.swift */; };
 		1854B2EC1D9A92EF002F3424 /* MemberInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854B2EB1D9A92EF002F3424 /* MemberInfoDetailView.swift */; };
 		1866FAF91DAC99280096F47D /* vitory_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 1866FAF81DAC99280096F47D /* vitory_image.png */; };
 		1866FAFB1DAC9E080096F47D /* baner_blog.png in Resources */ = {isa = PBXBuildFile; fileRef = 1866FAFA1DAC9E080096F47D /* baner_blog.png */; };
@@ -55,6 +58,9 @@
 		1813ADCC1D315806001BB532 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1813ADCE1D315806001BB532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		183B006D1DC21F8000F88013 /* MemberDeleteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberDeleteView.swift; sourceTree = "<group>"; };
+		184BB7D11DC4CD03002B5797 /* MainTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		184BB7D31DC4E91F002B5797 /* GameTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTabView.swift; sourceTree = "<group>"; };
+		184BB7D51DC4E997002B5797 /* GameSettingTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSettingTabView.swift; sourceTree = "<group>"; };
 		1854B2EB1D9A92EF002F3424 /* MemberInfoDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemberInfoDetailView.swift; path = ../MemberInfoDetailView.swift; sourceTree = "<group>"; };
 		1866FAF81DAC99280096F47D /* vitory_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vitory_image.png; path = ../../imagesample/vitory_image.png; sourceTree = "<group>"; };
 		1866FAFA1DAC9E080096F47D /* baner_blog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = baner_blog.png; path = ../../imagesample/baner_blog.png; sourceTree = "<group>"; };
@@ -133,6 +139,9 @@
 				18D7DFF31DB356C10033CD3D /* MemberIDSearchView.swift */,
 				181394861DC0F04D001081A1 /* MemberPasswordSearchView.swift */,
 				183B006D1DC21F8000F88013 /* MemberDeleteView.swift */,
+				184BB7D11DC4CD03002B5797 /* MainTabView.swift */,
+				184BB7D31DC4E91F002B5797 /* GameTabView.swift */,
+				184BB7D51DC4E997002B5797 /* GameSettingTabView.swift */,
 			);
 			path = Swift_sample_app;
 			sourceTree = "<group>";
@@ -253,12 +262,15 @@
 				1813ADC51D315806001BB532 /* ViewController.swift in Sources */,
 				1813ADC31D315806001BB532 /* AppDelegate.swift in Sources */,
 				18DFD50C1D8D183D00582637 /* MemberListViewTableCell.swift in Sources */,
+				184BB7D41DC4E91F002B5797 /* GameTabView.swift in Sources */,
 				1800AD5D1D3B2BD400C3F932 /* DB_Function.swift in Sources */,
 				188903AE1D3BA3F400B16FE8 /* DBController.m in Sources */,
 				1854B2EC1D9A92EF002F3424 /* MemberInfoDetailView.swift in Sources */,
 				1881E6D21DAA4FAD00095F8E /* MemberListViewHeader.swift in Sources */,
 				1866FAFF1DACA04E0096F47D /* MemberListViewFooter.swift in Sources */,
+				184BB7D61DC4E997002B5797 /* GameSettingTabView.swift in Sources */,
 				18976EB31DB2034B00C95206 /* WebViewblog.swift in Sources */,
+				184BB7D21DC4CD03002B5797 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

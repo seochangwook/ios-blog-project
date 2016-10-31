@@ -28,6 +28,7 @@
     /** 문자열 **/
     NSMutableString *info_str;
     NSMutableString *info_str_password;
+    NSMutableString *login_info;
 }
 
 - (BOOL)DB_Connect_func
@@ -1399,6 +1400,86 @@
     }
     
     return is_delete;
+}
+/////////////////////////
+- (BOOL)db_CheckLogin:(NSString *)inputid input_password:(NSString *)input_password
+{
+    BOOL is_login = false; //처음은 실패라 가정//
+    
+    NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    //도큐먼트 위치에 db.sqlite 파일명으로 경로 설정//
+    NSString *filePath = [documentDirectory stringByAppendingPathComponent:@"db.sqlite"];
+    
+    //파일이 존재하는지 확인//
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if([fileManager fileExistsAtPath:filePath])
+    {
+        //NSLog(@"file path : %@", filePath);
+        
+        //return ;
+    }
+    
+    NSLog(@"file path : %@", filePath);
+    
+    //데이터베이스 연결//
+    //해당 위치에 데이터베이스 없을 경우에 생성해서 연결//
+    sqlite3 *database; //sqlite3 데이터베이스 선언. 데이터베이스 핸들러 정의//
+    
+    char *error_msg = nil; //에러메시지를 받을 문자열 변수//
+    
+    //모든 데이터베이스관련 작업이 정상적으로 수행되었는지 확인하기 위해서 SQLITE_OK상수랑 비교해준다.//
+    //현재 작업할려는 sqlite3의 참조변수인 database에 기존에 설정해준 filePath를 이용해서 연결해준다.//
+    if(sqlite3_open([filePath UTF8String], &database) != SQLITE_OK)
+    {
+        //strcpy(error_msg, "DB Open ERROR");
+        
+        sqlite3_close(database);
+        
+        NSLog(@"QUERY RESULT MSG : [ERROR] DB Open ERROR");
+    }
+    
+    else
+    {
+        NSLog(@"QUERY RESULT MSG : [SUCCESS] DB Open Success!!");
+    }
+    
+    login_info = [[NSMutableString alloc]initWithString:@""];
+    
+    sqlite3_stmt *check_stmt; //데이터베이스 수정작업을 위한 것.//
+    char *check_sql; //쿼리문//
+    
+    check_sql = "SELECT member_id, member_password FROM game_member WHERE member_id = ? AND member_password = ?";
+    
+    if(sqlite3_prepare_v2(database, check_sql, -1, &check_stmt, NULL) == SQLITE_OK)
+    {
+        //bind로 '?'에 값을 할당해준다. PrepareStatement방식 적용//
+        sqlite3_bind_text(check_stmt, 1, [inputid UTF8String], -1, SQLITE_TRANSIENT);
+        sqlite3_bind_text(check_stmt, 2, [input_password UTF8String], -1, SQLITE_TRANSIENT);
+        
+        //반복은 한번만 돈다(한번만 돈다는 것은 계정이 존재한다는 의미)//
+        while(sqlite3_step(check_stmt) == SQLITE_ROW) //각 튜플들을 모두 탐색//
+        {
+            //Mutable은 변경가능하다는 뜻//
+            NSMutableString *result_string = [[NSMutableString alloc]init]; //할당//
+            
+            [result_string appendString:[NSString stringWithFormat:@"%s", sqlite3_column_text(check_stmt, 0)]];
+            [result_string appendString:[NSString stringWithFormat:@" "]];
+            [result_string appendString:[NSString stringWithFormat:@"%s", sqlite3_column_text(check_stmt, 1)]];
+            
+            NSLog(@"search account");
+            
+            is_login = true;
+        }
+    }
+    
+    sqlite3_finalize(check_stmt); //검색을 다 했으면 종료//
+    
+    sqlite3_close(database); //오픈된 데이터베이스를 닫는다. 해당 핸들러를 사용하지 않는다.//
+    
+    NSLog(@"QUERY RESULT MSG : [SUCCESS] DB Close Success!!");
+    
+    return is_login;
 }
 
 @end

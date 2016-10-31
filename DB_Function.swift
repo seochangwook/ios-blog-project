@@ -295,6 +295,16 @@ class DB_Func //클래스 정의.//
         
         return user_info
     }
+    /////////////////////
+    func DB_user_logincheck(input_id_str : String, input_password_str : String) -> Bool{
+        var login_check : Bool = false //실패라 가정//
+        
+        let db_control = DBController()
+        
+        login_check = db_control.db_CheckLogin(input_id_str, input_password : input_password_str)
+        
+        return login_check
+    }
 
 }
 ////////////

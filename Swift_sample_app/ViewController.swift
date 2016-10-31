@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController
 {
+    let DB_Func_class = DB_Func(); //기본적으로 디폴트 생성자 호출//
+    
     @IBOutlet weak var game_logo_imageview: UIImageView!
     @IBOutlet weak var id_textfield: UITextField!
     @IBOutlet weak var password_textfield: UITextField!
@@ -28,7 +30,10 @@ class ViewController: UIViewController
     @IBAction func login_button(_ sender: UIButton)
     {
         //데이터베이스와 비교 후 로그인//
-        let id_string = "Login"
+        var id_string = id_textfield.text
+        var password_string = password_textfield.text
+        
+        login_method(id_str : id_string!, password_str : password_string!)
         
         print(id_string)
     }
@@ -73,6 +78,43 @@ class ViewController: UIViewController
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         id_textfield.resignFirstResponder()
         password_textfield.resignFirstResponder()
+    }
+    
+    func login_method(id_str : String, password_str : String)
+    {
+        print("login info : id - "+id_str+"/password - "+password_str)
+        
+        //아이디와 패스워드를 가지고 현재 가입되어있는지 데이터베이스 검사//
+        var is_login : Bool
+        
+        is_login = DB_Func_class.DB_user_logincheck(input_id_str : id_str, input_password_str : password_str) //이름을 불러온다.//
+        
+        if(is_login == false)
+        {
+            let refreshAlert = UIAlertController(title: "로그인", message: "존재하지 않는 아이디이거나 패스워드 입니다. 다시 확인해주세요", preferredStyle: UIAlertControllerStyle.alert)
+            
+            //다이얼로그에 버튼 등록//
+            refreshAlert.addAction(UIAlertAction(title: "확인", style: .default, handler: { (action: UIAlertAction!) in
+                print("login check")
+            }))
+            
+            present(refreshAlert, animated: true, completion: nil) //작성된 다이얼로그를 만들어 준다.//
+        }
+        
+        else if(is_login == true)
+        {
+            print("login success... move main screen")
+            
+            //메인화면으로 이동//
+            let refreshAlert = UIAlertController(title: "로그인", message: "로그인 성공. 즐거운 게임 되세요", preferredStyle: UIAlertControllerStyle.alert)
+            
+            //다이얼로그에 버튼 등록//
+            refreshAlert.addAction(UIAlertAction(title: "확인", style: .default, handler: { (action: UIAlertAction!) in
+                self.performSegue(withIdentifier: "mainview", sender: self) //화면 이동.(prepare적용)//
+            }))
+            
+            present(refreshAlert, animated: true, completion: nil) //작성된 다이얼로그를 만들어 준다.//
+        }
     }
     
     //스토리보드 이동(Modal, Push(Navigation)방식 모두 prepare에서 한다.)//
@@ -134,6 +176,15 @@ class ViewController: UIViewController
             destination.info_str_title = "Member Delete"
             
             print("move storyboard navigation...")
+        }
+        
+        else if(segue_id == "mainview")
+        {
+            let tabbarcontroller = segue.destination as! UITabBarController
+            
+            let destination = tabbarcontroller.viewControllers?[0] as! MainTabView //첫번째 탭에 데이터 전달//
+            
+            destination.info_str = "게임 설명 탭"
         }
     }
 }
