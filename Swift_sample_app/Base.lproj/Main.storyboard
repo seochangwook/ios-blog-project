@@ -1160,10 +1160,10 @@
             </objects>
             <point key="canvasLocation" x="1338.5" y="-1005.5"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--My Tabbar Controller View-->
         <scene sceneID="20L-hq-VSY">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="BDx-Ua-MMJ" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="BDx-Ua-MMJ" customClass="MyTabbarControllerView" customModule="Swift_sample_app" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="fXv-cm-vgt">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
