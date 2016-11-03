@@ -19,6 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         
         // Type casting in swift is "as Type", you'll need to unwrap optionals however.
         
+        var pageController = UIPageControl.appearance()
+        
+        pageController.pageIndicatorTintColor = UIColor.lightGray
+        pageController.currentPageIndicatorTintColor = UIColor.black
+        pageController.backgroundColor = UIColor.white
+        
         return true
     }
 
