@@ -22,10 +22,6 @@ class ContentViewController: UIViewController {
     var left_image : String!
     var right_image : String!
     
-    @IBAction func back_button(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
