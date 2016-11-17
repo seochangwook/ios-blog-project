@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1800AD5D1D3B2BD400C3F932 /* DB_Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1800AD5C1D3B2BD400C3F932 /* DB_Function.swift */; };
 		1800AD5F1D3B80E500C3F932 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1800AD5E1D3B80E500C3F932 /* libsqlite3.dylib */; };
+		1808A62F1DDDF53D00406C19 /* collectionview_header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1808A62E1DDDF53D00406C19 /* collectionview_header.swift */; };
 		1808B6FA1D8E658C00DF1024 /* get_image_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1808B6F91D8E658C00DF1024 /* get_image_button.png */; };
 		1808B6FC1D8E66BB00DF1024 /* no_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 1808B6FB1D8E66BB00DF1024 /* no_image.png */; };
 		181394871DC0F04D001081A1 /* MemberPasswordSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181394861DC0F04D001081A1 /* MemberPasswordSearchView.swift */; };
@@ -17,6 +18,10 @@
 		1813ADC81D315806001BB532 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1813ADC61D315806001BB532 /* Main.storyboard */; };
 		1813ADCA1D315806001BB532 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1813ADC91D315806001BB532 /* Assets.xcassets */; };
 		1813ADCD1D315806001BB532 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1813ADCB1D315806001BB532 /* LaunchScreen.storyboard */; };
+		18195ADA1DDDDBAD00A2C7EA /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18195AD91DDDDBAD00A2C7EA /* CustomCollectionViewCell.swift */; };
+		18195ADE1DDDE10A00A2C7EA /* cell_image_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18195ADB1DDDE10A00A2C7EA /* cell_image_1.png */; };
+		18195ADF1DDDE10A00A2C7EA /* cell_image_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18195ADC1DDDE10A00A2C7EA /* cell_image_2.png */; };
+		18195AE01DDDE10A00A2C7EA /* cell_image_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 18195ADD1DDDE10A00A2C7EA /* cell_image_3.png */; };
 		18204C0C1DC783D700BCF143 /* MyTabbarControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18204C0B1DC783D700BCF143 /* MyTabbarControllerView.swift */; };
 		183B006E1DC21F8000F88013 /* MemberDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B006D1DC21F8000F88013 /* MemberDeleteView.swift */; };
 		184BB7D21DC4CD03002B5797 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184BB7D11DC4CD03002B5797 /* MainTabView.swift */; };
@@ -35,6 +40,13 @@
 		18894BF01D32908300EE4CB2 /* game_logo_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18894BEF1D32908300EE4CB2 /* game_logo_image.png */; };
 		18894BF41D37D3F300EE4CB2 /* EnrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18894BF31D37D3F300EE4CB2 /* EnrollView.swift */; };
 		18976EB31DB2034B00C95206 /* WebViewblog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18976EB21DB2034B00C95206 /* WebViewblog.swift */; };
+		18C6FDF41DDDFA4400046BA2 /* colheader_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C6FDF31DDDFA4400046BA2 /* colheader_image.png */; };
+		18C6FDF61DDDFEA800046BA2 /* celheader2_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C6FDF51DDDFEA800046BA2 /* celheader2_image.png */; };
+		18C6FDF81DDE021900046BA2 /* splash_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C6FDF71DDE021900046BA2 /* splash_image.png */; };
+		18C6FDFA1DDE078B00046BA2 /* CustomCollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6FDF91DDE078B00046BA2 /* CustomCollectionViewCell2.swift */; };
+		18C6FDFE1DDE0A3100046BA2 /* easy_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C6FDFB1DDE0A3100046BA2 /* easy_image.png */; };
+		18C6FDFF1DDE0A3100046BA2 /* hard_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C6FDFC1DDE0A3100046BA2 /* hard_image.png */; };
+		18C6FE001DDE0A3100046BA2 /* normal_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C6FDFD1DDE0A3100046BA2 /* normal_image.png */; };
 		18D7DFF41DB356C10033CD3D /* MemberIDSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D7DFF31DB356C10033CD3D /* MemberIDSearchView.swift */; };
 		18DFD4DA1D8BB15100582637 /* id_search_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFD4D71D8BB15100582637 /* id_search_image.png */; };
 		18DFD4DB1D8BB15100582637 /* member_out_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFD4D81D8BB15100582637 /* member_out_image.png */; };
@@ -51,6 +63,7 @@
 /* Begin PBXFileReference section */
 		1800AD5C1D3B2BD400C3F932 /* DB_Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DB_Function.swift; path = ../DB_Function.swift; sourceTree = "<group>"; };
 		1800AD5E1D3B80E500C3F932 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
+		1808A62E1DDDF53D00406C19 /* collectionview_header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collectionview_header.swift; sourceTree = "<group>"; };
 		1808B6F91D8E658C00DF1024 /* get_image_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = get_image_button.png; sourceTree = "<group>"; };
 		1808B6FB1D8E66BB00DF1024 /* no_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_image.png; sourceTree = "<group>"; };
 		181394861DC0F04D001081A1 /* MemberPasswordSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberPasswordSearchView.swift; sourceTree = "<group>"; };
@@ -61,6 +74,10 @@
 		1813ADC91D315806001BB532 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1813ADCC1D315806001BB532 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1813ADCE1D315806001BB532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18195AD91DDDDBAD00A2C7EA /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		18195ADB1DDDE10A00A2C7EA /* cell_image_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_image_1.png; sourceTree = "<group>"; };
+		18195ADC1DDDE10A00A2C7EA /* cell_image_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_image_2.png; sourceTree = "<group>"; };
+		18195ADD1DDDE10A00A2C7EA /* cell_image_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_image_3.png; sourceTree = "<group>"; };
 		18204C0B1DC783D700BCF143 /* MyTabbarControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabbarControllerView.swift; sourceTree = "<group>"; };
 		183B006D1DC21F8000F88013 /* MemberDeleteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberDeleteView.swift; sourceTree = "<group>"; };
 		184BB7D11DC4CD03002B5797 /* MainTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -81,6 +98,13 @@
 		18894BEF1D32908300EE4CB2 /* game_logo_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_logo_image.png; sourceTree = "<group>"; };
 		18894BF31D37D3F300EE4CB2 /* EnrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnrollView.swift; sourceTree = "<group>"; };
 		18976EB21DB2034B00C95206 /* WebViewblog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewblog.swift; path = ../WebViewblog.swift; sourceTree = "<group>"; };
+		18C6FDF31DDDFA4400046BA2 /* colheader_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colheader_image.png; sourceTree = "<group>"; };
+		18C6FDF51DDDFEA800046BA2 /* celheader2_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = celheader2_image.png; sourceTree = "<group>"; };
+		18C6FDF71DDE021900046BA2 /* splash_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash_image.png; sourceTree = "<group>"; };
+		18C6FDF91DDE078B00046BA2 /* CustomCollectionViewCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell2.swift; sourceTree = "<group>"; };
+		18C6FDFB1DDE0A3100046BA2 /* easy_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = easy_image.png; sourceTree = "<group>"; };
+		18C6FDFC1DDE0A3100046BA2 /* hard_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hard_image.png; sourceTree = "<group>"; };
+		18C6FDFD1DDE0A3100046BA2 /* normal_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normal_image.png; sourceTree = "<group>"; };
 		18D7DFF31DB356C10033CD3D /* MemberIDSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberIDSearchView.swift; sourceTree = "<group>"; };
 		18DFD4D71D8BB15100582637 /* id_search_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = id_search_image.png; sourceTree = "<group>"; };
 		18DFD4D81D8BB15100582637 /* member_out_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = member_out_image.png; sourceTree = "<group>"; };
@@ -152,6 +176,9 @@
 				184BB7D51DC4E997002B5797 /* GameSettingTabView.swift */,
 				18204C0B1DC783D700BCF143 /* MyTabbarControllerView.swift */,
 				18623AB41DCB830D00847B0A /* ContentViewController.swift */,
+				18195AD91DDDDBAD00A2C7EA /* CustomCollectionViewCell.swift */,
+				1808A62E1DDDF53D00406C19 /* collectionview_header.swift */,
+				18C6FDF91DDE078B00046BA2 /* CustomCollectionViewCell2.swift */,
 			);
 			path = Swift_sample_app;
 			sourceTree = "<group>";
@@ -159,12 +186,21 @@
 		18894BEE1D32908300EE4CB2 /* resource file */ = {
 			isa = PBXGroup;
 			children = (
+				18195ADB1DDDE10A00A2C7EA /* cell_image_1.png */,
+				18195ADC1DDDE10A00A2C7EA /* cell_image_2.png */,
+				18C6FDF71DDE021900046BA2 /* splash_image.png */,
+				18195ADD1DDDE10A00A2C7EA /* cell_image_3.png */,
 				1866FAFC1DAC9F7E0096F47D /* blog_movebutton.png */,
+				18C6FDF51DDDFEA800046BA2 /* celheader2_image.png */,
 				1866FAFA1DAC9E080096F47D /* baner_blog.png */,
+				18C6FDF31DDDFA4400046BA2 /* colheader_image.png */,
 				1866FAF81DAC99280096F47D /* vitory_image.png */,
 				18894BEF1D32908300EE4CB2 /* game_logo_image.png */,
 				18DFD4D71D8BB15100582637 /* id_search_image.png */,
 				18DFD4D81D8BB15100582637 /* member_out_image.png */,
+				18C6FDFB1DDE0A3100046BA2 /* easy_image.png */,
+				18C6FDFC1DDE0A3100046BA2 /* hard_image.png */,
+				18C6FDFD1DDE0A3100046BA2 /* normal_image.png */,
 				18612C401DCB953500C57104 /* indicator_left_image.png */,
 				18612C411DCB953500C57104 /* indicator_right_image.png */,
 				18DFD4D91D8BB15100582637 /* password_search_image.png */,
@@ -242,18 +278,27 @@
 				18612C421DCB953500C57104 /* indicator_left_image.png in Resources */,
 				1813ADCD1D315806001BB532 /* LaunchScreen.storyboard in Resources */,
 				18DFD4E61D8BB29A00582637 /* enroll_image.png in Resources */,
+				18C6FDFE1DDE0A3100046BA2 /* easy_image.png in Resources */,
 				18DFD4DC1D8BB15100582637 /* password_search_image.png in Resources */,
 				18DFD50E1D8D5C8200582637 /* user_more_info_imagae.png in Resources */,
+				18C6FDF81DDE021900046BA2 /* splash_image.png in Resources */,
+				18195AE01DDDE10A00A2C7EA /* cell_image_3.png in Resources */,
+				18195ADE1DDDE10A00A2C7EA /* cell_image_1.png in Resources */,
 				18DFD4E81D8BB29A00582637 /* memberlist_image.png in Resources */,
+				18C6FDF61DDDFEA800046BA2 /* celheader2_image.png in Resources */,
+				18C6FDFF1DDE0A3100046BA2 /* hard_image.png in Resources */,
 				1866FAF91DAC99280096F47D /* vitory_image.png in Resources */,
 				18612C431DCB953500C57104 /* indicator_right_image.png in Resources */,
 				1813ADCA1D315806001BB532 /* Assets.xcassets in Resources */,
 				1808B6FC1D8E66BB00DF1024 /* no_image.png in Resources */,
 				18DFD4E71D8BB29A00582637 /* login_image.png in Resources */,
+				18C6FDF41DDDFA4400046BA2 /* colheader_image.png in Resources */,
 				18DFD4DB1D8BB15100582637 /* member_out_image.png in Resources */,
 				18894BF01D32908300EE4CB2 /* game_logo_image.png in Resources */,
 				1866FAFD1DAC9F7E0096F47D /* blog_movebutton.png in Resources */,
 				1813ADC81D315806001BB532 /* Main.storyboard in Resources */,
+				18C6FE001DDE0A3100046BA2 /* normal_image.png in Resources */,
+				18195ADF1DDDE10A00A2C7EA /* cell_image_2.png in Resources */,
 				1866FAFB1DAC9E080096F47D /* baner_blog.png in Resources */,
 				18DFD4DA1D8BB15100582637 /* id_search_image.png in Resources */,
 				18DFD50A1D8D156B00582637 /* default_people_image.png in Resources */,
@@ -272,6 +317,7 @@
 				18DFD5081D8CFD0700582637 /* MemberListView.swift in Sources */,
 				18D7DFF41DB356C10033CD3D /* MemberIDSearchView.swift in Sources */,
 				181394871DC0F04D001081A1 /* MemberPasswordSearchView.swift in Sources */,
+				18C6FDFA1DDE078B00046BA2 /* CustomCollectionViewCell2.swift in Sources */,
 				183B006E1DC21F8000F88013 /* MemberDeleteView.swift in Sources */,
 				18894BF41D37D3F300EE4CB2 /* EnrollView.swift in Sources */,
 				1813ADC51D315806001BB532 /* ViewController.swift in Sources */,
@@ -279,9 +325,11 @@
 				18DFD50C1D8D183D00582637 /* MemberListViewTableCell.swift in Sources */,
 				18623AB51DCB830D00847B0A /* ContentViewController.swift in Sources */,
 				184BB7D41DC4E91F002B5797 /* GameTabView.swift in Sources */,
+				18195ADA1DDDDBAD00A2C7EA /* CustomCollectionViewCell.swift in Sources */,
 				1800AD5D1D3B2BD400C3F932 /* DB_Function.swift in Sources */,
 				188903AE1D3BA3F400B16FE8 /* DBController.m in Sources */,
 				1854B2EC1D9A92EF002F3424 /* MemberInfoDetailView.swift in Sources */,
+				1808A62F1DDDF53D00406C19 /* collectionview_header.swift in Sources */,
 				1881E6D21DAA4FAD00095F8E /* MemberListViewHeader.swift in Sources */,
 				1866FAFF1DACA04E0096F47D /* MemberListViewFooter.swift in Sources */,
 				184BB7D61DC4E997002B5797 /* GameSettingTabView.swift in Sources */,

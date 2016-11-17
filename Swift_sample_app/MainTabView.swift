@@ -52,7 +52,7 @@ class MainTabView : UIViewController, UIPageViewControllerDataSource,UIPageViewC
         //페이지의 영역을 지정(-180)//
         self.pageViewController.view.frame = CGRectMake(0, 65, self.view.frame.width, self.view.frame.height - 180)
         
-        //처음 시작할 페이지 뷰를 정의//
+        //페이지에 나타낼 뷰를 정의//
         let startVC = self.viewControllerAtIndex(index: 0) as! ContentViewController
         let viewControllers = NSArray(object: startVC)
         
