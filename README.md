@@ -27,6 +27,8 @@ Dreaming Developer 운영자 서창욱
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0043.PNG" width="200" height="350">
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0046.PNG" width="200" height="350">
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0047.PNG" width="200" height="350">
+  <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0048.PNG" width="200" height="350">
+  <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0049.PNG" width="200" height="350">
 </p>
 
 ---------------------------------------
@@ -38,3 +40,4 @@ Dreaming Developer 운영자 서창욱
 * sqlite3 CRUD (16.10.27)
 * custom tabbar / badge (16.10.31)
 * PageViewController (16.11.04)
+* CollectionViewController (16.11.18)
