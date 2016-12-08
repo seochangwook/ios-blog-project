@@ -24,16 +24,16 @@ class MemberIDSearchView : UIViewController, MFMailComposeViewControllerDelegate
     @IBOutlet weak var searchname_edittext: UITextField!
     
     @IBAction func search_button(_ sender: UIButton){
-        var input_name = searchname_edittext.text
+        let input_name = searchname_edittext.text
        
-        self.get_info = DB_Func_class.DB_Select_user_info(inputname : input_name!) //이름을 불러온다.//
+        self.get_info = DB_Func_class.DB_Select_user_info(input_name!) //이름을 불러온다.//
         
         print("info: ", self.get_info)
         
         //seperatedBy로 문자열을 분리한다.(Token)//
         let parsing_info = self.get_info.components(separatedBy: " ")
         
-        var count = parsing_info.count
+        let count = parsing_info.count
         
         print("count: ", count)
         
@@ -79,7 +79,7 @@ class MemberIDSearchView : UIViewController, MFMailComposeViewControllerDelegate
     }
     
     // MARK: MFMailComposeViewControllerDelegate Method
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?)
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?)
     {
         print("mail send ok")
         

@@ -30,10 +30,10 @@ class ViewController: UIViewController
     @IBAction func login_button(_ sender: UIButton)
     {
         //데이터베이스와 비교 후 로그인//
-        var id_string = id_textfield.text
-        var password_string = password_textfield.text
+        let id_string = id_textfield.text
+        let password_string = password_textfield.text
         
-        login_method(id_str : id_string!, password_str : password_string!)
+        login_method(id_string!, password_str : password_string!)
         
         print(id_string)
     }
@@ -80,14 +80,14 @@ class ViewController: UIViewController
         password_textfield.resignFirstResponder()
     }
     
-    func login_method(id_str : String, password_str : String)
+    func login_method(_ id_str : String, password_str : String)
     {
         print("login info : id - "+id_str+"/password - "+password_str)
         
         //아이디와 패스워드를 가지고 현재 가입되어있는지 데이터베이스 검사//
         var is_login : Bool
         
-        is_login = DB_Func_class.DB_user_logincheck(input_id_str : id_str, input_password_str : password_str) //이름을 불러온다.//
+        is_login = DB_Func_class.DB_user_logincheck(id_str, input_password_str : password_str) //이름을 불러온다.//
         
         if(is_login == false)
         {

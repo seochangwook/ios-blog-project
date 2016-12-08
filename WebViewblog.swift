@@ -39,8 +39,8 @@ class WebViewblog : UIViewController
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        let url = NSURL (string: "http://scw0531.blog.me/")
-        let requestObj = NSURLRequest(url: url! as URL) //Request방식으로 요청//
+        let url = URL (string: "http://scw0531.blog.me/")
+        let requestObj = URLRequest(url: url! as URL) //Request방식으로 요청//
         
         webview.loadRequest(requestObj as URLRequest) //설정된 주소를 웹뷰에 로드//
     }

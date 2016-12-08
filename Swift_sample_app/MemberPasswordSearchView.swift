@@ -34,14 +34,14 @@ class MemberPasswordSearchView : UIViewController
         print("input name: ", search_name)
         
         //비밀번호 찾기는 아이디와 이름을 주어서 조건이 2개이게 한다.//
-        self.get_info = DB_Func_class.DB_Select_user_info_password(inputname : search_name, input_id : search_id) //이름을 불러온다.//
+        self.get_info = DB_Func_class.DB_Select_user_info_password(search_name, input_id : search_id) //이름을 불러온다.//
         
         print("info: ", self.get_info)
         
         //seperatedBy로 문자열을 분리한다.(Token)//
         let parsing_info = self.get_info.components(separatedBy: " ")
         
-        var count = parsing_info.count
+        let count = parsing_info.count
         
         print("count: ", count)
         

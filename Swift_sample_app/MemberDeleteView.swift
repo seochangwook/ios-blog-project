@@ -29,7 +29,7 @@ class MemberDeleteView : UIViewController
         
         //다이얼로그에 버튼 등록//
         refreshAlert.addAction(UIAlertAction(title: "탈퇴", style: .default, handler: { (action: UIAlertAction!) in
-            self.delete_user(input_id: self.input_id_textfield.text!)
+            self.delete_user(self.input_id_textfield.text!)
         }))
         
         refreshAlert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -39,11 +39,11 @@ class MemberDeleteView : UIViewController
         present(refreshAlert, animated: true, completion: nil) //작성된 다이얼로그를 만들어 준다.//
     }
     
-    func delete_user(input_id : String)
+    func delete_user(_ input_id : String)
     {
         print("delete user")
         
-        self.delete_result = DB_Func_class.DB_user_delete(input_id : input_id) //이름을 불러온다.//
+        self.delete_result = DB_Func_class.DB_user_delete(input_id) //이름을 불러온다.//
         
         if(self.delete_result == true)
         {

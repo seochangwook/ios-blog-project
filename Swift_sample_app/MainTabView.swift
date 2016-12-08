@@ -53,7 +53,7 @@ class MainTabView : UIViewController, UIPageViewControllerDataSource,UIPageViewC
         self.pageViewController.view.frame = CGRectMake(0, 65, self.view.frame.width, self.view.frame.height - 180)
         
         //페이지에 나타낼 뷰를 정의//
-        let startVC = self.viewControllerAtIndex(index: 0) as! ContentViewController
+        let startVC = self.viewControllerAtIndex(0) 
         let viewControllers = NSArray(object: startVC)
         
         self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .forward, animated: true, completion: nil)
@@ -94,7 +94,7 @@ class MainTabView : UIViewController, UIPageViewControllerDataSource,UIPageViewC
     
     //첫번째 페이지로 이동//
     @IBAction func firstview_move_button(_ sender: UIBarButtonItem) {
-        let pageContentViewController = self.viewControllerAtIndex(index: 0)
+        let pageContentViewController = self.viewControllerAtIndex(0)
         
         pageControl.currentPage = 0 //indicator위치도 초기화//
         
@@ -118,17 +118,17 @@ class MainTabView : UIViewController, UIPageViewControllerDataSource,UIPageViewC
     /**
      * viewPageController 구성 함수
      */
-    func viewControllerAtIndex (index : Int) -> ContentViewController {
+    func viewControllerAtIndex (_ index : Int) -> ContentViewController {
         
         let vc : ContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ContentViewController") as! ContentViewController
         
         //각 속성에 할당//
         vc.pageIndex = index
         
-        vc.imageFile = self.pageImages[index] as! String
-        vc.titleText = self.pageTitles[index] as! String
-        vc.left_image = self.page_indicator_leftImages[index] as! String
-        vc.right_image = self.page_indicator_rightImages[index] as! String
+        vc.imageFile = self.pageImages[index] 
+        vc.titleText = self.pageTitles[index] 
+        vc.left_image = self.page_indicator_leftImages[index] 
+        vc.right_image = self.page_indicator_rightImages[index] 
         
         print("page move...")
         
@@ -148,7 +148,7 @@ class MainTabView : UIViewController, UIPageViewControllerDataSource,UIPageViewC
         
         index -= 1
         
-        return self.viewControllerAtIndex(index: index)
+        return self.viewControllerAtIndex(index)
     }
     
     /**
@@ -169,7 +169,7 @@ class MainTabView : UIViewController, UIPageViewControllerDataSource,UIPageViewC
             return nil
         }
         
-        return self.viewControllerAtIndex(index: index)
+        return self.viewControllerAtIndex(index)
     }
     
     func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {

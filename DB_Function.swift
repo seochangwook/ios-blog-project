@@ -95,7 +95,7 @@ class DB_Func //클래스 정의.//
     }
     /////////////
     //멤버의 이름들을 반환하는 메소드//
-    func DB_Select_user_name(flag:String) -> [String]
+    func DB_Select_user_name(_ flag:String) -> [String]
     {
         var member_name = [String]()
         
@@ -115,7 +115,7 @@ class DB_Func //클래스 정의.//
     }
     /////////////
     //멤버의 id들을 반환하는 메소드//
-    func DB_Select_user_id(flag:String) -> [String]
+    func DB_Select_user_id(_ flag:String) -> [String]
     {
         var member_id = [String]()
         
@@ -135,7 +135,7 @@ class DB_Func //클래스 정의.//
     }
     //////////////
     //멤버의 이미지들을 반환하는 메소드//
-    func DB_Select_user_image(flag:String) -> [String]
+    func DB_Select_user_image(_ flag:String) -> [String]
     {
         var member_image = [String]()
         
@@ -155,7 +155,7 @@ class DB_Func //클래스 정의.//
     }
     ////////////////
     //멤버의 주소들을 반환하는 메소드//
-    func DB_Select_user_address(flag:String) -> [String]
+    func DB_Select_user_address(_ flag:String) -> [String]
     {
         var member_address = [String]()
         
@@ -175,7 +175,7 @@ class DB_Func //클래스 정의.//
     }
     /////////////////
     //멤버의 전화번호들을 반환하는 메소드//
-    func DB_Select_user_phonenumber(flag:String) -> [String]
+    func DB_Select_user_phonenumber(_ flag:String) -> [String]
     {
         var phonenumber = [String]()
         
@@ -195,7 +195,7 @@ class DB_Func //클래스 정의.//
     }
     /////////////////
     //멤버의 이메일 주소들을 반환하는 메소드//
-    func DB_Select_user_emailaddress(flag:String) -> [String]
+    func DB_Select_user_emailaddress(_ flag:String) -> [String]
     {
         var emailaddress = [String]()
         
@@ -215,7 +215,7 @@ class DB_Func //클래스 정의.//
     }
     //////////////////
     //멤버의 승률을 반환하는 메소드//
-    func DB_Select_user_success(flag:String) -> [String]
+    func DB_Select_user_success(_ flag:String) -> [String]
     {
         var success = [String]()
         
@@ -235,7 +235,7 @@ class DB_Func //클래스 정의.//
     }
     ////////////////////
     //멤버의 실점을 반환하는 메소드//
-    func DB_Select_user_fail(flag:String) -> [String]
+    func DB_Select_user_fail(_ flag:String) -> [String]
     {
         var fail = [String]()
         
@@ -255,7 +255,7 @@ class DB_Func //클래스 정의.//
     }
     ////////////////////
     //멤버의 정보를 가져온다.//
-    func DB_Select_user_info(inputname:String) -> String
+    func DB_Select_user_info(_ inputname:String) -> String
     {
         var user_info = String()
         
@@ -269,7 +269,7 @@ class DB_Func //클래스 정의.//
     }
     ////////////////////
     //멤버의 패스워드 정보를 가져온다.//
-    func DB_Select_user_info_password(inputname:String, input_id:String) -> String
+    func DB_Select_user_info_password(_ inputname:String, input_id:String) -> String
     {
         var user_info = String()
         
@@ -283,7 +283,7 @@ class DB_Func //클래스 정의.//
     }
     ////////////////////
     //멤버의 정보를 지운다.//
-    func DB_user_delete(input_id:String) -> Bool
+    func DB_user_delete(_ input_id:String) -> Bool
     {
         var user_info = Bool()
         
@@ -296,7 +296,7 @@ class DB_Func //클래스 정의.//
         return user_info
     }
     /////////////////////
-    func DB_user_logincheck(input_id_str : String, input_password_str : String) -> Bool{
+    func DB_user_logincheck(_ input_id_str : String, input_password_str : String) -> Bool{
         var login_check : Bool = false //실패라 가정//
         
         let db_control = DBController()

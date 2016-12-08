@@ -302,7 +302,7 @@ class EnrollView : UIViewController, UIImagePickerControllerDelegate, UINavigati
             
             if(id_check == true)
             {
-                var refreshAlert = UIAlertController(title: "ERROR Message", message: "이미 가입된 아이디 입니다. 다시 입력해주세요.", preferredStyle: UIAlertControllerStyle.alert)
+                let refreshAlert = UIAlertController(title: "ERROR Message", message: "이미 가입된 아이디 입니다. 다시 입력해주세요.", preferredStyle: UIAlertControllerStyle.alert)
                 
                 //다이얼로그에 버튼 등록//
                 refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
@@ -314,7 +314,7 @@ class EnrollView : UIViewController, UIImagePickerControllerDelegate, UINavigati
             
             else
             {
-                var refreshAlert = UIAlertController(title: "Message", message: "사용가능한 아이디입니다.", preferredStyle: UIAlertControllerStyle.alert)
+                let refreshAlert = UIAlertController(title: "Message", message: "사용가능한 아이디입니다.", preferredStyle: UIAlertControllerStyle.alert)
                 
                 //다이얼로그에 버튼 등록//
                 refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
@@ -327,7 +327,7 @@ class EnrollView : UIViewController, UIImagePickerControllerDelegate, UINavigati
         
         else //데이터베이스 연결이 실패한 경우//
         {
-            var refreshAlert = UIAlertController(title: "ERROR Message", message: "db connect error", preferredStyle: UIAlertControllerStyle.alert)
+            let refreshAlert = UIAlertController(title: "ERROR Message", message: "db connect error", preferredStyle: UIAlertControllerStyle.alert)
             
             //다이얼로그에 버튼 등록//
             refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
@@ -402,7 +402,7 @@ class EnrollView : UIViewController, UIImagePickerControllerDelegate, UINavigati
         
         if(is_enroll == true)
         {
-            var refreshAlert = UIAlertController(title: "등록 성공", message: "사용자 정보를 등록하였습니다. 재미있게 게임을 즐기세요", preferredStyle: UIAlertControllerStyle.alert)
+            let refreshAlert = UIAlertController(title: "등록 성공", message: "사용자 정보를 등록하였습니다. 재미있게 게임을 즐기세요", preferredStyle: UIAlertControllerStyle.alert)
             
             //다이얼로그에 버튼 등록//
             refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
@@ -414,7 +414,7 @@ class EnrollView : UIViewController, UIImagePickerControllerDelegate, UINavigati
         
         else if(is_enroll == false)
         {
-            var refreshAlert = UIAlertController(title: "등록 실패", message: "입력된 내용을 다시 확인하세요", preferredStyle: UIAlertControllerStyle.alert)
+            let refreshAlert = UIAlertController(title: "등록 실패", message: "입력된 내용을 다시 확인하세요", preferredStyle: UIAlertControllerStyle.alert)
             
             //다이얼로그에 버튼 등록//
             refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in

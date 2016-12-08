@@ -106,19 +106,19 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
         
         print("db table check : ", self.db_table_check)
         
-        self.load_memberlist(flag: "2") //기본적용//
+        self.load_memberlist("2") //기본적용//
         
         // set up the refresh control
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         
         //Swift3에서부터는 action사용 시 #selector가 필요.//
-        refreshControl.addTarget(self, action: #selector(self.refresh(sender:)), for: UIControlEvents.valueChanged)
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: UIControlEvents.valueChanged)
         
         member_tableview.addSubview(refreshControl) //리플래시 화면을 보일(빙글빙글 돌아가는 프로그래스바)뷰를 장착.//
     }
     
-    func refresh(sender:AnyObject) {
+    func refresh(_ sender:AnyObject) {
         // Code to refresh table view
         print("refresh table")
         
@@ -139,7 +139,7 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
         listtitle_label.text = "Game ranking list"
     }
     
-    func load_memberlist(flag:String) //해당 부분이 네트워크로 데이터를 불러오는 경우도 된다//
+    func load_memberlist(_ flag:String) //해당 부분이 네트워크로 데이터를 불러오는 경우도 된다//
     {
         print("load member list")
         
@@ -147,15 +147,15 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
         if(self.db_connection_check == true)
         {
             //이름부분의 리스트 정보//
-            self.member_name = DB_Func_class.DB_Select_user_name(flag: flag) //이름을 불러온다.//
-            self.member_image = DB_Func_class.DB_Select_user_image(flag: flag) //이미지를 불러온다.//
-            self.member_id = DB_Func_class.DB_Select_user_id(flag: flag) //id들을 불러온다.//
+            self.member_name = DB_Func_class.DB_Select_user_name(flag) //이름을 불러온다.//
+            self.member_image = DB_Func_class.DB_Select_user_image(flag) //이미지를 불러온다.//
+            self.member_id = DB_Func_class.DB_Select_user_id(flag) //id들을 불러온다.//
             //부가정보 로드//
-            self.member_address = DB_Func_class.DB_Select_user_address(flag: flag) //주소정보들을 불러온다.//
-            self.member_phone_number = DB_Func_class.DB_Select_user_phonenumber(flag: flag) //전화번호 정보들을 불러온다.//
-            self.member_email_address = DB_Func_class.DB_Select_user_emailaddress(flag: flag) //이메일 정보들을 불러온다.//
-            self.member_success = DB_Func_class.DB_Select_user_success(flag: flag) //승률정보들을 불러온다//
-            self.member_fail = DB_Func_class.DB_Select_user_fail(flag: flag) //패전기록들을 불러온다//
+            self.member_address = DB_Func_class.DB_Select_user_address(flag) //주소정보들을 불러온다.//
+            self.member_phone_number = DB_Func_class.DB_Select_user_phonenumber(flag) //전화번호 정보들을 불러온다.//
+            self.member_email_address = DB_Func_class.DB_Select_user_emailaddress(flag) //이메일 정보들을 불러온다.//
+            self.member_success = DB_Func_class.DB_Select_user_success(flag) //승률정보들을 불러온다//
+            self.member_fail = DB_Func_class.DB_Select_user_fail(flag) //패전기록들을 불러온다//
             
             print("member name count:", self.member_name.count)
             print("member id count:", self.member_id.count)
@@ -183,7 +183,7 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
         }
     }
     
-    func load_memberlist_header(flag:String, totalmembercount_label:UILabel, winpoint_label:UILabel, bestmember_label:UILabel, winpeopleimageview:UIImageView) //해당 부분이 네트워크로 데이터를 불러오는 경우도 된다//
+    func load_memberlist_header(_ flag:String, totalmembercount_label:UILabel, winpoint_label:UILabel, bestmember_label:UILabel, winpeopleimageview:UIImageView) //해당 부분이 네트워크로 데이터를 불러오는 경우도 된다//
     {
         print("load member list for headerview")
         
@@ -191,9 +191,9 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
         if(self.db_connection_check == true)
         {
             //이름부분의 리스트 정보//
-            self.header_member_name = DB_Func_class.DB_Select_user_name(flag: flag) //이름을 불러온다.//
-            self.header_member_winnumber = DB_Func_class.DB_Select_user_success(flag: flag) //승률정보들을 불러온다//
-            self.header_member_winpeopleimage = DB_Func_class.DB_Select_user_image(flag: flag) //이미지를 불러온다.//
+            self.header_member_name = DB_Func_class.DB_Select_user_name(flag) //이름을 불러온다.//
+            self.header_member_winnumber = DB_Func_class.DB_Select_user_success(flag) //승률정보들을 불러온다//
+            self.header_member_winpeopleimage = DB_Func_class.DB_Select_user_image(flag) //이미지를 불러온다.//
         }
         
         //내림차순이기에 가장 첫번째가 가장 최고득점자다.//
@@ -294,7 +294,7 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
     
     //테이블뷰 헤더뷰 설정//
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        var headerCell = self.member_tableview.dequeueReusableCell(withIdentifier: self.listviewheaderIdentifier)as? MemberListViewHeader
+        let headerCell = self.member_tableview.dequeueReusableCell(withIdentifier: self.listviewheaderIdentifier)as? MemberListViewHeader
         
         //headerCell?.backgroundColor = UIColor.cyan
         
@@ -303,7 +303,7 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
         {
         case 0:
             //해당 섹션에서 필요한 작업을 해준다.(셀)//
-            OrderMaxValue_memberlist(totalmembercount_label: (headerCell?.totalmembercount_label)!, winpoint_label: (headerCell?.winpoint_label)!,
+            OrderMaxValue_memberlist((headerCell?.totalmembercount_label)!, winpoint_label: (headerCell?.winpoint_label)!,
                                      bestmember_label: (headerCell?.bestmember_label)!,
                                      winpeopleimageview: (headerCell?.winpeopleimageview)!) //내림차순 정렬을 해야지 한번에 총 멤버수까지 알 수 있다.//
             break
@@ -399,7 +399,7 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
          
          print("db table check : ", self.db_table_check)
          
-        self.load_memberlist(flag: "0") //내림차순 결과//
+        self.load_memberlist("0") //내림차순 결과//
     }
     
     func OrderMinValue_member() //오름차순(ASC)//
@@ -415,11 +415,11 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
          
          print("db table check : ", self.db_table_check)
          
-        self.load_memberlist(flag: "1") //오름차순 결과//
+        self.load_memberlist("1") //오름차순 결과//
     }
     
     //헤더뷰의 정렬 메소드 정의//
-    func OrderMaxValue_memberlist(totalmembercount_label:UILabel, winpoint_label:UILabel, bestmember_label:UILabel, winpeopleimageview: UIImageView) //내림차순(DESC)//
+    func OrderMaxValue_memberlist(_ totalmembercount_label:UILabel, winpoint_label:UILabel, bestmember_label:UILabel, winpeopleimageview: UIImageView) //내림차순(DESC)//
     {
         print("최고득점순으로 정렬")
         
@@ -432,6 +432,6 @@ class MemberListView : UIViewController, UITableViewDataSource, UITableViewDeleg
         
         print("db table check : ", self.db_table_check)
         
-        self.load_memberlist_header(flag: "0", totalmembercount_label: totalmembercount_label, winpoint_label: winpoint_label, bestmember_label: bestmember_label,winpeopleimageview:winpeopleimageview) //내림차순 결과//
+        self.load_memberlist_header("0", totalmembercount_label: totalmembercount_label, winpoint_label: winpoint_label, bestmember_label: bestmember_label,winpeopleimageview:winpeopleimageview) //내림차순 결과//
     }
 }
