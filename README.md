@@ -44,3 +44,4 @@ Dreaming Developer 운영자 서창욱
 * PageViewController (16.11.04)
 * CollectionViewController (16.11.18)
 * HTTP GET/POST, JSON Parsing (16.12.08)
+* Alamofire+SwiftyJSON <-> SwiftHTTP+JsonJoy -> Alamofire+SwiftyJSON 더 우수
