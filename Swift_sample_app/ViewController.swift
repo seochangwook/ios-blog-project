@@ -52,6 +52,10 @@ class ViewController: UIViewController
     {
     
     }
+    
+    @IBAction func facebook_login(_ sender: UIButton) {
+        
+    }
 
     func set_game_logo_image() //이미지를 셋팅하는 메소드.//
     {
@@ -185,6 +189,14 @@ class ViewController: UIViewController
             let destination = tabbarcontroller.viewControllers?[0] as! MainTabView //첫번째 탭에 데이터 전달//
             
             destination.info_str = "게임 설명 탭"
+        }
+        
+        else if(segue_id == "facebooklogin"){
+            let facebooklogincontroller = segue.destination as! FacebookloginView
+            
+            facebooklogincontroller.text = "Game Messenger Login"
+            
+            print("move storyboard navigation...");
         }
     }
 }

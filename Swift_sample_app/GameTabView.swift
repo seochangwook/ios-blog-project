@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 import SwiftHTTP //HTTP통신을 쉽게 할 수 있는 모듈//
-import AssetsLibrary //이미지, 동영상 등 리소스 작업을 하기 위한 라이브러리//
 import JSONJoy
+import AssetsLibrary //이미지, 동영상 등 리소스 작업을 하기 위한 라이브러리//
 
 class GameTabView : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     var info_str : String = "게임 탭"
