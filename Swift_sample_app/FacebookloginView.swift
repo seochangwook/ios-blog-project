@@ -10,8 +10,9 @@ import Foundation
 import UIKit
 import Alamofire //네트워크 라이브러리//
 import SwiftyJSON //JSON파싱 라이브러리//
+import AssetsLibrary //이미지, 동영상 등 리소스 작업을 하기 위한 라이브러리//
 
-class FacebookloginView : UIViewController{
+class FacebookloginView : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     //서버의 ip주소와 포트번호//
     var server_ip_address:String = "192.168.0.12"
@@ -23,12 +24,30 @@ class FacebookloginView : UIViewController{
     var message_array = [String]()
     var date_array = [String]()
     
+    //파일 데이터를 가지고 있을 배열//
+    var file_array = [String]()
+    var file_num_array = [String]()
+    
     @IBOutlet weak var info_label: UILabel!
     @IBOutlet weak var network_state_info: UILabel!
     @IBOutlet weak var info_label2: UILabel!
+    @IBOutlet weak var info_label3: UILabel!
+    @IBOutlet weak var imageview_thumbnail: UIImageView!
+    @IBOutlet weak var imageview: UIImageView!
+    @IBOutlet weak var imageview_2: UIImageView!
+    @IBOutlet weak var imageview_3: UIImageView!
+    @IBOutlet weak var image_path: UILabel!
+    
+    var upload_image_url:String = ""; //업로드할 파일의 경로가 저장되는 변수//
+    
+    var asset = ALAssetsLibrary()
+    //이미지 불러오기//
+    let imagePicker = UIImagePickerController() //UIImagePickerController()객체 선언//
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imagePicker.delegate = self //해당 swift파일에서 delegate처리를 하겠다. (delegate == callback)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,11 +56,86 @@ class FacebookloginView : UIViewController{
         print(text);
         
         info_label.text = text
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    @IBAction func get_image_button(_ sender: UIButton) {
+        print("get image")
+        
+        imagePicker.allowsEditing = true //사진을 Crop등 수정가능하게 설정//
+        imagePicker.sourceType = .photoLibrary //사진라이브러리에서 이미지를 가져온다.(모드는 다양하다.)//
+        
+        present(imagePicker, animated:true, completion:nil)
+    }
+    
+    //UIImagePicker에 대한 delegate구현//
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo editingInfo: [String : Any]) {
+        if let pickedImage = editingInfo[UIImagePickerControllerOriginalImage] as? UIImage
+        {
+            //선택된 이미지 정보를 추출//
+            let imageUrl          = editingInfo[UIImagePickerControllerReferenceURL] as! URL
+            let imageName         = imageUrl.lastPathComponent
+            let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first as String!
+            let photoURL          = URL(fileURLWithPath: documentDirectory!)
+            let localPath         = photoURL.appendingPathComponent(imageName)
+            let data              = UIImagePNGRepresentation(pickedImage)
+            
+            //print("image path:", imageUrl)
+            //ex) assets-library://asset/asset.JPG?id=20BA9B63-354F-4B2C-AB30-DB453BF03ACD&ext=JPG 형식으로 출력//
+            //ios는 기본적으로 assets-library로 경로를 출력한다. -> ALAssetsLibrary 사용해서 작업//
+            //print("image name:", imageName)
+            //ex) asset.JPG 형식으로 출력//
+            //print("photoURL:", photoURL)
+            //ex) file:///var/mobile/Containers/Data/Application/C7BA5314-0853-4284-B122-4698A2E014D7/Documents/ 형식으로 출력//
+            //print("local path:", localPath)
+            //ex) file:///var/mobile/Containers/Data/Application/A2C931B8-5388-4C1A-934A-5003C2E6DAB9/Documents/asset.JPG 형식으로 출력//
+            
+            let string_url = imageUrl.relativeString //해당값을 디비에 저장하면 된다.(NSURL -> String)//
+            
+            print("string path url:", string_url)
+            
+            image_path.text = string_url
+            
+            //let test_url = URL(string: string_url) //(String -> NSURL)
+            
+            //print("URL: ", test_url)
+            
+            upload_image_url = string_url
+            
+            getUIImagefromAsseturl(imageUrl) //assets-library형식으로 저장된 NSURL을 가지고 UIImage를 반환(이미지 적용)//
+        }
+        
+        dismiss(animated: true, completion: nil) //사진 불러오기 뷰를 종료//
+    }
+    
+    func getUIImagefromAsseturl (_ url: URL)
+    {
+        print("image url: ", url)
+        
+        asset.asset(for: url, resultBlock: { asset in
+            if let ast = asset
+            {
+                let assetRep = ast.defaultRepresentation()
+                let iref = assetRep?.fullResolutionImage().takeUnretainedValue()
+                let image = UIImage(cgImage: iref!)
+                
+                print("image value: ", iref)
+                
+                DispatchQueue.main.async(execute: {
+                    // ...Update UI with image here
+                    self.imageview_thumbnail.contentMode = .scaleAspectFit
+                    self.imageview_thumbnail.image = image //썸네일 이미지 적용//
+                })
+            }
+            }, failureBlock: { error in
+                print("Error: \(error)")
+        })
+    }
+    
     
     @IBAction func get_listdata(_ sender: UIButton) {
         if(message_array.isEmpty || date_array.isEmpty){
@@ -116,7 +210,7 @@ class FacebookloginView : UIViewController{
         self.message_array.removeAll()
         self.date_array.removeAll()
         
-        print("Message data trans...")
+        print("get Message list...")
         
         var progress = ProgressDialog(delegate: self)
         
@@ -159,6 +253,166 @@ class FacebookloginView : UIViewController{
                 print(response.result.error)
                 break
                 
+            }
+        }
+    }
+    
+    //사진첩에서 선택된 이미지파일의 URL을 서버로 전송(저장)//
+    @IBAction func upload_button(_ sender: UIButton) {
+        print("file upload(URL)...")
+        
+        var progress = ProgressDialog(delegate: self)
+        
+        let parameters = [
+            "fileurl":upload_image_url,
+        ]
+        
+        progress.Show(true, mesaj: "Loading...")
+        
+        //호출//
+        Alamofire.request("http://"+server_ip_address+":"+server_port_number+"/function/ios_file_upload", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
+            
+            //swift-case로 응답성공/실패를 분리//
+            switch(response.result) {
+            case .success(_):
+                if let data = response.result.value{
+                    print(response.result.value!)
+                    
+                    self.info_label3.text = "Success"
+                    
+                    progress.Close()
+                }
+                break
+                
+            case .failure(_):
+                print(response.result.error!)
+                break
+                
+            }
+        }
+    }
+    
+    @IBAction func get_filelist_button(_ sender: UIButton) {
+        //배열 초기화//
+        self.file_array.removeAll()
+        self.file_num_array.removeAll()
+        
+        print("get filelist...")
+        
+        var progress = ProgressDialog(delegate: self)
+        
+        progress.Show(true, mesaj: "Loading...")
+        
+        //GET방식은 URLEncoding//
+        Alamofire.request("http://"+server_ip_address+":"+server_port_number+"/function/ios_file_list", method: .get, encoding: URLEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
+            
+            switch(response.result) {
+            case .success(_):
+                if let data = response.result.value{
+                    print(response.result.value!)
+                    
+                    //JSON값을 가지고 파싱//
+                    let json = JSON(data)
+                    
+                    for item in json["results"].arrayValue {
+                        var filelist_str:String = item["file_num"].stringValue + ":" + item["file_url"].stringValue
+                        
+                        self.file_array.append(item["file_url"].stringValue)
+                        self.file_num_array.append(item["file_num"].stringValue)
+                        
+                        print(filelist_str)
+                    }
+                    
+                    //이미지 출력(테이블뷰랑 호환//
+                    self.Print_get_image(file_array:self.file_array, file_num_array:self.file_num_array)
+                    
+                    progress.Close()
+                }
+                break
+                
+            case .failure(_):
+                print(response.result.error)
+                break
+                
+            }
+        }
+    }
+    
+    func Print_get_image(file_array:[String], file_num_array:[String]){
+        for item in file_num_array{
+            if(item == "3"){
+                print("image num : ", item)
+                print("image url : ", file_array[0])
+                
+                //String -> NSURL//
+                let fileUrl = URL(string: file_array[0])
+                
+                asset.asset(for: fileUrl!, resultBlock: { asset in
+                    if let ast = asset
+                    {
+                        let assetRep = ast.defaultRepresentation()
+                        let iref = assetRep?.fullResolutionImage().takeUnretainedValue()
+                        let image = UIImage(cgImage: iref!)
+                        
+                        DispatchQueue.main.async(execute: {
+                            // ...Update UI with image here
+                            self.imageview.contentMode = .scaleAspectFit
+                            self.imageview.image = image //썸네일 이미지 적용//
+                        })
+                    }
+                    }, failureBlock: { error in
+                        print("Error: \(error)")
+                })
+            }
+            
+            else if(item == "4"){
+                print("image num : ", item)
+                print("image url : ", file_array[1])
+                
+                //String -> NSURL//
+                let fileUrl = URL(string: file_array[1])
+                
+                asset.asset(for: fileUrl!, resultBlock: { asset in
+                    if let ast = asset
+                    {
+                        let assetRep = ast.defaultRepresentation()
+                        let iref = assetRep?.fullResolutionImage().takeUnretainedValue()
+                        let image = UIImage(cgImage: iref!)
+                        
+                        DispatchQueue.main.async(execute: {
+                            // ...Update UI with image here
+                            self.imageview_2.contentMode = .scaleAspectFit
+                            self.imageview_2.image = image //썸네일 이미지 적용//
+                        })
+                    }
+                    }, failureBlock: { error in
+                        print("Error: \(error)")
+                })
+            }
+            
+            else if(item == "5"){
+                print("image num : ", item)
+                print("image url : ", file_array[2])
+                
+                //String -> NSURL//
+                let fileUrl = URL(string: file_array[2])
+                
+                asset.asset(for: fileUrl!, resultBlock: { asset in
+                    if let ast = asset
+                    {
+                        let assetRep = ast.defaultRepresentation()
+                        let iref = assetRep?.fullResolutionImage().takeUnretainedValue()
+                        let image = UIImage(cgImage: iref!)
+                        
+                        DispatchQueue.main.async(execute: {
+                            // ...Update UI with image here
+                            self.imageview_3.contentMode = .scaleAspectFit
+                            self.imageview_3.image = image //썸네일 이미지 적용//
+                        })
+                    }
+                    }, failureBlock: { error in
+                        print("Error: \(error)")
+                })
             }
         }
     }
