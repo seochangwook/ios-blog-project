@@ -45,3 +45,7 @@ Dreaming Developer 운영자 서창욱
 * CollectionViewController (16.11.18)
 * HTTP GET/POST, JSON Parsing (16.12.08)
 * Alamofire+SwiftyJSON <-> SwiftHTTP+JsonJoy -> Alamofire+SwiftyJSON 더 우수
+<p align="left">
+  <img src="https://github.com/seochangwook/ios-game-project/blob/master/alamofire_logo.png" width="200" height="350">
+</p>
+* 
