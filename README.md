@@ -31,6 +31,7 @@ Dreaming Developer 운영자 서창욱
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0049.PNG" width="200" height="350">
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0051.PNG" width="200" height="350">
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0052.PNG" width="200" height="350">
+  <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0053.PNG" width="200" height="350">
 </p>
 
 ---------------------------------------
@@ -44,8 +45,8 @@ Dreaming Developer 운영자 서창욱
 * PageViewController (16.11.04)
 * CollectionViewController (16.11.18)
 * HTTP GET/POST, JSON Parsing (16.12.08)
-* Alamofire+SwiftyJSON <-> SwiftHTTP+JsonJoy -> Alamofire+SwiftyJSON 더 우수
+* Alamofire+SwiftyJSON <-> SwiftHTTP+JsonJoy -> Alamofire+SwiftyJSON 더 우수 (16.12.26)
 <p align="left">
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/alamofire_logo.png" width="400" height="150">
 </p>
-* 
+* assets-library image url upload -> load imageview (16.12.27)
