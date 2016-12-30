@@ -32,6 +32,7 @@ Dreaming Developer 운영자 서창욱
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0051.PNG" width="200" height="350">
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0052.PNG" width="200" height="350">
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0053.PNG" width="200" height="350">
+  <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0054.PNG" width="200" height="350">
 </p>
 
 ---------------------------------------
@@ -50,3 +51,4 @@ Dreaming Developer 운영자 서창욱
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/alamofire_logo.png" width="400" height="150">
 </p>
 * assets-library image url upload -> load imageview (16.12.27)
+* facebook API(Login) (16.12.30)
