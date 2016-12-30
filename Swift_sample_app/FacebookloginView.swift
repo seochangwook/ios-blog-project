@@ -11,14 +11,17 @@ import UIKit
 import Alamofire //네트워크 라이브러리//
 import SwiftyJSON //JSON파싱 라이브러리//
 import AssetsLibrary //이미지, 동영상 등 리소스 작업을 하기 위한 라이브러리//
+import FacebookCore //페이스북 연동관련 코어 라이브러리//
+import FacebookLogin //페이스북 로그인 관련 라이브러리//
 
 class FacebookloginView : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     //서버의 ip주소와 포트번호//
-    var server_ip_address:String = "192.168.0.12"
+    var server_ip_address:String = "192.168.1.14"
     var server_port_number = "3000"
     
     var text:String = "";
+    var accesstoken:String = "";
     
     //데이터를 가지고 있을 배열//
     var message_array = [String]()
@@ -37,6 +40,7 @@ class FacebookloginView : UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var imageview_2: UIImageView!
     @IBOutlet weak var imageview_3: UIImageView!
     @IBOutlet weak var image_path: UILabel!
+    @IBOutlet weak var fb_login_status_label: UILabel!
     
     var upload_image_url:String = ""; //업로드할 파일의 경로가 저장되는 변수//
     
@@ -48,7 +52,39 @@ class FacebookloginView : UIViewController, UIImagePickerControllerDelegate, UIN
         super.viewDidLoad()
         
         imagePicker.delegate = self //해당 swift파일에서 delegate처리를 하겠다. (delegate == callback)
+        
+        /*let myLoginButton = UIButton(type: .custom)
+        myLoginButton.backgroundColor = UIColor.darkGray
+        myLoginButton.frame = CGRectMake(0, 100, 100, 40);
+        myLoginButton.center = view.center;
+        myLoginButton.setTitle("FB Login", for: .normal)
+        
+        //Handle clicks on the button
+        myLoginButton.addTarget(self, action: #selector(self.login_state), for: .touchUpInside)
+        
+        // Add the button to the view
+        view.addSubview(myLoginButton)*/
     }
+    
+    /*func login_state() {
+        let loginManager = LoginManager() //페이스북 로그인에 대한 상태를 관리를 클래스//
+        
+        //권한을 가지고 로그인 시도//
+        loginManager.logIn([.publicProfile, .email], viewController: self){ LoginResult in
+            //로그인 성공유무에 따른 판단//
+            switch LoginResult {
+            case .failed(let error):
+                print(error)
+            case .cancelled:
+                print("User cancelled login.")
+            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+                self.accesstoken = accessToken as! String
+                print("Logged in! (" + self.accesstoken + ")")
+                
+                self.fb_login_status_label.text = "login status..."
+            }
+        }
+    }*/
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -56,7 +92,6 @@ class FacebookloginView : UIViewController, UIImagePickerControllerDelegate, UIN
         print(text);
         
         info_label.text = text
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -136,6 +171,80 @@ class FacebookloginView : UIViewController, UIImagePickerControllerDelegate, UIN
         })
     }
     
+    //페이스북 로그인(커스텀 버튼)//
+    @IBAction func FB_loginbutton(_ sender: UIButton) {
+        let loginManager = LoginManager() //페이스북 로그인에 대한 상태를 관리를 클래스//
+        
+        /*로그인을 하기 전 AccessToken.current를 가지고 중복 로그인에 대해서 검사할 수 있다. 자동로그인을 적용하면 로그인 페이지는
+         생략하기에 우회할 수 있다.*/
+        
+        //권한을 가지고 로그인 시도(비동기)//
+        loginManager.logIn([.publicProfile, .email], viewController: self){ LoginResult in
+            //로그인 성공유무에 따른 판단//
+            switch LoginResult {
+            case .failed(let error):
+                print(error)
+            case .cancelled:
+                print("User cancelled login.")
+            case .success( _, _, let accessToken):
+                self.fb_login_status_label.text = "login status..."
+                
+                self.accesstoken = accessToken.authenticationToken //AccessToken값을 추출//
+                print("accessToken : " + self.accesstoken)
+                
+                //서버로 AccessToken값 전송//
+                print("Login data trans...")
+                
+                var progress = ProgressDialog(delegate: self)
+                
+                let fcmToken = "fcmtoken"
+                
+                //파라미터 설정//
+                let parameters = [
+                    "accessToken":self.accesstoken,
+                    "fcmtoekn":fcmToken
+                ]
+                
+                progress.Show(true, mesaj: "Loading...")
+                
+                //호출//
+                Alamofire.request("http://"+self.server_ip_address+":"+self.server_port_number+"/login/auth/facebook", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
+                    
+                    //swift-case로 응답성공/실패를 분리//
+                    switch(response.result) {
+                    case .success(_):
+                        if let data = response.result.value{
+                            print(response.result.value!)
+                            
+                            //JSON값을 가지고 파싱//
+                            let json = JSON(data)
+                            
+                            var result_str = json["message"].stringValue
+                            
+                            print("result: " + result_str)
+                            
+                            progress.Close()
+                        }
+                        break
+                        
+                    case .failure(_):
+                        print(response.result.error!)
+                        break
+                        
+                    }
+                }
+            }
+        }
+    }
+    
+    //페이스북 로그아웃 버튼(커스텀 버튼)//
+    @IBAction func FB_logoutbutton(_ sender: UIButton) {
+        let loginManager = LoginManager()
+        
+        loginManager.logOut()
+        
+        self.fb_login_status_label.text = "logout status..."
+    }
     
     @IBAction func get_listdata(_ sender: UIButton) {
         if(message_array.isEmpty || date_array.isEmpty){
@@ -415,5 +524,9 @@ class FacebookloginView : UIViewController, UIImagePickerControllerDelegate, UIN
                 })
             }
         }
+    }
+    
+    func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
+        return CGRect(x: x, y: y, width: width, height: height)
     }
 }

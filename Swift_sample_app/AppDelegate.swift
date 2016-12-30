@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FacebookCore
 
 @UIApplicationMain //앱의 시작점을 명시. 스위프트는 따로 main이 없다.(main.swift파일은 존재)//
 class AppDelegate: UIResponder, UIApplicationDelegate
@@ -44,7 +45,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         print("App exit")
     }
-
-
+    
+    //페이스북 로그인 후 다시 콜백한다.//
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool
+    {
+        return SDKApplicationDelegate.shared.application(app, open: url, options: options)
+        
+    }
 }
 

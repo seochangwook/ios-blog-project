@@ -22,6 +22,8 @@
 		18195ADE1DDDE10A00A2C7EA /* cell_image_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18195ADB1DDDE10A00A2C7EA /* cell_image_1.png */; };
 		18195ADF1DDDE10A00A2C7EA /* cell_image_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18195ADC1DDDE10A00A2C7EA /* cell_image_2.png */; };
 		18195AE01DDDE10A00A2C7EA /* cell_image_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 18195ADD1DDDE10A00A2C7EA /* cell_image_3.png */; };
+		181F96E61E153256009DF73D /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CE26A11E1030E7003EFAF0 /* SwiftHTTP.framework */; };
+		181F96E71E153256009DF73D /* SwiftHTTP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18CE26A11E1030E7003EFAF0 /* SwiftHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18204C0C1DC783D700BCF143 /* MyTabbarControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18204C0B1DC783D700BCF143 /* MyTabbarControllerView.swift */; };
 		183B006E1DC21F8000F88013 /* MemberDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B006D1DC21F8000F88013 /* MemberDeleteView.swift */; };
 		184BB7D21DC4CD03002B5797 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184BB7D11DC4CD03002B5797 /* MainTabView.swift */; };
@@ -35,14 +37,28 @@
 		1866FAFB1DAC9E080096F47D /* baner_blog.png in Resources */ = {isa = PBXBuildFile; fileRef = 1866FAFA1DAC9E080096F47D /* baner_blog.png */; };
 		1866FAFD1DAC9F7E0096F47D /* blog_movebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 1866FAFC1DAC9F7E0096F47D /* blog_movebutton.png */; };
 		1866FAFF1DACA04E0096F47D /* MemberListViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866FAFE1DACA04E0096F47D /* MemberListViewFooter.swift */; };
-		187209B91DF7F50800A9CEA6 /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187209B81DF7F50800A9CEA6 /* SwiftHTTP.framework */; };
-		187209BD1DF8494100A9CEA6 /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187209BC1DF8494100A9CEA6 /* SwiftHTTP.framework */; };
-		187209BE1DF8494100A9CEA6 /* SwiftHTTP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 187209BC1DF8494100A9CEA6 /* SwiftHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		187209C31DF8F5AF00A9CEA6 /* ProgressDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187209C21DF8F5AF00A9CEA6 /* ProgressDialog.swift */; };
-		187209DC1DF9980D00A9CEA6 /* JSONJoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187209CF1DF997D900A9CEA6 /* JSONJoy.framework */; };
 		187209DD1DF9981E00A9CEA6 /* JSONJoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187209CF1DF997D900A9CEA6 /* JSONJoy.framework */; };
 		187209DE1DF9981E00A9CEA6 /* JSONJoy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 187209CF1DF997D900A9CEA6 /* JSONJoy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		187209E41DF9987600A9CEA6 /* GameTabjsondata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187209E31DF9987600A9CEA6 /* GameTabjsondata.swift */; };
+		187B4E621E155AB900C2F292 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187B4E531E155AA200C2F292 /* Bolts.framework */; };
+		187B4E631E155AB900C2F292 /* Bolts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 187B4E531E155AA200C2F292 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		187B4E661E155ABF00C2F292 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187B4E571E155AA200C2F292 /* FacebookLogin.framework */; };
+		187B4E671E155ABF00C2F292 /* FacebookLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 187B4E571E155AA200C2F292 /* FacebookLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		187B4E6A1E155AC700C2F292 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187B4E551E155AA200C2F292 /* FacebookCore.framework */; };
+		187B4E6B1E155AC700C2F292 /* FacebookCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 187B4E551E155AA200C2F292 /* FacebookCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		187B4E6E1E155ACB00C2F292 /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187B4E591E155AA200C2F292 /* FacebookShare.framework */; };
+		187B4E6F1E155ACB00C2F292 /* FacebookShare.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 187B4E591E155AA200C2F292 /* FacebookShare.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		187B4E721E155ACF00C2F292 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187B4E5B1E155AA200C2F292 /* FBSDKCoreKit.framework */; };
+		187B4E731E155ACF00C2F292 /* FBSDKCoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 187B4E5B1E155AA200C2F292 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		187B4E761E155AD300C2F292 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187B4E5D1E155AA200C2F292 /* FBSDKLoginKit.framework */; };
+		187B4E771E155AD300C2F292 /* FBSDKLoginKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 187B4E5D1E155AA200C2F292 /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		187B4E7A1E155AD600C2F292 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187B4E5F1E155AA200C2F292 /* FBSDKShareKit.framework */; };
+		187B4E7B1E155AD600C2F292 /* FBSDKShareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 187B4E5F1E155AA200C2F292 /* FBSDKShareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		187B4E7E1E155ADA00C2F292 /* Pods_Swift_sample_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187B4E611E155AA200C2F292 /* Pods_Swift_sample_app.framework */; };
+		187B4E7F1E155ADA00C2F292 /* Pods_Swift_sample_app.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 187B4E611E155AA200C2F292 /* Pods_Swift_sample_app.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		187B4E831E155E0600C2F292 /* facebook_loginbutton_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B4E821E155E0600C2F292 /* facebook_loginbutton_icon.png */; };
+		187B4E851E160D9400C2F292 /* facebook_logout_button_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B4E841E160D9400C2F292 /* facebook_logout_button_icon.png */; };
 		1881E6D21DAA4FAD00095F8E /* MemberListViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881E6D11DAA4FAD00095F8E /* MemberListViewHeader.swift */; };
 		188903AE1D3BA3F400B16FE8 /* DBController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188903AD1D3BA3F400B16FE8 /* DBController.m */; };
 		18894BF01D32908300EE4CB2 /* game_logo_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18894BEF1D32908300EE4CB2 /* game_logo_image.png */; };
@@ -74,6 +90,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		181F96E81E153256009DF73D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18B90C541DF7F17700F01B0C /* SwiftHTTP.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6BFD901519C8D8B500DD99B6;
+			remoteInfo = SwiftHTTP;
+		};
 		187209CE1DF997D900A9CEA6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 187209C41DF997D900A9CEA6 /* JSONJoy.xcodeproj */;
@@ -129,6 +152,118 @@
 			proxyType = 1;
 			remoteGlobalIDString = 6B3E79B619D355CF006071F7;
 			remoteInfo = JSONJoy;
+		};
+		187B4E521E155AA200C2F292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9F9C2FBF41E100945765A759720D2FC8;
+			remoteInfo = Bolts;
+		};
+		187B4E541E155AA200C2F292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27C82BD562210B39A20243DD5D5391D5;
+			remoteInfo = FacebookCore;
+		};
+		187B4E561E155AA200C2F292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A956C11A8DA89F58D33F7F3B1CCAB88C;
+			remoteInfo = FacebookLogin;
+		};
+		187B4E581E155AA200C2F292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 832856AE2A2EA11A8CB883C95EBF0436;
+			remoteInfo = FacebookShare;
+		};
+		187B4E5A1E155AA200C2F292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 47ED2152A785E5787AD59BB334E2B85C;
+			remoteInfo = FBSDKCoreKit;
+		};
+		187B4E5C1E155AA200C2F292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 484C4216BF811A7DC00987BA20C128E4;
+			remoteInfo = FBSDKLoginKit;
+		};
+		187B4E5E1E155AA200C2F292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 95F9BE02B6F1AE4838E15715D7D40BC8;
+			remoteInfo = FBSDKShareKit;
+		};
+		187B4E601E155AA200C2F292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEB682BD9BAC4AC2CF71D649827AEAE8;
+			remoteInfo = "Pods-Swift_sample_app";
+		};
+		187B4E641E155AB900C2F292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 44CAD6CE523055ED339E87154473A254;
+			remoteInfo = Bolts;
+		};
+		187B4E681E155ABF00C2F292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7335E9C9689F3B8A16F063A884748533;
+			remoteInfo = FacebookLogin;
+		};
+		187B4E6C1E155AC700C2F292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DDBCFDE490CDFDABF6F16A26F346932D;
+			remoteInfo = FacebookCore;
+		};
+		187B4E701E155ACB00C2F292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A7FEAA14E89971698ACA148F7F7202F2;
+			remoteInfo = FacebookShare;
+		};
+		187B4E741E155ACF00C2F292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 593E9479C06FB200807D11AB29EB50BD;
+			remoteInfo = FBSDKCoreKit;
+		};
+		187B4E781E155AD300C2F292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B5AC3C06B783F8674FDB4C0F900B56A;
+			remoteInfo = FBSDKLoginKit;
+		};
+		187B4E7C1E155AD600C2F292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 332F91393FB1DE033D370B4CEDDD5FCF;
+			remoteInfo = FBSDKShareKit;
+		};
+		187B4E801E155ADA00C2F292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D7264A6FFA934482A3EA7DC04018605;
+			remoteInfo = "Pods-Swift_sample_app";
 		};
 		18C177DA1E11261A0058CC23 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -300,9 +435,17 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				187B4E6F1E155ACB00C2F292 /* FacebookShare.framework in Embed Frameworks */,
+				187B4E631E155AB900C2F292 /* Bolts.framework in Embed Frameworks */,
+				187B4E771E155AD300C2F292 /* FBSDKLoginKit.framework in Embed Frameworks */,
+				181F96E71E153256009DF73D /* SwiftHTTP.framework in Embed Frameworks */,
 				18C178051E11594B0058CC23 /* SwiftyJSON.framework in Embed Frameworks */,
-				187209BE1DF8494100A9CEA6 /* SwiftHTTP.framework in Embed Frameworks */,
 				18C177E91E1126340058CC23 /* Alamofire.framework in Embed Frameworks */,
+				187B4E7B1E155AD600C2F292 /* FBSDKShareKit.framework in Embed Frameworks */,
+				187B4E671E155ABF00C2F292 /* FacebookLogin.framework in Embed Frameworks */,
+				187B4E6B1E155AC700C2F292 /* FacebookCore.framework in Embed Frameworks */,
+				187B4E731E155ACF00C2F292 /* FBSDKCoreKit.framework in Embed Frameworks */,
+				187B4E7F1E155ADA00C2F292 /* Pods_Swift_sample_app.framework in Embed Frameworks */,
 				187209DE1DF9981E00A9CEA6 /* JSONJoy.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -341,11 +484,12 @@
 		1866FAFA1DAC9E080096F47D /* baner_blog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = baner_blog.png; path = ../../imagesample/baner_blog.png; sourceTree = "<group>"; };
 		1866FAFC1DAC9F7E0096F47D /* blog_movebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blog_movebutton.png; path = ../../imagesample/blog_movebutton.png; sourceTree = "<group>"; };
 		1866FAFE1DACA04E0096F47D /* MemberListViewFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListViewFooter.swift; sourceTree = "<group>"; };
-		187209B81DF7F50800A9CEA6 /* SwiftHTTP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHTTP.framework; path = "../swift_library/SwiftHTTP-master/build/Release-iphoneos/SwiftHTTP.framework"; sourceTree = "<group>"; };
-		187209BC1DF8494100A9CEA6 /* SwiftHTTP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftHTTP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		187209C21DF8F5AF00A9CEA6 /* ProgressDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressDialog.swift; sourceTree = "<group>"; };
 		187209C41DF997D900A9CEA6 /* JSONJoy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JSONJoy.xcodeproj; path = "../swift_library/JSONJoy-Swift-master/JSONJoy.xcodeproj"; sourceTree = "<group>"; };
 		187209E31DF9987600A9CEA6 /* GameTabjsondata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTabjsondata.swift; sourceTree = "<group>"; };
+		187B4E471E155AA100C2F292 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		187B4E821E155E0600C2F292 /* facebook_loginbutton_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebook_loginbutton_icon.png; path = ../../../sample_image/facebook_loginbutton_icon.png; sourceTree = "<group>"; };
+		187B4E841E160D9400C2F292 /* facebook_logout_button_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebook_logout_button_icon.png; path = ../../../sample_image/facebook_logout_button_icon.png; sourceTree = "<group>"; };
 		1881E6D11DAA4FAD00095F8E /* MemberListViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListViewHeader.swift; sourceTree = "<group>"; };
 		188903AC1D3BA3F400B16FE8 /* DBController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBController.h; sourceTree = "<group>"; };
 		188903AD1D3BA3F400B16FE8 /* DBController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBController.m; sourceTree = "<group>"; };
@@ -375,6 +519,8 @@
 		18DFD5091D8D156B00582637 /* default_people_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_people_image.png; sourceTree = "<group>"; };
 		18DFD50B1D8D183D00582637 /* MemberListViewTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListViewTableCell.swift; sourceTree = "<group>"; };
 		18DFD50D1D8D5C8200582637 /* user_more_info_imagae.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_more_info_imagae.png; sourceTree = "<group>"; };
+		597BDCE8C811CC300B009E11 /* Pods-Swift_sample_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_sample_app.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift_sample_app/Pods-Swift_sample_app.release.xcconfig"; sourceTree = "<group>"; };
+		70CEA3DBF817687EA60E6E26 /* Pods-Swift_sample_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_sample_app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift_sample_app/Pods-Swift_sample_app.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,12 +528,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187B4E7E1E155ADA00C2F292 /* Pods_Swift_sample_app.framework in Frameworks */,
+				181F96E61E153256009DF73D /* SwiftHTTP.framework in Frameworks */,
 				187209DD1DF9981E00A9CEA6 /* JSONJoy.framework in Frameworks */,
 				18C177E81E1126340058CC23 /* Alamofire.framework in Frameworks */,
-				187209DC1DF9980D00A9CEA6 /* JSONJoy.framework in Frameworks */,
-				187209BD1DF8494100A9CEA6 /* SwiftHTTP.framework in Frameworks */,
+				187B4E661E155ABF00C2F292 /* FacebookLogin.framework in Frameworks */,
+				187B4E621E155AB900C2F292 /* Bolts.framework in Frameworks */,
+				187B4E721E155ACF00C2F292 /* FBSDKCoreKit.framework in Frameworks */,
+				187B4E6A1E155AC700C2F292 /* FacebookCore.framework in Frameworks */,
+				187B4E6E1E155ACB00C2F292 /* FacebookShare.framework in Frameworks */,
+				187B4E7A1E155AD600C2F292 /* FBSDKShareKit.framework in Frameworks */,
+				187B4E761E155AD300C2F292 /* FBSDKLoginKit.framework in Frameworks */,
 				18C178041E11594B0058CC23 /* SwiftyJSON.framework in Frameworks */,
-				187209B91DF7F50800A9CEA6 /* SwiftHTTP.framework in Frameworks */,
 				1800AD5F1D3B80E500C3F932 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,11 +550,11 @@
 		1813ADB61D315806001BB532 = {
 			isa = PBXGroup;
 			children = (
+				187B4E471E155AA100C2F292 /* Pods.xcodeproj */,
 				18C177EC1E11590B0058CC23 /* SwiftyJSON.xcodeproj */,
 				18C177CF1E11261A0058CC23 /* Alamofire.xcodeproj */,
 				18B90C541DF7F17700F01B0C /* SwiftHTTP.xcodeproj */,
 				187209C41DF997D900A9CEA6 /* JSONJoy.xcodeproj */,
-				187209BC1DF8494100A9CEA6 /* SwiftHTTP.framework */,
 				188903AC1D3BA3F400B16FE8 /* DBController.h */,
 				188903AD1D3BA3F400B16FE8 /* DBController.m */,
 				188903AF1D3BA47500B16FE8 /* Swift_sample_app-Bridging-Header.h */,
@@ -411,6 +563,7 @@
 				1813ADC01D315806001BB532 /* Products */,
 				18894BEE1D32908300EE4CB2 /* resource file */,
 				187209B71DF7F50800A9CEA6 /* Frameworks */,
+				3F35C763B66824A4F6160994 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -460,7 +613,6 @@
 		187209B71DF7F50800A9CEA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				187209B81DF7F50800A9CEA6 /* SwiftHTTP.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -503,9 +655,26 @@
 			name = jsondata;
 			sourceTree = "<group>";
 		};
+		187B4E481E155AA100C2F292 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				187B4E531E155AA200C2F292 /* Bolts.framework */,
+				187B4E551E155AA200C2F292 /* FacebookCore.framework */,
+				187B4E571E155AA200C2F292 /* FacebookLogin.framework */,
+				187B4E591E155AA200C2F292 /* FacebookShare.framework */,
+				187B4E5B1E155AA200C2F292 /* FBSDKCoreKit.framework */,
+				187B4E5D1E155AA200C2F292 /* FBSDKLoginKit.framework */,
+				187B4E5F1E155AA200C2F292 /* FBSDKShareKit.framework */,
+				187B4E611E155AA200C2F292 /* Pods_Swift_sample_app.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		18894BEE1D32908300EE4CB2 /* resource file */ = {
 			isa = PBXGroup;
 			children = (
+				187B4E841E160D9400C2F292 /* facebook_logout_button_icon.png */,
+				187B4E821E155E0600C2F292 /* facebook_loginbutton_icon.png */,
 				18195ADB1DDDE10A00A2C7EA /* cell_image_1.png */,
 				18195ADC1DDDE10A00A2C7EA /* cell_image_2.png */,
 				18C6FDF71DDE021900046BA2 /* splash_image.png */,
@@ -577,6 +746,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3F35C763B66824A4F6160994 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70CEA3DBF817687EA60E6E26 /* Pods-Swift_sample_app.debug.xcconfig */,
+				597BDCE8C811CC300B009E11 /* Pods-Swift_sample_app.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -584,10 +762,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1813ADD11D315806001BB532 /* Build configuration list for PBXNativeTarget "Swift_sample_app" */;
 			buildPhases = (
+				D2BBC8D57B531F4818D12D19 /* [CP] Check Pods Manifest.lock */,
 				1813ADBB1D315806001BB532 /* Sources */,
 				1813ADBC1D315806001BB532 /* Frameworks */,
 				1813ADBD1D315806001BB532 /* Resources */,
 				187209BF1DF8494200A9CEA6 /* Embed Frameworks */,
+				01C0E87F0DEFBE085B5700BE /* [CP] Embed Pods Frameworks */,
+				14FF4624A44884B735D886F8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -595,6 +776,15 @@
 				187209E01DF9981E00A9CEA6 /* PBXTargetDependency */,
 				18C177EB1E1126340058CC23 /* PBXTargetDependency */,
 				18C178071E11594B0058CC23 /* PBXTargetDependency */,
+				181F96E91E153256009DF73D /* PBXTargetDependency */,
+				187B4E651E155AB900C2F292 /* PBXTargetDependency */,
+				187B4E691E155ABF00C2F292 /* PBXTargetDependency */,
+				187B4E6D1E155AC700C2F292 /* PBXTargetDependency */,
+				187B4E711E155ACB00C2F292 /* PBXTargetDependency */,
+				187B4E751E155ACF00C2F292 /* PBXTargetDependency */,
+				187B4E791E155AD300C2F292 /* PBXTargetDependency */,
+				187B4E7D1E155AD600C2F292 /* PBXTargetDependency */,
+				187B4E811E155ADA00C2F292 /* PBXTargetDependency */,
 			);
 			name = Swift_sample_app;
 			productName = Swift_sample_app;
@@ -637,6 +827,10 @@
 				{
 					ProductGroup = 187209C51DF997D900A9CEA6 /* Products */;
 					ProjectRef = 187209C41DF997D900A9CEA6 /* JSONJoy.xcodeproj */;
+				},
+				{
+					ProductGroup = 187B4E481E155AA100C2F292 /* Products */;
+					ProjectRef = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
 				},
 				{
 					ProductGroup = 18CE26911E1030E0003EFAF0 /* Products */;
@@ -702,6 +896,62 @@
 			fileType = wrapper.framework;
 			path = JSONJoy.framework;
 			remoteRef = 187209DA1DF997D900A9CEA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		187B4E531E155AA200C2F292 /* Bolts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Bolts.framework;
+			remoteRef = 187B4E521E155AA200C2F292 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		187B4E551E155AA200C2F292 /* FacebookCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FacebookCore.framework;
+			remoteRef = 187B4E541E155AA200C2F292 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		187B4E571E155AA200C2F292 /* FacebookLogin.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FacebookLogin.framework;
+			remoteRef = 187B4E561E155AA200C2F292 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		187B4E591E155AA200C2F292 /* FacebookShare.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FacebookShare.framework;
+			remoteRef = 187B4E581E155AA200C2F292 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		187B4E5B1E155AA200C2F292 /* FBSDKCoreKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FBSDKCoreKit.framework;
+			remoteRef = 187B4E5A1E155AA200C2F292 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		187B4E5D1E155AA200C2F292 /* FBSDKLoginKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FBSDKLoginKit.framework;
+			remoteRef = 187B4E5C1E155AA200C2F292 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		187B4E5F1E155AA200C2F292 /* FBSDKShareKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FBSDKShareKit.framework;
+			remoteRef = 187B4E5E1E155AA200C2F292 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		187B4E611E155AA200C2F292 /* Pods_Swift_sample_app.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_Swift_sample_app.framework;
+			remoteRef = 187B4E601E155AA200C2F292 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		18C177DB1E11261A0058CC23 /* Alamofire.framework */ = {
@@ -860,6 +1110,8 @@
 			files = (
 				18612C421DCB953500C57104 /* indicator_left_image.png in Resources */,
 				1813ADCD1D315806001BB532 /* LaunchScreen.storyboard in Resources */,
+				187B4E851E160D9400C2F292 /* facebook_logout_button_icon.png in Resources */,
+				187B4E831E155E0600C2F292 /* facebook_loginbutton_icon.png in Resources */,
 				18DFD4E61D8BB29A00582637 /* enroll_image.png in Resources */,
 				18C6FDFE1DDE0A3100046BA2 /* easy_image.png in Resources */,
 				18DFD4DC1D8BB15100582637 /* password_search_image.png in Resources */,
@@ -890,6 +1142,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01C0E87F0DEFBE085B5700BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swift_sample_app/Pods-Swift_sample_app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14FF4624A44884B735D886F8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swift_sample_app/Pods-Swift_sample_app-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2BBC8D57B531F4818D12D19 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1813ADBB1D315806001BB532 /* Sources */ = {
@@ -927,10 +1227,55 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		181F96E91E153256009DF73D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftHTTP;
+			targetProxy = 181F96E81E153256009DF73D /* PBXContainerItemProxy */;
+		};
 		187209E01DF9981E00A9CEA6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JSONJoy;
 			targetProxy = 187209DF1DF9981E00A9CEA6 /* PBXContainerItemProxy */;
+		};
+		187B4E651E155AB900C2F292 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Bolts;
+			targetProxy = 187B4E641E155AB900C2F292 /* PBXContainerItemProxy */;
+		};
+		187B4E691E155ABF00C2F292 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FacebookLogin;
+			targetProxy = 187B4E681E155ABF00C2F292 /* PBXContainerItemProxy */;
+		};
+		187B4E6D1E155AC700C2F292 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FacebookCore;
+			targetProxy = 187B4E6C1E155AC700C2F292 /* PBXContainerItemProxy */;
+		};
+		187B4E711E155ACB00C2F292 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FacebookShare;
+			targetProxy = 187B4E701E155ACB00C2F292 /* PBXContainerItemProxy */;
+		};
+		187B4E751E155ACF00C2F292 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FBSDKCoreKit;
+			targetProxy = 187B4E741E155ACF00C2F292 /* PBXContainerItemProxy */;
+		};
+		187B4E791E155AD300C2F292 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FBSDKLoginKit;
+			targetProxy = 187B4E781E155AD300C2F292 /* PBXContainerItemProxy */;
+		};
+		187B4E7D1E155AD600C2F292 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FBSDKShareKit;
+			targetProxy = 187B4E7C1E155AD600C2F292 /* PBXContainerItemProxy */;
+		};
+		187B4E811E155ADA00C2F292 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Swift_sample_app";
+			targetProxy = 187B4E801E155ADA00C2F292 /* PBXContainerItemProxy */;
 		};
 		18C177EB1E1126340058CC23 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1050,6 +1395,7 @@
 		};
 		1813ADD21D315806001BB532 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70CEA3DBF817687EA60E6E26 /* Pods-Swift_sample_app.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1059,6 +1405,8 @@
 				DEVELOPMENT_TEAM = 7SQL894E3T;
 				INFOPLIST_FILE = Swift_sample_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.developer-seo.Swift-sample-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1071,6 +1419,7 @@
 		};
 		1813ADD31D315806001BB532 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 597BDCE8C811CC300B009E11 /* Pods-Swift_sample_app.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1080,6 +1429,8 @@
 				DEVELOPMENT_TEAM = 7SQL894E3T;
 				INFOPLIST_FILE = Swift_sample_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.developer-seo.Swift-sample-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
