@@ -51,8 +51,8 @@ Dreaming Developer 운영자 서창욱
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/alamofire_logo.png" width="400" height="150">
 </p>
 * assets-library image url upload -> load imageview (16.12.27)
-* facebook API(Login) (16.12.30)
+* facebook API(Login) / use cocoapod (16.12.30)
 <p align="left">
-  <img src="https://github.com/seochangwook/ios-game-project/blob/master/alamofire_logo.png" width="400" height="150">
+  <img src="https://github.com/seochangwook/ios-game-project/blob/master/cocoapod_image.png" width="400" height="150">
 </p>
 * 
