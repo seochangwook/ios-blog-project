@@ -124,7 +124,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="YsQ-2E-npG" kind="push" identifier="facebooklogin" id="gGv-wL-SCD"/>
+                                    <segue destination="YsQ-2E-npG" kind="push" identifier="facebooklogin" id="m9W-dJ-bOm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -484,6 +484,7 @@
                                 <state key="normal" image="facebook_loginbutton_icon.png"/>
                                 <connections>
                                     <action selector="FB_loginbutton:" destination="YsQ-2E-npG" eventType="touchUpInside" id="EAR-gr-fhO"/>
+                                    <segue destination="SWp-l5-zlr" kind="push" identifier="profileview" id="bRs-t0-O5U"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0L-Sd-g8c">
@@ -520,7 +521,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdh-l3-Ujq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1597.5" y="1317.5"/>
+            <point key="canvasLocation" x="1816" y="597"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="tde-Md-YrB">
+            <objects>
+                <viewController id="SWp-l5-zlr" customClass="ProfileView" customModule="Swift_sample_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e16-Sj-fCW"/>
+                        <viewControllerLayoutGuide type="bottom" id="9mP-o3-66w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pzd-PW-jS5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iC-jE-SNh">
+                                <frame key="frameInset" minX="16" minY="72" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="8BQ-za-8o6"/>
+                    <connections>
+                        <outlet property="info_label" destination="4iC-jE-SNh" id="jE4-ar-7vS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q7W-IS-YOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2383.5" y="596.5"/>
         </scene>
         <!--MemberListView-->
         <scene sceneID="BV2-gy-lZ7">
@@ -556,7 +588,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xX6-Qq-K5m" id="REP-Cb-W0x">
-                                            <frame key="frameInset" width="320" height="79"/>
+                                            <frame key="frameInset" width="320" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="총 멤버수: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DR-bc-hU9">
@@ -623,7 +655,7 @@
                                         <rect key="frame" x="0.0" y="108" width="320" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1U2-F2-2fI" id="O3S-hg-ojR">
-                                            <frame key="frameInset" width="320" height="56"/>
+                                            <frame key="frameInset" width="320" height="57"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vq3-tu-EJd"/>
@@ -680,7 +712,7 @@
                                         <rect key="frame" x="0.0" y="165" width="320" height="35"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xZg-4V-hGq" id="LYG-e0-umd">
-                                            <frame key="frameInset" width="320" height="34"/>
+                                            <frame key="frameInset" width="320" height="35"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baner_blog.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pss-Qp-3JB"/>
@@ -1502,7 +1534,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell2" id="LZG-wd-7bX" customClass="CustomCollectionViewCell2" customModule="Swift_sample_app" customModuleProvider="target">
-                                        <rect key="frame" x="83" y="34" width="66" height="92"/>
+                                        <rect key="frame" x="83.5" y="34" width="66" height="92"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="66" height="92"/>

@@ -17,8 +17,11 @@ import FacebookLogin //페이스북 로그인 관련 라이브러리//
 class FacebookloginView : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     //서버의 ip주소와 포트번호//
-    var server_ip_address:String = "192.168.1.14"
+    var server_ip_address:String = "192.168.0.11"
     var server_port_number = "3000"
+    
+    //Key//
+    let userNameKeyConstant = "userid"
     
     var text:String = "";
     var accesstoken:String = "";
@@ -118,7 +121,7 @@ class FacebookloginView : UIViewController, UIImagePickerControllerDelegate, UIN
             let photoURL          = URL(fileURLWithPath: documentDirectory!)
             let localPath         = photoURL.appendingPathComponent(imageName)
             let data              = UIImagePNGRepresentation(pickedImage)
-            
+        
             //print("image path:", imageUrl)
             //ex) assets-library://asset/asset.JPG?id=20BA9B63-354F-4B2C-AB30-DB453BF03ACD&ext=JPG 형식으로 출력//
             //ios는 기본적으로 assets-library로 경로를 출력한다. -> ALAssetsLibrary 사용해서 작업//
@@ -220,14 +223,24 @@ class FacebookloginView : UIViewController, UIImagePickerControllerDelegate, UIN
                             let json = JSON(data)
                             
                             var result_str = json["message"].stringValue
+                            var get_user_id = json["id"].stringValue
                             
-                            print("result: " + result_str)
+                            print("result: " + result_str + "/" + get_user_id)
                             
-                            progress.Close()
+                            //네트워크 작업을 다 완료 후 수행(async - 비동기 작업)//
+                            DispatchQueue.main.async {
+                                progress.Close()
+                                print("Network job finish...(" + get_user_id + ")")
+                                
+                                //공유저장소등에 저장(최초 로그인 작업 시 유저의 정보를 저장)//
+                                let defaults = UserDefaults.standard
+                                defaults.set(get_user_id, forKey: self.userNameKeyConstant)
+                            }
                         }
                         break
                         
                     case .failure(_):
+                        progress.Close()
                         print(response.result.error!)
                         break
                         

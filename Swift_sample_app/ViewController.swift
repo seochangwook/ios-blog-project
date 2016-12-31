@@ -192,11 +192,12 @@ class ViewController: UIViewController
         }
         
         else if(segue_id == "facebooklogin"){
-            let facebooklogincontroller = segue.destination as! FacebookloginView
-            
-            facebooklogincontroller.text = "Game Messenger Login"
-            
             print("move storyboard navigation...");
+            
+            //새로운 UINavigation으로 분기할때는 UINavigationController를 먼저 클래스 할당 후 topViewController로 등록//
+            let destination = segue.destination as! FacebookloginView
+            
+            destination.text = "Game Messenger Login"
         }
     }
 }
