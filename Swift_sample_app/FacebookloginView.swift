@@ -237,11 +237,13 @@ class FacebookloginView : UIViewController, UIImagePickerControllerDelegate, UIN
                                 defaults.set(get_user_id, forKey: self.userNameKeyConstant)
                             }
                         }
+                        
                         break
                         
                     case .failure(_):
                         progress.Close()
                         print(response.result.error!)
+                        
                         break
                         
                     }
