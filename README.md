@@ -63,5 +63,5 @@ Dreaming Developer 운영자 서창욱
 <p align="left">
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/kingfisher_logo.png" width="400" height="130">
 </p>
-* UITableview (user list) - Network
+* UITableview (user list) - Network (17.1.3)
 
