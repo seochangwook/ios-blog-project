@@ -81,6 +81,11 @@
 		18D8FD931E1900FB00A86B74 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D8FD6A1E19002000A86B74 /* Kingfisher.framework */; };
 		18D8FD941E1900FB00A86B74 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18D8FD6A1E19002000A86B74 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18D8FD981E19084500A86B74 /* default_humanimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D8FD971E19084500A86B74 /* default_humanimage.png */; };
+		18D8FDC11E1A64A200A86B74 /* talk_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D8FDC01E1A64A200A86B74 /* talk_icon.png */; };
+		18D8FDC31E1A675200A86B74 /* UserListViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8FDC21E1A675200A86B74 /* UserListViewTableCell.swift */; };
+		18D8FDCA1E1A6E8E00A86B74 /* UserListViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8FDC91E1A6E8E00A86B74 /* UserListViewHeader.swift */; };
+		18D8FDE61E1AB41000A86B74 /* UserListViewTableFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8FDE51E1AB41000A86B74 /* UserListViewTableFooter.swift */; };
+		18D8FDE81E1AB97700A86B74 /* MessageRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8FDE71E1AB97700A86B74 /* MessageRoom.swift */; };
 		18DFD4DA1D8BB15100582637 /* id_search_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFD4D71D8BB15100582637 /* id_search_image.png */; };
 		18DFD4DB1D8BB15100582637 /* member_out_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFD4D81D8BB15100582637 /* member_out_image.png */; };
 		18DFD4DC1D8BB15100582637 /* password_search_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFD4D91D8BB15100582637 /* password_search_image.png */; };
@@ -538,6 +543,11 @@
 		18C6FDFD1DDE0A3100046BA2 /* normal_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normal_image.png; sourceTree = "<group>"; };
 		18D7DFF31DB356C10033CD3D /* MemberIDSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberIDSearchView.swift; sourceTree = "<group>"; };
 		18D8FD971E19084500A86B74 /* default_humanimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = default_humanimage.png; path = ../../../sample_image/default_humanimage.png; sourceTree = "<group>"; };
+		18D8FDC01E1A64A200A86B74 /* talk_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = talk_icon.png; path = ../../../sample_image/talk_icon.png; sourceTree = "<group>"; };
+		18D8FDC21E1A675200A86B74 /* UserListViewTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewTableCell.swift; sourceTree = "<group>"; };
+		18D8FDC91E1A6E8E00A86B74 /* UserListViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewHeader.swift; sourceTree = "<group>"; };
+		18D8FDE51E1AB41000A86B74 /* UserListViewTableFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewTableFooter.swift; sourceTree = "<group>"; };
+		18D8FDE71E1AB97700A86B74 /* MessageRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageRoom.swift; sourceTree = "<group>"; };
 		18DFD4D71D8BB15100582637 /* id_search_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = id_search_image.png; sourceTree = "<group>"; };
 		18DFD4D81D8BB15100582637 /* member_out_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = member_out_image.png; sourceTree = "<group>"; };
 		18DFD4D91D8BB15100582637 /* password_search_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password_search_image.png; sourceTree = "<group>"; };
@@ -616,8 +626,12 @@
 				1854B2EB1D9A92EF002F3424 /* MemberInfoDetailView.swift */,
 				18C1778E1E110F3F0058CC23 /* FacebookloginView.swift */,
 				18DFD5071D8CFD0700582637 /* MemberListView.swift */,
+				18D8FDE51E1AB41000A86B74 /* UserListViewTableFooter.swift */,
 				1813ADC41D315806001BB532 /* ViewController.swift */,
 				1813ADC61D315806001BB532 /* Main.storyboard */,
+				18D8FDE71E1AB97700A86B74 /* MessageRoom.swift */,
+				18D8FDC21E1A675200A86B74 /* UserListViewTableCell.swift */,
+				18D8FDC91E1A6E8E00A86B74 /* UserListViewHeader.swift */,
 				1813ADC91D315806001BB532 /* Assets.xcassets */,
 				1813ADCB1D315806001BB532 /* LaunchScreen.storyboard */,
 				1813ADCE1D315806001BB532 /* Info.plist */,
@@ -709,6 +723,7 @@
 		18894BEE1D32908300EE4CB2 /* resource file */ = {
 			isa = PBXGroup;
 			children = (
+				18D8FDC01E1A64A200A86B74 /* talk_icon.png */,
 				18D8FD971E19084500A86B74 /* default_humanimage.png */,
 				187B4E841E160D9400C2F292 /* facebook_logout_button_icon.png */,
 				187B4E821E155E0600C2F292 /* facebook_loginbutton_icon.png */,
@@ -1180,6 +1195,7 @@
 				1813ADCA1D315806001BB532 /* Assets.xcassets in Resources */,
 				1808B6FC1D8E66BB00DF1024 /* no_image.png in Resources */,
 				18DFD4E71D8BB29A00582637 /* login_image.png in Resources */,
+				18D8FDC11E1A64A200A86B74 /* talk_icon.png in Resources */,
 				18C6FDF41DDDFA4400046BA2 /* colheader_image.png in Resources */,
 				18DFD4DB1D8BB15100582637 /* member_out_image.png in Resources */,
 				18894BF01D32908300EE4CB2 /* game_logo_image.png in Resources */,
@@ -1260,16 +1276,20 @@
 				18894BF41D37D3F300EE4CB2 /* EnrollView.swift in Sources */,
 				1813ADC51D315806001BB532 /* ViewController.swift in Sources */,
 				1813ADC31D315806001BB532 /* AppDelegate.swift in Sources */,
+				18D8FDE61E1AB41000A86B74 /* UserListViewTableFooter.swift in Sources */,
 				18C1778F1E110F3F0058CC23 /* FacebookloginView.swift in Sources */,
 				18DFD50C1D8D183D00582637 /* MemberListViewTableCell.swift in Sources */,
 				18623AB51DCB830D00847B0A /* ContentViewController.swift in Sources */,
 				1832CAC81E17A7CE00FFEC05 /* ProfileView.swift in Sources */,
+				18D8FDC31E1A675200A86B74 /* UserListViewTableCell.swift in Sources */,
 				184BB7D41DC4E91F002B5797 /* GameTabView.swift in Sources */,
+				18D8FDE81E1AB97700A86B74 /* MessageRoom.swift in Sources */,
 				18195ADA1DDDDBAD00A2C7EA /* CustomCollectionViewCell.swift in Sources */,
 				1800AD5D1D3B2BD400C3F932 /* DB_Function.swift in Sources */,
 				188903AE1D3BA3F400B16FE8 /* DBController.m in Sources */,
 				1854B2EC1D9A92EF002F3424 /* MemberInfoDetailView.swift in Sources */,
 				1808A62F1DDDF53D00406C19 /* collectionview_header.swift in Sources */,
+				18D8FDCA1E1A6E8E00A86B74 /* UserListViewHeader.swift in Sources */,
 				1881E6D21DAA4FAD00095F8E /* MemberListViewHeader.swift in Sources */,
 				1866FAFF1DACA04E0096F47D /* MemberListViewFooter.swift in Sources */,
 				184BB7D61DC4E997002B5797 /* GameSettingTabView.swift in Sources */,
