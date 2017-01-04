@@ -14,7 +14,7 @@ import Kingfisher //이미지 로더 클래스//
 
 class ProfileView : UIViewController, UITableViewDataSource, UITableViewDelegate{
     //서버의 ip주소와 포트번호//
-    var server_ip_address:String = "192.168.0.11"
+    var server_ip_address:String = "192.168.43.36"
     var server_port_number = "3000"
     
     //Key//
@@ -30,6 +30,7 @@ class ProfileView : UIViewController, UITableViewDataSource, UITableViewDelegate
     
     var info_text:String = "User Profile info"
     var user_id_str:String = "";
+    var user_profileimage_str:String = ""
     
     /** TableView 관련 Swipe Refresh 이벤트 **/
     var refreshControl: UIRefreshControl!
@@ -272,8 +273,10 @@ class ProfileView : UIViewController, UITableViewDataSource, UITableViewDelegate
             //이동할 스토리보드에 있는 값을 받을 변수설정(안드로이드에서는 해당 기능을 인텐트로 구현)//
             destination.sender_id = self.user_id_label.text!
             destination.sender_name = self.name_label.text!
+            destination.sender_profileimage = self.user_profileimage_str
             destination.receiver_id = self.user_id_array[cell_position!]
             destination.receiver_name = self.user_name_array[cell_position!]
+            destination.receiver_profileimage = self.user_profile_array[cell_position!]
         }
     }
     
@@ -342,6 +345,7 @@ class ProfileView : UIViewController, UITableViewDataSource, UITableViewDelegate
         name_label.text = user_name
         email_label.text = user_email
         user_id_label.text = user_id
+        user_profileimage_str = user_profileimageurl
         
         if(user_gender == "male"){
             gender_label.text = user_gender + "(남자)"
