@@ -17,7 +17,7 @@ import FacebookLogin //페이스북 로그인 관련 라이브러리//
 class FacebookloginView : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     //서버의 ip주소와 포트번호//
-    var server_ip_address:String = "192.168.43.36"
+    var server_ip_address:String = "192.168.0.7"
     var server_port_number = "3000"
     
     //Key//

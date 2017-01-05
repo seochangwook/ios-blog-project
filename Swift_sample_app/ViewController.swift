@@ -69,8 +69,16 @@ class ViewController: UIViewController
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        print("viewDidLoad()");
+        
         //이미지 설정//
         set_game_logo_image();
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true);
+        
+        print("viewDidAppear()");
     }
     
     override func didReceiveMemoryWarning() {

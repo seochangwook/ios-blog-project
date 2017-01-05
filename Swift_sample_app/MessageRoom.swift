@@ -14,14 +14,13 @@ import Kingfisher //이미지 로더 클래스//
 
 class MessageRoom : UIViewController, UITableViewDataSource, UITableViewDelegate{
     //서버의 ip주소와 포트번호//
-    var server_ip_address:String = "192.168.43.36"
+    var server_ip_address:String = "192.168.0.7"
     var server_port_number = "3000"
     
     @IBOutlet weak var receiver_info_label: UILabel!
     @IBOutlet weak var sender_info_label: UILabel!
     
     @IBOutlet weak var chatting_table: UITableView!
-    
     @IBOutlet weak var message_edittext: UITextField!
     
     var sender_id:String = ""
@@ -62,6 +61,9 @@ class MessageRoom : UIViewController, UITableViewDataSource, UITableViewDelegate
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: UIControlEvents.valueChanged)
         
         chatting_table.addSubview(refreshControl) //리플래시 화면을 보일(빙글빙글 돌아가는 프로그래스바)뷰를 장착.//
+        
+        //채팅 관련 데이터를 불러온다.//
+        load_message_data();
     }
     
     //당겨서 새로고침//
@@ -69,9 +71,17 @@ class MessageRoom : UIViewController, UITableViewDataSource, UITableViewDelegate
         // Code to refresh table view
         print("refresh table")
         
-        chatting_table.reloadData() //뷰를 재로드//
+        print("more page count : ", page_count)
         
-        refreshControl.endRefreshing() //다시 새로고침을 끝낸다.//
+        //증가된 페이지 카운트 수를 가지고 다시 재구성(refresh 시 다시 초기 10으로 돌아감)//
+        self.message_array.removeAll()
+        self.message_date.removeAll()
+        self.name_array.removeAll()
+        self.sender_id_array.removeAll()
+        
+        //load_userlist(page_count: page_count) //데이터 로드//
+        //채팅 관련 데이터를 불러온다.//
+        load_message_data();
     }
     
     //적용된 UITableView관련 필수 메소드를 오버라이드 해준다.(테이블의 행의 개수를 설정)//
@@ -160,6 +170,8 @@ class MessageRoom : UIViewController, UITableViewDataSource, UITableViewDelegate
         self.sender_id_array.removeAll()
         
         //load_userlist(page_count: page_count) //데이터 로드//
+        //채팅 관련 데이터를 불러온다.//
+        load_message_data();
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -195,78 +207,142 @@ class MessageRoom : UIViewController, UITableViewDataSource, UITableViewDelegate
     
     //메세지 전송버튼//
     @IBAction func send_button(_ sender: UIButton) {
+        print("message send");
         
+        //메세지 전송은 전송 뒤 다시 테이블의 데이터를 로드하는 작업이 필요//
+        var message_str:String = message_edittext.text!
+        
+        send_message(message:message_str);
+        
+        message_edittext.text = "";
     }
     
     func load_message_data(){
-        print("---------------------------")
+        if(self.message_array.count != 0){
+            print("refresh table")
+            
+            chatting_table.reloadData() //뷰를 재로드//
+            
+            refreshControl.endRefreshing() //다시 새로고침을 끝낸다.//
+        }
         
-        print("page count: ", page_count)
+        else{
+            print("---------------------------")
+            
+            print("page count: ", page_count)
+            
+            //파라미터 설정(송수신 관련 정보)//
+            let parameters = [
+                "pagecount":page_count,
+                "senderid":sender_id,
+                "receiverid":receiver_id
+            ]
+            
+            //네트워크로 유저의 정보를 검색한다.//
+            var progress = ProgressDialog(delegate: self)
+            progress.Show(true, mesaj: "Loading...")
+            
+            //테이블뷰에 나타날 데이터를 셋팅//
+            //호출//
+            //GET방식은 URLEncoding//
+            Alamofire.request("http://"+server_ip_address+":"+server_port_number+"/message/messagecontentlist", method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
+                
+                switch(response.result) {
+                case .success(_):
+                    if let data = response.result.value{
+                        //print(response.result.value!)
+                        
+                        //JSON값을 가지고 파싱//
+                        let json = JSON(data)
+                        
+                        for item in json["result"].arrayValue {
+                            print(item)
+                            //각 파싱한 값들을 배열에 설정//
+                            self.sender_id_array.append(item["senderid"].stringValue)
+                            self.message_date.append(item["date"].stringValue)
+                            self.message_array.append(item["message"].stringValue)
+                            self.name_array.append(item["sendername"].stringValue + "->" + item["receivername"].stringValue)
+                        }
+                        
+                        //네트워크 작업을 다 완료 후 수행(async - 비동기 작업)//
+                        DispatchQueue.main.async {
+                            progress.Close()
+                            
+                            print("finish get user list")
+                            print("---------------------------")
+                            
+                            //리스트를 변경 시 다시 테이블을 초기화//
+                            self.chatting_table.reloadData() //뷰를 재로드//
+                            
+                            self.refreshControl.endRefreshing() //다시 새로고침을 끝낸다.//
+                        }
+                    }
+                    break
+                    
+                case .failure(_):
+                    print(response.result.error)
+                    
+                    print("---------------------------")
+                    break
+                    
+                }
+            }
+        }
+    }
+    
+    func send_message(message:String){
+        print("[" + message + "]send...[" + sender_id + "(" + sender_name + ") -> " + receiver_id + "(" + receiver_name + ")]");
         
         //파라미터 설정(송수신 관련 정보)//
         let parameters = [
-            "pagecount":page_count,
             "senderid":sender_id,
-            "receiverid":receiver_id
+            "receiverid":receiver_id,
+            "message":message,
+            "sendername":sender_name,
+            "receivername":receiver_name
         ]
         
-        //네트워크로 유저의 정보를 검색한다.//
-        var progress = ProgressDialog(delegate: self)
+        var progress = ProgressDialog(delegate: self);
         progress.Show(true, mesaj: "Loading...")
         
-        //테이블뷰에 나타날 데이터를 셋팅//
         //호출//
-        //GET방식은 URLEncoding//
-        Alamofire.request("http://"+server_ip_address+":"+server_port_number+"/message/messagecontentlist", method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
+        Alamofire.request("http://"+self.server_ip_address+":"+self.server_port_number+"/message/send", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
             
+            //swift-case로 응답성공/실패를 분리//
             switch(response.result) {
             case .success(_):
                 if let data = response.result.value{
-                    //print(response.result.value!)
+                    print(response.result.value!)
                     
                     //JSON값을 가지고 파싱//
                     let json = JSON(data)
                     
-                    for item in json["result"].arrayValue {
-                        print(item)
-                        //각 파싱한 값들을 배열에 설정//
-                        self.sender_id_array.append(item["senderid"].stringValue)
-                        self.message_date.append(item["date"].stringValue)
-                        self.message_array.append(item["message"].stringValue)
-                        self.name_array.append(item["sendername"].stringValue + "->" + item["receivername"].stringValue)
-                    }
                     
                     //네트워크 작업을 다 완료 후 수행(async - 비동기 작업)//
                     DispatchQueue.main.async {
                         progress.Close()
                         
-                        print("finish get user list")
+                        //다시 테이블을 데이터 리스트를 호출//
+                        print("more page count : ", self.page_count)
                         
-                        for item in self.sender_id_array{
-                            print(item);
-                        }
+                        //증가된 페이지 카운트 수를 가지고 다시 재구성(refresh 시 다시 초기 10으로 돌아감)//
+                        self.message_array.removeAll()
+                        self.message_date.removeAll()
+                        self.name_array.removeAll()
+                        self.sender_id_array.removeAll()
                         
-                        for item in self.message_date{
-                            print(item);
-                        }
-                        
-                        for item in self.message_array{
-                            print(item);
-                        }
-                        
-                        for item in self.name_array{
-                            print(item);
-                        }
-                        
-                        print("---------------------------")
+                        //load_userlist(page_count: page_count) //데이터 로드//
+                        //채팅 관련 데이터를 불러온다.//
+                        self.load_message_data();
                     }
                 }
+                
                 break
                 
             case .failure(_):
-                print(response.result.error)
+                progress.Close()
+                print(response.result.error!)
                 
-                print("---------------------------")
                 break
                 
             }

@@ -14,7 +14,7 @@ import Kingfisher //이미지 로더 클래스//
 
 class ProfileView : UIViewController, UITableViewDataSource, UITableViewDelegate{
     //서버의 ip주소와 포트번호//
-    var server_ip_address:String = "192.168.43.36"
+    var server_ip_address:String = "192.168.0.7"
     var server_port_number = "3000"
     
     //Key//
@@ -64,6 +64,8 @@ class ProfileView : UIViewController, UITableViewDataSource, UITableViewDelegate
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: UIControlEvents.valueChanged)
         
         user_tableview.addSubview(refreshControl) //리플래시 화면을 보일(빙글빙글 돌아가는 프로그래스바)뷰를 장착.//
+        
+        load_userlist(page_count: page_count) //데이터 로드//
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -147,6 +149,10 @@ class ProfileView : UIViewController, UITableViewDataSource, UITableViewDelegate
         //profile_imageview.kf.setImage(with: url)
         
         //버튼 설정//
+        if(self.user_id_array[row] == self.user_id_str){
+            cell.chatting_button?.setImage(UIImage(named: "my_info_button.png"), for: UIControlState.normal)
+        }
+        
         cell.chatting_button?.tag = row //태그등록//
         //cell.chatting_button?.addTarget(self, action: #selector(self.makeSegue), for: UIControlEvents.touchUpInside)
         
@@ -183,9 +189,13 @@ class ProfileView : UIViewController, UITableViewDataSource, UITableViewDelegate
         // Code to refresh table view
         print("refresh table")
         
-        user_tableview.reloadData() //뷰를 재로드//
+        self.user_profile_array.removeAll()
+        self.user_gender_array.removeAll()
+        self.user_email_array.removeAll()
+        self.user_name_array.removeAll()
+        self.user_id_array.removeAll()
         
-        refreshControl.endRefreshing() //다시 새로고침을 끝낸다.//
+        load_userlist(page_count: page_count) //데이터 로드//
     }
     
     //리스트뷰 선택//
@@ -262,14 +272,13 @@ class ProfileView : UIViewController, UITableViewDataSource, UITableViewDelegate
         if(segue_id == "messageroom")
         {
             let button = sender as? UIButton //현재 UIButton의 프로토콜로 왔으니 sender를 UIButton으로 캐스팅한다.//
+            let cell_position = button?.tag //버튼의 tag값을 가져온다.(tag: 선택된 셀의 row값)//
             
             //UINavigation에서의 값 전달도 일반적으로 destination을 설정해서 한다.//
             let destination = segue.destination as! MessageRoom //이동할 스토리보드를 정의//
-            
-            let cell_position = button?.tag //버튼의 tag값을 가져온다.(tag: 선택된 셀의 row값)//
-            
+                
             print("move sotryboard...")
-            
+                
             //이동할 스토리보드에 있는 값을 받을 변수설정(안드로이드에서는 해당 기능을 인텐트로 구현)//
             destination.sender_id = self.user_id_label.text!
             destination.sender_name = self.name_label.text!
@@ -365,66 +374,73 @@ class ProfileView : UIViewController, UITableViewDataSource, UITableViewDelegate
     }
     
     func load_userlist(page_count:String){
-        print("---------------------------")
-        
-        print("page count: ", page_count)
-        
-        //파라미터 설정//
-        let parameters = [
-            "pagecount":page_count
-        ]
-        
-        //네트워크로 유저의 정보를 검색한다.//
-        var progress = ProgressDialog(delegate: self)
-        progress.Show(true, mesaj: "Loading...")
-        
-        //테이블뷰에 나타날 데이터를 셋팅//
-        //호출//
-        //GET방식은 URLEncoding//
-        Alamofire.request("http://"+server_ip_address+":"+server_port_number+"/user/list", method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
+        if(self.user_id_array.count != 0){
+            print("refresh table")
             
-            switch(response.result) {
-            case .success(_):
-                if let data = response.result.value{
-                    //print(response.result.value!)
-                    
-                    //JSON값을 가지고 파싱//
-                    let json = JSON(data)
-                    
-                    for item in json["results"].arrayValue {
-                        //print(item)
-                        //각 파싱한 값들을 배열에 설정//
-                        //자기 자신은 제외//
-                        if(item["id"].stringValue == self.user_id_str){
-                            
-                        }
+            user_tableview.reloadData() //뷰를 재로드//
+            
+            refreshControl.endRefreshing() //다시 새로고침을 끝낸다.//
+        }
+        
+        else{
+            print("---------------------------")
+            
+            print("page count: ", page_count)
+            
+            //파라미터 설정//
+            let parameters = [
+                "pagecount":page_count
+            ]
+            
+            //네트워크로 유저의 정보를 검색한다.//
+            var progress = ProgressDialog(delegate: self)
+            progress.Show(true, mesaj: "Loading...")
+            
+            //테이블뷰에 나타날 데이터를 셋팅//
+            //호출//
+            //GET방식은 URLEncoding//
+            Alamofire.request("http://"+server_ip_address+":"+server_port_number+"/user/list", method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
+                
+                switch(response.result) {
+                case .success(_):
+                    if let data = response.result.value{
+                        //print(response.result.value!)
                         
-                        else{
-                            self.user_id_array.append(item["id"].stringValue)
+                        //JSON값을 가지고 파싱//
+                        let json = JSON(data)
+                        
+                        for item in json["results"].arrayValue {
+                            //print(item)
+                            //각 파싱한 값들을 배열에 설정//
+                           self.user_id_array.append(item["id"].stringValue)
                             self.user_name_array.append(item["name"].stringValue)
                             self.user_email_array.append(item["email"].stringValue)
                             self.user_gender_array.append(item["gender"].stringValue)
                             self.user_profile_array.append(item["profile_image"].stringValue)
                         }
+                        
+                        //네트워크 작업을 다 완료 후 수행(async - 비동기 작업)//
+                        DispatchQueue.main.async {
+                            progress.Close()
+                            
+                            print("finish get user list")
+                            
+                            print("---------------------------")
+                            
+                            self.user_tableview.reloadData() //뷰를 재로드//
+                            
+                            self.refreshControl.endRefreshing() //다시 새로고침을 끝낸다.//
+                        }
                     }
+                    break
                     
-                    //네트워크 작업을 다 완료 후 수행(async - 비동기 작업)//
-                    DispatchQueue.main.async {
-                        progress.Close()
-                        
-                        print("finish get user list")
-                        
-                        print("---------------------------")
-                    }
+                case .failure(_):
+                    print(response.result.error)
+                    
+                    print("---------------------------")
+                    break
+                    
                 }
-                break
-                
-            case .failure(_):
-                print(response.result.error)
-                
-                print("---------------------------")
-                break
-                
             }
         }
     }
