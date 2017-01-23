@@ -218,6 +218,7 @@ class LocationView : UIViewController, UITableViewDataSource, UITableViewDelegat
         location_table.reloadData() //필터링 된 데이터를 기준으로 다시 테이블뷰를 설정//
     }
     
+    //검색바에서 입력을 하기 시작할 경우//
     func searchBarTextDidBeginEditing(_ searchbar: UISearchBar) {
         self.searchbar.showsCancelButton = true //취소버튼 보이기//
     }
@@ -227,5 +228,23 @@ class LocationView : UIViewController, UITableViewDataSource, UITableViewDelegat
         self.searchbar.showsCancelButton = false
         self.searchbar.text = ""
         self.searchbar.resignFirstResponder()
+    }
+    
+    //키보드에서 검색버튼 눌렀을 경우//
+    func searchBarSearchButtonClicked(_ searchbar: UISearchBar){
+        print("search text: ", self.searchbar.text!)
+        
+        let refreshAlert = UIAlertController(title: "검색결과", message: self.searchbar.text!, preferredStyle: UIAlertControllerStyle.alert)
+        
+        //다이얼로그에 버튼 등록//
+        refreshAlert.addAction(UIAlertAction(title: "확인", style: .default, handler: { (action: UIAlertAction!) in
+            print("검색확인")
+            
+            self.searchbar.showsCancelButton = false
+            self.searchbar.text = ""
+            self.searchbar.resignFirstResponder()
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil) //작성된 다이얼로그를 만들어 준다.//
     }
 }
