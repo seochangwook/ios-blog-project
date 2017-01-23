@@ -14,7 +14,7 @@ import Kingfisher //이미지 로더 클래스//
 
 class ProfileView : UIViewController, UITableViewDataSource, UITableViewDelegate{
     //서버의 ip주소와 포트번호//
-    var server_ip_address:String = "192.168.0.7"
+    var server_ip_address:String = "192.168.0.9"
     var server_port_number = "3000"
     
     //Key//
@@ -286,6 +286,13 @@ class ProfileView : UIViewController, UITableViewDataSource, UITableViewDelegate
             destination.receiver_id = self.user_id_array[cell_position!]
             destination.receiver_name = self.user_name_array[cell_position!]
             destination.receiver_profileimage = self.user_profile_array[cell_position!]
+        }
+        
+        else if(segue_id == "locationview"){
+            //UINavigation에서의 값 전달도 일반적으로 destination을 설정해서 한다.//
+            let destination = segue.destination as! LocationView //이동할 스토리보드를 정의//
+            
+            print("move sotryboard...")
         }
     }
     

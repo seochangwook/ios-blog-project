@@ -55,6 +55,9 @@
 		18894BF01D32908300EE4CB2 /* game_logo_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18894BEF1D32908300EE4CB2 /* game_logo_image.png */; };
 		18894BF41D37D3F300EE4CB2 /* EnrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18894BF31D37D3F300EE4CB2 /* EnrollView.swift */; };
 		18976EB31DB2034B00C95206 /* WebViewblog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18976EB21DB2034B00C95206 /* WebViewblog.swift */; };
+		18980F1C1E34838F00A763DB /* LocationTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18980F1B1E34838F00A763DB /* LocationTableCell.swift */; };
+		18980F381E35085700A763DB /* location_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 18980F371E35085700A763DB /* location_button.png */; };
+		18980F3A1E35149400A763DB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18980F391E35149400A763DB /* MapView.swift */; };
 		18C1778F1E110F3F0058CC23 /* FacebookloginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1778E1E110F3F0058CC23 /* FacebookloginView.swift */; };
 		18C177E81E1126340058CC23 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C177DB1E11261A0058CC23 /* Alamofire.framework */; };
 		18C177E91E1126340058CC23 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18C177DB1E11261A0058CC23 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -100,6 +103,8 @@
 		18DFD50A1D8D156B00582637 /* default_people_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFD5091D8D156B00582637 /* default_people_image.png */; };
 		18DFD50C1D8D183D00582637 /* MemberListViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DFD50B1D8D183D00582637 /* MemberListViewTableCell.swift */; };
 		18DFD50E1D8D5C8200582637 /* user_more_info_imagae.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DFD50D1D8D5C8200582637 /* user_more_info_imagae.png */; };
+		18F5C1A91E3375CA009603E8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F5C1A81E3375CA009603E8 /* MapKit.framework */; };
+		18F5C1C51E3383C7009603E8 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5C1C41E3383C7009603E8 /* LocationView.swift */; };
 		5D8F9A10505FAD0CD0480BB8 /* Pods_Swift_sample_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B812493490072B50331C993 /* Pods_Swift_sample_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -538,6 +543,9 @@
 		18894BEF1D32908300EE4CB2 /* game_logo_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_logo_image.png; sourceTree = "<group>"; };
 		18894BF31D37D3F300EE4CB2 /* EnrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnrollView.swift; sourceTree = "<group>"; };
 		18976EB21DB2034B00C95206 /* WebViewblog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewblog.swift; path = ../WebViewblog.swift; sourceTree = "<group>"; };
+		18980F1B1E34838F00A763DB /* LocationTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableCell.swift; sourceTree = "<group>"; };
+		18980F371E35085700A763DB /* location_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location_button.png; path = ../../../sample_image/location_button.png; sourceTree = "<group>"; };
+		18980F391E35149400A763DB /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		18B90C541DF7F17700F01B0C /* SwiftHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftHTTP.xcodeproj; path = "../swift_library/SwiftHTTP-master/SwiftHTTP.xcodeproj"; sourceTree = "<group>"; };
 		18C1778E1E110F3F0058CC23 /* FacebookloginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookloginView.swift; sourceTree = "<group>"; };
 		18C177CF1E11261A0058CC23 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../swift_library/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
@@ -566,6 +574,8 @@
 		18DFD5091D8D156B00582637 /* default_people_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_people_image.png; sourceTree = "<group>"; };
 		18DFD50B1D8D183D00582637 /* MemberListViewTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListViewTableCell.swift; sourceTree = "<group>"; };
 		18DFD50D1D8D5C8200582637 /* user_more_info_imagae.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_more_info_imagae.png; sourceTree = "<group>"; };
+		18F5C1A81E3375CA009603E8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		18F5C1C41E3383C7009603E8 /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		597BDCE8C811CC300B009E11 /* Pods-Swift_sample_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_sample_app.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift_sample_app/Pods-Swift_sample_app.release.xcconfig"; sourceTree = "<group>"; };
 		70CEA3DBF817687EA60E6E26 /* Pods-Swift_sample_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_sample_app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift_sample_app/Pods-Swift_sample_app.debug.xcconfig"; sourceTree = "<group>"; };
 		9B812493490072B50331C993 /* Pods_Swift_sample_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_sample_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -578,6 +588,7 @@
 			files = (
 				18D8FD831E1900BD00A86B74 /* FacebookShare.framework in Frameworks */,
 				18D8FD871E1900BD00A86B74 /* FBSDKCoreKit.framework in Frameworks */,
+				18F5C1A91E3375CA009603E8 /* MapKit.framework in Frameworks */,
 				187B4E7E1E155ADA00C2F292 /* Pods_Swift_sample_app.framework in Frameworks */,
 				181F96E61E153256009DF73D /* SwiftHTTP.framework in Frameworks */,
 				187209DD1DF9981E00A9CEA6 /* JSONJoy.framework in Frameworks */,
@@ -639,6 +650,7 @@
 				18D8FDE51E1AB41000A86B74 /* UserListViewTableFooter.swift */,
 				1813ADC41D315806001BB532 /* ViewController.swift */,
 				1813ADC61D315806001BB532 /* Main.storyboard */,
+				18980F1B1E34838F00A763DB /* LocationTableCell.swift */,
 				18D8FDE71E1AB97700A86B74 /* MessageRoom.swift */,
 				18D8FDC21E1A675200A86B74 /* UserListViewTableCell.swift */,
 				18D8FDC91E1A6E8E00A86B74 /* UserListViewHeader.swift */,
@@ -663,6 +675,8 @@
 				1808A62E1DDDF53D00406C19 /* collectionview_header.swift */,
 				18C6FDF91DDE078B00046BA2 /* CustomCollectionViewCell2.swift */,
 				1832CAC71E17A7CE00FFEC05 /* ProfileView.swift */,
+				18F5C1C41E3383C7009603E8 /* LocationView.swift */,
+				18980F391E35149400A763DB /* MapView.swift */,
 			);
 			path = Swift_sample_app;
 			sourceTree = "<group>";
@@ -670,6 +684,7 @@
 		187209B71DF7F50800A9CEA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18F5C1A81E3375CA009603E8 /* MapKit.framework */,
 				9B812493490072B50331C993 /* Pods_Swift_sample_app.framework */,
 			);
 			name = Frameworks;
@@ -733,6 +748,7 @@
 		18894BEE1D32908300EE4CB2 /* resource file */ = {
 			isa = PBXGroup;
 			children = (
+				18980F371E35085700A763DB /* location_button.png */,
 				185052DD1E1D4A230076B7D3 /* my_info_button.png */,
 				185052D71E1CE1ED0076B7D3 /* send_button_icon.png */,
 				18D8FDC01E1A64A200A86B74 /* talk_icon.png */,
@@ -871,6 +887,11 @@
 						DevelopmentTeam = 7SQL894E3T;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -1217,6 +1238,7 @@
 				185052D81E1CE1ED0076B7D3 /* send_button_icon.png in Resources */,
 				1813ADC81D315806001BB532 /* Main.storyboard in Resources */,
 				18C6FE001DDE0A3100046BA2 /* normal_image.png in Resources */,
+				18980F381E35085700A763DB /* location_button.png in Resources */,
 				18195ADF1DDDE10A00A2C7EA /* cell_image_2.png in Resources */,
 				1866FAFB1DAC9E080096F47D /* baner_blog.png in Resources */,
 				18DFD4DA1D8BB15100582637 /* id_search_image.png in Resources */,
@@ -1287,6 +1309,8 @@
 				185052DA1E1CE83F0076B7D3 /* MessageTableCell.swift in Sources */,
 				181394871DC0F04D001081A1 /* MemberPasswordSearchView.swift in Sources */,
 				187209E41DF9987600A9CEA6 /* GameTabjsondata.swift in Sources */,
+				18980F3A1E35149400A763DB /* MapView.swift in Sources */,
+				18980F1C1E34838F00A763DB /* LocationTableCell.swift in Sources */,
 				18C6FDFA1DDE078B00046BA2 /* CustomCollectionViewCell2.swift in Sources */,
 				183B006E1DC21F8000F88013 /* MemberDeleteView.swift in Sources */,
 				18894BF41D37D3F300EE4CB2 /* EnrollView.swift in Sources */,
@@ -1308,6 +1332,7 @@
 				1808A62F1DDDF53D00406C19 /* collectionview_header.swift in Sources */,
 				18D8FDCA1E1A6E8E00A86B74 /* UserListViewHeader.swift in Sources */,
 				1881E6D21DAA4FAD00095F8E /* MemberListViewHeader.swift in Sources */,
+				18F5C1C51E3383C7009603E8 /* LocationView.swift in Sources */,
 				1866FAFF1DACA04E0096F47D /* MemberListViewFooter.swift in Sources */,
 				184BB7D61DC4E997002B5797 /* GameSettingTabView.swift in Sources */,
 				18976EB31DB2034B00C95206 /* WebViewblog.swift in Sources */,
