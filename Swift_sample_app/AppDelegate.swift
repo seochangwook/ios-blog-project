@@ -8,6 +8,7 @@
 
 import UIKit
 import FacebookCore
+import SlideMenuControllerSwift
 
 @UIApplicationMain //앱의 시작점을 명시. 스위프트는 따로 main이 없다.(main.swift파일은 존재)//
 class AppDelegate: UIResponder, UIApplicationDelegate

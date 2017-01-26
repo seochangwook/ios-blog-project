@@ -30,6 +30,15 @@
 		184BB7D21DC4CD03002B5797 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184BB7D11DC4CD03002B5797 /* MainTabView.swift */; };
 		184BB7D41DC4E91F002B5797 /* GameTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184BB7D31DC4E91F002B5797 /* GameTabView.swift */; };
 		184BB7D61DC4E997002B5797 /* GameSettingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184BB7D51DC4E997002B5797 /* GameSettingTabView.swift */; };
+		184DC65F1E37411F0081C0F6 /* SlideMenuControllerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184DC65E1E37411F0081C0F6 /* SlideMenuControllerSwift.framework */; };
+		184DC6601E37411F0081C0F6 /* SlideMenuControllerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 184DC65E1E37411F0081C0F6 /* SlideMenuControllerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		184DC67D1E3747670081C0F6 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184DC67C1E3747670081C0F6 /* RightViewController.swift */; };
+		184DC68D1E3867530081C0F6 /* RightViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184DC68C1E3867530081C0F6 /* RightViewTableCell.swift */; };
+		184DC68F1E3868930081C0F6 /* background_drawer.png in Resources */ = {isa = PBXBuildFile; fileRef = 184DC68E1E3868930081C0F6 /* background_drawer.png */; };
+		184DC6961E389C4C0081C0F6 /* menu_edit_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 184DC6941E389C4C0081C0F6 /* menu_edit_icon.png */; };
+		184DC6971E389C4C0081C0F6 /* menu_setting_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 184DC6951E389C4C0081C0F6 /* menu_setting_icon.png */; };
+		184DC6991E38FE670081C0F6 /* UserEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184DC6981E38FE670081C0F6 /* UserEditView.swift */; };
+		184DC69B1E39109B0081C0F6 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184DC69A1E39109B0081C0F6 /* SettingView.swift */; };
 		185052D81E1CE1ED0076B7D3 /* send_button_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 185052D71E1CE1ED0076B7D3 /* send_button_icon.png */; };
 		185052DA1E1CE83F0076B7D3 /* MessageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185052D91E1CE83F0076B7D3 /* MessageTableCell.swift */; };
 		185052DC1E1CEAA40076B7D3 /* MessageTableFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185052DB1E1CEAA40076B7D3 /* MessageTableFooterCell.swift */; };
@@ -115,6 +124,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 6BFD901519C8D8B500DD99B6;
 			remoteInfo = SwiftHTTP;
+		};
+		184DC65D1E37411F0081C0F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B931C7F6740181ED1E3971C8EF57A3;
+			remoteInfo = SlideMenuControllerSwift;
+		};
+		184DC6611E37411F0081C0F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 54350E5594DE5924C71A05DF870CB4B3;
+			remoteInfo = SlideMenuControllerSwift;
 		};
 		187209CE1DF997D900A9CEA6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -232,7 +255,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 187B4E471E155AA100C2F292 /* Pods.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = CAEB3919170DB3360FE02179BF4C2AA1;
+			remoteGlobalIDString = 774E59FDA72DC7B43C69B74FE66FDB0C;
 			remoteInfo = "Pods-Swift_sample_app";
 		};
 		18C177DA1E11261A0058CC23 /* PBXContainerItemProxy */ = {
@@ -482,6 +505,7 @@
 				18D8FD941E1900FB00A86B74 /* Kingfisher.framework in Embed Frameworks */,
 				187B4E7F1E155ADA00C2F292 /* Pods_Swift_sample_app.framework in Embed Frameworks */,
 				18D8FD881E1900BD00A86B74 /* FBSDKCoreKit.framework in Embed Frameworks */,
+				184DC6601E37411F0081C0F6 /* SlideMenuControllerSwift.framework in Embed Frameworks */,
 				18D8FD7C1E1900BD00A86B74 /* FacebookCore.framework in Embed Frameworks */,
 				18D8FD841E1900BD00A86B74 /* FacebookShare.framework in Embed Frameworks */,
 				18D8FD901E1900BD00A86B74 /* FBSDKShareKit.framework in Embed Frameworks */,
@@ -518,6 +542,13 @@
 		184BB7D11DC4CD03002B5797 /* MainTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		184BB7D31DC4E91F002B5797 /* GameTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTabView.swift; sourceTree = "<group>"; };
 		184BB7D51DC4E997002B5797 /* GameSettingTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSettingTabView.swift; sourceTree = "<group>"; };
+		184DC67C1E3747670081C0F6 /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
+		184DC68C1E3867530081C0F6 /* RightViewTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RightViewTableCell.swift; path = ../RightViewTableCell.swift; sourceTree = "<group>"; };
+		184DC68E1E3868930081C0F6 /* background_drawer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background_drawer.png; path = ../../../sample_image/background_drawer.png; sourceTree = "<group>"; };
+		184DC6941E389C4C0081C0F6 /* menu_edit_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_edit_icon.png; path = ../../../sample_image/menu_edit_icon.png; sourceTree = "<group>"; };
+		184DC6951E389C4C0081C0F6 /* menu_setting_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_setting_icon.png; path = ../../../sample_image/menu_setting_icon.png; sourceTree = "<group>"; };
+		184DC6981E38FE670081C0F6 /* UserEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEditView.swift; sourceTree = "<group>"; };
+		184DC69A1E39109B0081C0F6 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		185052D71E1CE1ED0076B7D3 /* send_button_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = send_button_icon.png; path = ../../../sample_image/send_button_icon.png; sourceTree = "<group>"; };
 		185052D91E1CE83F0076B7D3 /* MessageTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageTableCell.swift; path = ../MessageTableCell.swift; sourceTree = "<group>"; };
 		185052DB1E1CEAA40076B7D3 /* MessageTableFooterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableFooterCell.swift; sourceTree = "<group>"; };
@@ -596,6 +627,7 @@
 				18C178041E11594B0058CC23 /* SwiftyJSON.framework in Frameworks */,
 				18D8FD8B1E1900BD00A86B74 /* FBSDKLoginKit.framework in Frameworks */,
 				1800AD5F1D3B80E500C3F932 /* libsqlite3.dylib in Frameworks */,
+				184DC65F1E37411F0081C0F6 /* SlideMenuControllerSwift.framework in Frameworks */,
 				18D8FD7B1E1900BD00A86B74 /* FacebookCore.framework in Frameworks */,
 				18D8FD931E1900FB00A86B74 /* Kingfisher.framework in Frameworks */,
 				18D8FD8F1E1900BD00A86B74 /* FBSDKShareKit.framework in Frameworks */,
@@ -644,12 +676,14 @@
 				1813ADC21D315806001BB532 /* AppDelegate.swift */,
 				185052D91E1CE83F0076B7D3 /* MessageTableCell.swift */,
 				185052DB1E1CEAA40076B7D3 /* MessageTableFooterCell.swift */,
+				184DC68C1E3867530081C0F6 /* RightViewTableCell.swift */,
 				1854B2EB1D9A92EF002F3424 /* MemberInfoDetailView.swift */,
 				18C1778E1E110F3F0058CC23 /* FacebookloginView.swift */,
 				18DFD5071D8CFD0700582637 /* MemberListView.swift */,
 				18D8FDE51E1AB41000A86B74 /* UserListViewTableFooter.swift */,
 				1813ADC41D315806001BB532 /* ViewController.swift */,
 				1813ADC61D315806001BB532 /* Main.storyboard */,
+				184DC67C1E3747670081C0F6 /* RightViewController.swift */,
 				18980F1B1E34838F00A763DB /* LocationTableCell.swift */,
 				18D8FDE71E1AB97700A86B74 /* MessageRoom.swift */,
 				18D8FDC21E1A675200A86B74 /* UserListViewTableCell.swift */,
@@ -677,6 +711,8 @@
 				1832CAC71E17A7CE00FFEC05 /* ProfileView.swift */,
 				18F5C1C41E3383C7009603E8 /* LocationView.swift */,
 				18980F391E35149400A763DB /* MapView.swift */,
+				184DC6981E38FE670081C0F6 /* UserEditView.swift */,
+				184DC69A1E39109B0081C0F6 /* SettingView.swift */,
 			);
 			path = Swift_sample_app;
 			sourceTree = "<group>";
@@ -741,6 +777,7 @@
 				18D8FD6A1E19002000A86B74 /* Kingfisher.framework */,
 				187B4E611E155AA200C2F292 /* Pods_Swift_sample_app.framework */,
 				18D8FDA01E19272500A86B74 /* RainbowSwift.framework */,
+				184DC65E1E37411F0081C0F6 /* SlideMenuControllerSwift.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -757,9 +794,12 @@
 				187B4E821E155E0600C2F292 /* facebook_loginbutton_icon.png */,
 				18195ADB1DDDE10A00A2C7EA /* cell_image_1.png */,
 				18195ADC1DDDE10A00A2C7EA /* cell_image_2.png */,
+				184DC68E1E3868930081C0F6 /* background_drawer.png */,
 				18C6FDF71DDE021900046BA2 /* splash_image.png */,
 				18195ADD1DDDE10A00A2C7EA /* cell_image_3.png */,
 				1866FAFC1DAC9F7E0096F47D /* blog_movebutton.png */,
+				184DC6941E389C4C0081C0F6 /* menu_edit_icon.png */,
+				184DC6951E389C4C0081C0F6 /* menu_setting_icon.png */,
 				18C6FDF51DDDFEA800046BA2 /* celheader2_image.png */,
 				1866FAFA1DAC9E080096F47D /* baner_blog.png */,
 				18C6FDF31DDDFA4400046BA2 /* colheader_image.png */,
@@ -866,6 +906,7 @@
 				18D8FD8E1E1900BD00A86B74 /* PBXTargetDependency */,
 				18D8FD921E1900BD00A86B74 /* PBXTargetDependency */,
 				18D8FD961E1900FB00A86B74 /* PBXTargetDependency */,
+				184DC6621E37411F0081C0F6 /* PBXTargetDependency */,
 			);
 			name = Swift_sample_app;
 			productName = Swift_sample_app;
@@ -936,6 +977,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		184DC65E1E37411F0081C0F6 /* SlideMenuControllerSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SlideMenuControllerSwift.framework;
+			remoteRef = 184DC65D1E37411F0081C0F6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		187209CF1DF997D900A9CEA6 /* JSONJoy.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -1209,6 +1257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184DC68F1E3868930081C0F6 /* background_drawer.png in Resources */,
 				18612C421DCB953500C57104 /* indicator_left_image.png in Resources */,
 				1813ADCD1D315806001BB532 /* LaunchScreen.storyboard in Resources */,
 				187B4E851E160D9400C2F292 /* facebook_logout_button_icon.png in Resources */,
@@ -1238,9 +1287,11 @@
 				185052D81E1CE1ED0076B7D3 /* send_button_icon.png in Resources */,
 				1813ADC81D315806001BB532 /* Main.storyboard in Resources */,
 				18C6FE001DDE0A3100046BA2 /* normal_image.png in Resources */,
+				184DC6961E389C4C0081C0F6 /* menu_edit_icon.png in Resources */,
 				18980F381E35085700A763DB /* location_button.png in Resources */,
 				18195ADF1DDDE10A00A2C7EA /* cell_image_2.png in Resources */,
 				1866FAFB1DAC9E080096F47D /* baner_blog.png in Resources */,
+				184DC6971E389C4C0081C0F6 /* menu_setting_icon.png in Resources */,
 				18DFD4DA1D8BB15100582637 /* id_search_image.png in Resources */,
 				18DFD50A1D8D156B00582637 /* default_people_image.png in Resources */,
 				1808B6FA1D8E658C00DF1024 /* get_image_button.png in Resources */,
@@ -1307,6 +1358,7 @@
 				18D7DFF41DB356C10033CD3D /* MemberIDSearchView.swift in Sources */,
 				187209C31DF8F5AF00A9CEA6 /* ProgressDialog.swift in Sources */,
 				185052DA1E1CE83F0076B7D3 /* MessageTableCell.swift in Sources */,
+				184DC68D1E3867530081C0F6 /* RightViewTableCell.swift in Sources */,
 				181394871DC0F04D001081A1 /* MemberPasswordSearchView.swift in Sources */,
 				187209E41DF9987600A9CEA6 /* GameTabjsondata.swift in Sources */,
 				18980F3A1E35149400A763DB /* MapView.swift in Sources */,
@@ -1319,8 +1371,10 @@
 				18D8FDE61E1AB41000A86B74 /* UserListViewTableFooter.swift in Sources */,
 				18C1778F1E110F3F0058CC23 /* FacebookloginView.swift in Sources */,
 				18DFD50C1D8D183D00582637 /* MemberListViewTableCell.swift in Sources */,
+				184DC67D1E3747670081C0F6 /* RightViewController.swift in Sources */,
 				18623AB51DCB830D00847B0A /* ContentViewController.swift in Sources */,
 				1832CAC81E17A7CE00FFEC05 /* ProfileView.swift in Sources */,
+				184DC69B1E39109B0081C0F6 /* SettingView.swift in Sources */,
 				18D8FDC31E1A675200A86B74 /* UserListViewTableCell.swift in Sources */,
 				184BB7D41DC4E91F002B5797 /* GameTabView.swift in Sources */,
 				185052DC1E1CEAA40076B7D3 /* MessageTableFooterCell.swift in Sources */,
@@ -1329,6 +1383,7 @@
 				1800AD5D1D3B2BD400C3F932 /* DB_Function.swift in Sources */,
 				188903AE1D3BA3F400B16FE8 /* DBController.m in Sources */,
 				1854B2EC1D9A92EF002F3424 /* MemberInfoDetailView.swift in Sources */,
+				184DC6991E38FE670081C0F6 /* UserEditView.swift in Sources */,
 				1808A62F1DDDF53D00406C19 /* collectionview_header.swift in Sources */,
 				18D8FDCA1E1A6E8E00A86B74 /* UserListViewHeader.swift in Sources */,
 				1881E6D21DAA4FAD00095F8E /* MemberListViewHeader.swift in Sources */,
@@ -1347,6 +1402,11 @@
 			isa = PBXTargetDependency;
 			name = SwiftHTTP;
 			targetProxy = 181F96E81E153256009DF73D /* PBXContainerItemProxy */;
+		};
+		184DC6621E37411F0081C0F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SlideMenuControllerSwift;
+			targetProxy = 184DC6611E37411F0081C0F6 /* PBXContainerItemProxy */;
 		};
 		187209E01DF9981E00A9CEA6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

@@ -187,7 +187,7 @@ class LocationView : UIViewController, UITableViewDataSource, UITableViewDelegat
             
             //UINavigation에서의 값 전달도 일반적으로 destination을 설정해서 한다.//
             let destination = segue.destination as! MapView //이동할 스토리보드를 정의//
-            
+        
             print("move sotryboard...")
             
             //이동할 스토리보드에 있는 값을 받을 변수설정(안드로이드에서는 해당 기능을 인텐트로 구현)//
