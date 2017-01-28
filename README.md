@@ -41,6 +41,7 @@ Dreaming Developer 운영자 서창욱
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0060.PNG" width="200" height="350">
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0061.PNG" width="200" height="350">
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0064.PNG" width="200" height="350">
+  <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0066.PNG" width="200" height="350">
 </p>
 
 ---------------------------------------
@@ -71,3 +72,7 @@ Dreaming Developer 운영자 서창욱
 * UITableview (user list) - Network (17.1.3)
 * SearchBar (17.1.23)
 * SlideMenuController (17.1.26)
+* GoogleMap API (17.1.29)
+<p align="left">
+  <img src="https://github.com/seochangwook/ios-game-project/blob/master/googlemap_image.png" width="400" height="130">
+</p>
