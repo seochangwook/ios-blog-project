@@ -8,18 +8,22 @@
 
 import UIKit
 import FacebookCore
-import SlideMenuControllerSwift
+import GoogleMaps
 
 @UIApplicationMain //앱의 시작점을 명시. 스위프트는 따로 main이 없다.(main.swift파일은 존재)//
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
     var window: UIWindow?
 
+    let googleMapsApiKey = "AIzaSyCGmzJbFd9yeWzS51LHd09vLfrqQ9n49hM"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         // Type casting in swift is "as Type", you'll need to unwrap optionals however.
+        
+        //GoogleMap API Key등록//
+        GMSServices.provideAPIKey(googleMapsApiKey)
     
         return true
     }

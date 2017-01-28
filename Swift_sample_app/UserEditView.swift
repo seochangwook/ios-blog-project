@@ -8,8 +8,9 @@
 
 import Foundation
 import UIKit
+import GoogleMaps
 
-class UserEditView : UIViewController{
+class UserEditView : UIViewController, GMSMapViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
     }

@@ -1586,7 +1586,7 @@
 				DEVELOPMENT_TEAM = 7SQL894E3T;
 				INFOPLIST_FILE = Swift_sample_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_LIBTOOLFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.developer-seo.Swift-sample-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1610,7 +1610,7 @@
 				DEVELOPMENT_TEAM = 7SQL894E3T;
 				INFOPLIST_FILE = Swift_sample_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_LIBTOOLFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.developer-seo.Swift-sample-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
