@@ -74,5 +74,5 @@ Dreaming Developer 운영자 서창욱
 * SlideMenuController (17.1.26)
 * GoogleMap API (17.1.29)
 <p align="left">
-  <img src="https://github.com/seochangwook/ios-game-project/blob/master/googlemap_image.png" width="400" height="130">
+  <img src="https://github.com/seochangwook/ios-game-project/blob/master/googlemap_image.png" width="300" height="130">
 </p>
