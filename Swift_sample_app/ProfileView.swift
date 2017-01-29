@@ -14,7 +14,7 @@ import Kingfisher //이미지 로더 클래스//
 
 class ProfileView : UIViewController, UITableViewDataSource, UITableViewDelegate{
     //서버의 ip주소와 포트번호//
-    var server_ip_address:String = "192.168.0.9"
+    var server_ip_address:String = "192.168.0.10"
     var server_port_number = "3000"
     
     //Key//

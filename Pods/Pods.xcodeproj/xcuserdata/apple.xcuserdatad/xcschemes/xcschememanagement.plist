@@ -44,6 +44,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PermissionScope.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Swift_sample_app.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,17 +72,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>3734EBBB2C9F40DDB04F5C27062D82FC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>44CAD6CE523055ED339E87154473A254</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>54350E5594DE5924C71A05DF870CB4B3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>588DA868D2050C3593233EAFC46BE3F7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,7 +97,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>774E59FDA72DC7B43C69B74FE66FDB0C</key>
+		<key>84A5B2FD44545B06352FD9C2625B0557</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -108,6 +108,16 @@
 			<true/>
 		</dict>
 		<key>C4944FEC314D1A66588651D006273ADE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D1CD2D144FF07D37D62A306784D6FFCB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D973DBB3FF803A3BAC3F870E70F87628</key>
 		<dict>
 			<key>primary</key>
 			<true/>

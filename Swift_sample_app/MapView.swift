@@ -13,7 +13,7 @@ import GoogleMaps //구글맵 관련 라이브러리. 최근 스위프트 버전
 import CoreLocation //지오코딩을 위해 필요한 라이브러리//
 import AddressBookUI //지오코딩을 위해 필요한 라이브러리//
 
-class MapView : SlideMenuController, GMSMapViewDelegate{
+class MapView : SlideMenuController, GMSMapViewDelegate, CLLocationManagerDelegate{
     var location_name : String = ""
     
     //위도와 경도값을 초기화//
@@ -23,6 +23,7 @@ class MapView : SlideMenuController, GMSMapViewDelegate{
     var original_address_longitude:CLLocationDegrees = 0.0
     
     var mapView:GMSMapView? = nil //구글맵 뷰 객체//
+    var locationManager : CLLocationManager = CLLocationManager() //NSLocationWhenInUseUsageDescription 권한 설정필요(Info.plist)//
     
     @IBOutlet weak var location_label: UILabel!
     @IBOutlet weak var search_input_location: UITextField!
@@ -63,6 +64,8 @@ class MapView : SlideMenuController, GMSMapViewDelegate{
                 
                 //이벤트 등록//
                 self.mapView?.delegate = self
+                self.locationManager.delegate = self
+                self.locationManager.requestAlwaysAuthorization() //위치정보 권한을 물어보는 다이얼로그 활성화(앱 설치 후 최초 1회)//
                 
                 //지도의 유형을 변경가능//
                 self.mapView?.mapType = kGMSTypeNormal //기본 유형으로 설정//
@@ -70,7 +73,7 @@ class MapView : SlideMenuController, GMSMapViewDelegate{
                 //실내지도 on/off설정//
                 self.mapView?.isIndoorEnabled = false
                 
-                //나의 위치정보 설정(GPS상황에 따라 환경이 달라질 수 있다.)//
+                //나의 위치정보 설정(GPS상황에 따라 환경이 달라질 수 있다.). 나의 현재위치로 한번에 이동할 수 있는 버튼 등록//
                 self.mapView?.isMyLocationEnabled = true
                 
                 if let mylocation = self.mapView?.myLocation {
@@ -168,7 +171,7 @@ class MapView : SlideMenuController, GMSMapViewDelegate{
                 //폴리라인 추가//
                 let path = GMSMutablePath()
                 
-                path.addLatitude(37.4836862, longitude:126.8742653)
+                path.addLatitude(self.original_address_latitude, longitude:self.original_address_longitude)
                 path.addLatitude(self.search_address_latitude, longitude:self.search_address_longitude)
                 
                 let polyline = GMSPolyline(path: path)

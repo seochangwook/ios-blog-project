@@ -13,7 +13,7 @@ import SwiftyJSON //JSON파싱 라이브러리//
 
 class LocationView : UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate{
     //서버의 ip주소와 포트번호//
-    var server_ip_address:String = "192.168.0.9"
+    var server_ip_address:String = "192.168.0.10"
     var server_port_number = "3000"
     
     @IBOutlet weak var location_table: UITableView!
