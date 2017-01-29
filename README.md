@@ -42,6 +42,7 @@ Dreaming Developer 운영자 서창욱
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0061.PNG" width="200" height="350">
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0064.PNG" width="200" height="350">
   <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0066.PNG" width="200" height="350">
+  <img src="https://github.com/seochangwook/ios-game-project/blob/master/IMG_0067.PNG" width="200" height="350">
 </p>
 
 ---------------------------------------
